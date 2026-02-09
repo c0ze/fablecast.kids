@@ -15,7 +15,7 @@ const faqs = [
       },
       {
         q: 'How do I sign up?',
-        a: 'Click "Get Started" on the landing page and sign in with your Google account. You\u2019ll choose a plan, set your child\u2019s age range and preferred language, and you\u2019re ready to go. No separate password to remember.'
+        a: 'Click "Get Started" on the landing page and sign in with your Google account. You\u2019ll choose a plan and preferred language, and you\u2019re ready to go. No separate password to remember.'
       },
       {
         q: 'Is there a free trial?',
@@ -95,7 +95,7 @@ const faqs = [
     items: [
       {
         q: 'What data do you collect?',
-        a: 'Only the minimum necessary: your email (from Google Sign-In), display name, and your chosen preferences (age range, language, series). We don\u2019t collect any data from children directly, and we don\u2019t track browsing behavior.'
+        a: 'Only the minimum necessary: your email (from Google Sign-In), display name, and your chosen preferences (language, series). We don\u2019t collect any data from children directly, and we don\u2019t track browsing behavior.'
       },
       {
         q: 'Are there ads?',

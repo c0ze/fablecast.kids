@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
           <ul className="mt-3 ml-6 list-disc space-y-1.5">
             <li><strong>Email address</strong> &mdash; provided through Google Sign-In, used solely for account identification and essential service communications.</li>
             <li><strong>Display name</strong> &mdash; provided through Google Sign-In, used to personalize your experience.</li>
-            <li><strong>Account preferences</strong> &mdash; child&rsquo;s age range, preferred language, and preferred series. You provide these during onboarding.</li>
+            <li><strong>Account preferences</strong> &mdash; preferred language and preferred series. You provide these during onboarding.</li>
             <li><strong>Subscription status</strong> &mdash; your selected plan and subscription dates.</li>
           </ul>
           <p className="mt-3">
@@ -38,7 +38,7 @@ export default function PrivacyPolicy() {
           <p className="mt-2">Your data is used exclusively to:</p>
           <ul className="mt-3 ml-6 list-disc space-y-1.5">
             <li>Authenticate your account via Google Sign-In.</li>
-            <li>Deliver stories in your preferred language and age range.</li>
+            <li>Deliver stories in your preferred language.</li>
             <li>Manage your subscription plan.</li>
             <li>Send essential service communications (e.g., subscription confirmations or critical service updates).</li>
           </ul>

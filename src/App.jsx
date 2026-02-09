@@ -218,7 +218,6 @@ function App() {
   const [authError, setAuthError] = useState('');
   const [setupModalOpen, setSetupModalOpen] = useState(false);
   const [setupSaving, setSetupSaving] = useState(false);
-  const [setupAgeRange, setSetupAgeRange] = useState('3-5');
   const [setupLanguage, setSetupLanguage] = useState('English');
   const [setupSeries, setSetupSeries] = useState('');
   const [revealReady, setRevealReady] = useState(false);
@@ -323,9 +322,6 @@ function App() {
           setSetupLanguage(profile.preferredLanguage);
           setActiveLang(profile.preferredLanguage);
         }
-        if (profile?.childAgeRange) {
-          setSetupAgeRange(profile.childAgeRange);
-        }
         if (profile?.preferredSeries) {
           setSetupSeries(profile.preferredSeries);
         }
@@ -404,7 +400,6 @@ function App() {
           email: authUser.email,
           displayName: authUser.displayName,
           plan: selectedPlan,
-          childAgeRange: setupAgeRange,
           preferredLanguage: setupLanguage,
           preferredSeries: selectedPlan === 'Squire' ? setupSeries : null,
           setupComplete: true,
@@ -618,7 +613,7 @@ function App() {
                 </span>
                 , Every Single Morning
               </h1>
-              <p className="mt-5 max-w-xl text-lg leading-relaxed text-cosmos/80">
+              <p className="mt-5 max-w-xl text-xl leading-relaxed text-cosmos/80">
                 Fresh, illustrated adventures delivered daily with the heart of bedtime
                 storytelling. Six beloved characters, three languages, one magical reading
                 routine.
@@ -683,7 +678,7 @@ function App() {
           <h2 className="mt-4 font-display text-3xl text-cosmos sm:text-4xl">
             {formatDropDate(latestBatch.generatedAt)}
           </h2>
-          <p className="mt-2 text-cosmos/60">Six fresh stories are baked and ready!</p>
+          <p className="mt-2 text-lg text-cosmos/60">Six fresh stories are baked and ready!</p>
         </div>
 
         <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -703,7 +698,7 @@ function App() {
                     <p className="text-xs text-cosmos/60">Lead: {drop.lead}</p>
                   </div>
                 </div>
-                <p className="mt-3 text-sm font-semibold text-cosmos/80">{drop.titles.English}</p>
+                <p className="mt-3 text-base font-semibold text-cosmos/80">{drop.titles.English}</p>
               </div>
             );
           })}
@@ -718,7 +713,7 @@ function App() {
               {'\uD83C\uDF0D'} Multilingual
             </span>
             <h3 className="mt-4 font-display text-3xl text-cosmos">Same Story, Three Languages</h3>
-            <p className="mt-3 text-cosmos/75">
+            <p className="mt-3 text-lg text-cosmos/75">
               One real page from today&apos;s Rusty story, lovingly localized across all three
               editions.
             </p>
@@ -745,7 +740,7 @@ function App() {
                 Rusty&apos;s Warm Winter Friend ({activeLang})
               </p>
             </div>
-            <p className="text-lg font-semibold leading-relaxed text-cosmos">
+            <p className="text-xl font-semibold leading-relaxed text-cosmos">
               {languageSnippets[activeLang]}
             </p>
           </article>
@@ -768,7 +763,7 @@ function App() {
             >
               <span className="text-4xl">{feature.icon}</span>
               <h4 className="mt-3 font-display text-xl text-cosmos">{feature.title}</h4>
-              <p className="mt-2 text-sm leading-relaxed text-cosmos/75">
+              <p className="mt-2 text-base leading-relaxed text-cosmos/75">
                 {feature.description}
               </p>
             </article>
@@ -785,7 +780,7 @@ function App() {
                 {'\uD83C\uDFA0'} Story Carousel
               </span>
               <h3 className="mt-3 font-display text-3xl text-cosmos">Meet the Characters</h3>
-              <p className="mt-2 text-cosmos/70">
+              <p className="mt-2 text-lg text-cosmos/70">
                 Real daily titles and cast cards from each live series.
               </p>
             </div>
@@ -822,7 +817,7 @@ function App() {
                 <h4 className="font-display text-2xl">{currentStory.series}</h4>
               </div>
             </div>
-            <p className="mt-4 text-lg font-semibold leading-relaxed">
+            <p className="mt-4 text-xl font-semibold leading-relaxed">
               {currentStory.titles[activeLang]}
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
@@ -866,7 +861,7 @@ function App() {
             {'\uD83C\uDF81'} Plans
           </span>
           <h3 className="mt-4 font-display text-3xl text-cosmos">Choose Your Story Bounty</h3>
-          <p className="mt-3 text-cosmos/70">Simple plans for every reading routine.</p>
+          <p className="mt-3 text-lg text-cosmos/70">Simple plans for every reading routine.</p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {pricing.map((plan) => (
@@ -898,7 +893,7 @@ function App() {
                   {plan.period}
                 </span>
               </p>
-              <ul className="mt-4 space-y-2 text-sm">
+              <ul className="mt-4 space-y-2.5 text-base">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-2">
                     <span className="mt-0.5 text-mint">{'\u2714'}</span>
@@ -930,7 +925,7 @@ function App() {
         <div className="mx-auto max-w-3xl px-6 py-14 text-center lg:px-8">
           <span className="text-5xl">{'\uD83D\uDD13'}</span>
           <h3 className="mt-4 font-display text-3xl text-cosmos">Ready for Storytime?</h3>
-          <p className="mt-3 text-cosmos/70">
+          <p className="mt-3 text-lg text-cosmos/70">
             Sign in with Google for fast, password-free onboarding.
           </p>
           <p className="mt-2 inline-flex items-center gap-2 rounded-full bg-twilight/10 px-4 py-1.5 text-sm font-bold text-twilight">
@@ -1043,19 +1038,6 @@ function App() {
             </p>
 
             <form onSubmit={handleSetupSave} className="mt-5 space-y-4">
-              <label className="block text-sm font-bold text-cosmos">
-                Child&apos;s Age Range
-                <select
-                  value={setupAgeRange}
-                  onChange={(event) => setSetupAgeRange(event.target.value)}
-                  className="mt-1 w-full rounded-xl border-2 border-dashed border-lavender/40 bg-white px-4 py-2.5 font-semibold focus:border-twilight focus:outline-none"
-                >
-                  <option>3-5</option>
-                  <option>6-8</option>
-                  <option>9-12</option>
-                </select>
-              </label>
-
               <label className="block text-sm font-bold text-cosmos">
                 Preferred Language
                 <select
