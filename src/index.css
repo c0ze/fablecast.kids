@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Nunito+Sans:wght@400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #2C194A;
+  background: #fffdf7;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito Sans', sans-serif;
+  background:
+    radial-gradient(circle at 10% 8%, rgba(255, 158, 198, 0.15), transparent 22%),
+    radial-gradient(circle at 85% 12%, rgba(168, 230, 207, 0.18), transparent 25%),
+    radial-gradient(circle at 50% 50%, rgba(212, 187, 255, 0.1), transparent 30%),
+    radial-gradient(circle at 80% 80%, rgba(244, 210, 122, 0.15), transparent 26%),
+    radial-gradient(circle at 15% 70%, rgba(168, 216, 234, 0.12), transparent 22%),
+    #fffdf7;
+  color: #2C194A;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Wavy section dividers */
+.wavy-top {
+  position: relative;
+}
+
+.wavy-top::before {
+  content: '';
+  position: absolute;
+  top: -24px;
+  left: 0;
+  right: 0;
+  height: 24px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 24'%3E%3Cpath d='M0 24 Q150 0 300 12 T600 12 T900 12 T1200 12 L1200 24Z' fill='%23fffdf7'/%3E%3C/svg%3E");
+  background-size: cover;
+}
+
+/* Decorative dots pattern for cards */
+.dots-pattern {
+  background-image: radial-gradient(circle, rgba(124, 92, 191, 0.08) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Cute card hover effect */
+.card-cute {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-cute:hover {
+  transform: translateY(-4px) rotate(-0.5deg);
+  box-shadow: 0 12px 32px rgba(124, 92, 191, 0.15);
+}
+
+/* Sticker-style badges */
+.sticker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 2px dashed;
+  transform: rotate(-2deg);
+}
+
+/* Character emoji bounce */
+.char-bounce {
+  display: inline-block;
+  animation: bounce_soft 2s ease-in-out infinite;
+}
+
+.char-bounce:nth-child(2) { animation-delay: 0.3s; }
+.char-bounce:nth-child(3) { animation-delay: 0.6s; }
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .card-cute:hover {
+    transform: none;
+  }
+
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
