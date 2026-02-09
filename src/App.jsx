@@ -1,9 +1,32 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, useCallback } from 'react';
 import { onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth';
 import { doc, getDoc, serverTimestamp, setDoc } from 'firebase/firestore';
 import { auth, db, googleProvider, hasFirebaseConfig } from './firebase';
 import Logo from './Logo';
 import HeroBanner from './HeroBanner';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import About from './pages/About';
+import Characters from './pages/Characters';
+import FAQ from './pages/FAQ';
+import Blog from './pages/Blog';
+
+const PAGES = {
+  home: null,
+  privacy: PrivacyPolicy,
+  terms: TermsOfService,
+  about: About,
+  characters: Characters,
+  faq: FAQ,
+  blog: Blog
+};
+
+const NAV_LINKS = [
+  { page: 'about', label: 'How It Works', emoji: '\u2728' },
+  { page: 'characters', label: 'Characters', emoji: '\uD83C\uDFA0' },
+  { page: 'faq', label: 'FAQ', emoji: '\u2753' },
+  { page: 'blog', label: 'Blog', emoji: '\uD83D\uDCDD' }
+];
 
 const seriesEmoji = {
   'adventures-of-rusty': { icon: '\uD83D\uDC36', color: 'bg-peach', border: 'border-peach' },
@@ -199,8 +222,32 @@ function App() {
   const [setupLanguage, setSetupLanguage] = useState('English');
   const [setupSeries, setSetupSeries] = useState('');
   const [revealReady, setRevealReady] = useState(false);
+  const [currentPage, setCurrentPage] = useState('home');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const revealRef = useRef(null);
   const touchStartX = useRef(null);
+
+  const navigateTo = useCallback((page) => {
+    setCurrentPage(page);
+    setMobileMenuOpen(false);
+    window.location.hash = page === 'home' ? '' : page;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
+  useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash.replace('#', '') || 'home';
+      if (PAGES.hasOwnProperty(hash)) {
+        setCurrentPage(hash);
+        window.scrollTo({ top: 0 });
+      } else {
+        setCurrentPage('home');
+      }
+    };
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
 
   const latestBatch = useMemo(
     () => [...dailyDrops].sort((a, b) => b.generatedAt.localeCompare(a.generatedAt))[0],
@@ -410,24 +457,133 @@ function App() {
   return (
     <main ref={revealRef} className="min-h-screen bg-page text-cosmos">
       {/* ===== NAVBAR ===== */}
-      <nav className="relative z-10 mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-8">
-        <Logo className="h-14 w-auto sm:h-16" />
-        <div className="flex items-center gap-3">
+      <nav className="relative z-20 mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-8">
+        <button onClick={() => navigateTo('home')} className="shrink-0">
+          <Logo className="h-14 w-auto sm:h-16" />
+        </button>
+
+        {/* Desktop nav */}
+        <div className="hidden items-center gap-1 md:flex">
+          {NAV_LINKS.map((link) => (
+            <button
+              key={link.page}
+              onClick={() => navigateTo(link.page)}
+              className={`rounded-full px-4 py-2 text-sm font-bold transition ${
+                currentPage === link.page
+                  ? 'bg-twilight/10 text-twilight'
+                  : 'text-cosmos/70 hover:bg-twilight/5 hover:text-cosmos'
+              }`}
+            >
+              {link.emoji} {link.label}
+            </button>
+          ))}
           <a
-            href="#daily-drop"
-            className="hidden rounded-full border-2 border-dashed border-bubblegum/50 px-4 py-2 text-sm font-bold text-bubblegum transition hover:bg-bubblegum/10 sm:inline-flex"
-          >
-            Today&apos;s Stories
-          </a>
-          <a
-            href="#auth-section"
-            className="rounded-full bg-twilight px-5 py-2.5 text-sm font-bold text-white shadow-candy transition hover:bg-plumMist hover:shadow-glow"
+            href={currentPage === 'home' ? '#auth-section' : '#'}
+            onClick={(e) => {
+              if (currentPage !== 'home') {
+                e.preventDefault();
+                navigateTo('home');
+              }
+            }}
+            className="ml-2 rounded-full bg-twilight px-5 py-2.5 text-sm font-bold text-white shadow-candy transition hover:bg-plumMist hover:shadow-glow"
           >
             Get Started
           </a>
         </div>
+
+        {/* Mobile hamburger */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-dashed border-twilight/30 text-xl md:hidden"
+          aria-label="Menu"
+        >
+          {mobileMenuOpen ? '\u2715' : '\u2630'}
+        </button>
       </nav>
 
+      {/* Mobile menu dropdown */}
+      {mobileMenuOpen && (
+        <div className="absolute left-0 right-0 top-[72px] z-10 border-b-2 border-dashed border-starlight/30 bg-page/95 px-6 py-4 shadow-soft backdrop-blur-sm md:hidden">
+          <div className="flex flex-col gap-1">
+            {NAV_LINKS.map((link) => (
+              <button
+                key={link.page}
+                onClick={() => navigateTo(link.page)}
+                className={`rounded-xl px-4 py-3 text-left text-sm font-bold transition ${
+                  currentPage === link.page
+                    ? 'bg-twilight/10 text-twilight'
+                    : 'text-cosmos/70 hover:bg-twilight/5'
+                }`}
+              >
+                {link.emoji} {link.label}
+              </button>
+            ))}
+            <button
+              onClick={() => navigateTo('home')}
+              className="mt-2 rounded-full bg-twilight px-5 py-2.5 text-sm font-bold text-white shadow-candy"
+            >
+              {'\uD83C\uDFE0'} Home
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* ===== SUB-PAGES ===== */}
+      {currentPage !== 'home' && PAGES[currentPage] && (
+        <>
+          {(() => {
+            const PageComponent = PAGES[currentPage];
+            return <PageComponent />;
+          })()}
+
+          {/* Sub-page footer */}
+          <footer className="border-t-2 border-dashed border-plumMist/15 bg-white/50">
+            <div className="mx-auto max-w-6xl px-6 py-10 lg:px-8">
+              <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
+                <button onClick={() => navigateTo('home')} className="shrink-0">
+                  <Logo className="h-10 w-auto opacity-60" />
+                </button>
+                <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm">
+                  {NAV_LINKS.map((link) => (
+                    <button
+                      key={link.page}
+                      onClick={() => navigateTo(link.page)}
+                      className={`font-semibold transition ${
+                        currentPage === link.page ? 'text-twilight' : 'text-cosmos/50 hover:text-cosmos'
+                      }`}
+                    >
+                      {link.label}
+                    </button>
+                  ))}
+                  <button
+                    onClick={() => navigateTo('privacy')}
+                    className={`font-semibold transition ${
+                      currentPage === 'privacy' ? 'text-twilight' : 'text-cosmos/50 hover:text-cosmos'
+                    }`}
+                  >
+                    Privacy
+                  </button>
+                  <button
+                    onClick={() => navigateTo('terms')}
+                    className={`font-semibold transition ${
+                      currentPage === 'terms' ? 'text-twilight' : 'text-cosmos/50 hover:text-cosmos'
+                    }`}
+                  >
+                    Terms
+                  </button>
+                </div>
+              </div>
+              <p className="mt-6 text-center text-sm text-cosmos/40">
+                Made with love for little readers everywhere.
+              </p>
+            </div>
+          </footer>
+        </>
+      )}
+
+      {/* ===== LANDING PAGE ===== */}
+      {currentPage === 'home' && (
+      <>
       {/* ===== HERO ===== */}
       <section className="relative overflow-hidden">
         {/* Floating decorative blobs */}
@@ -826,17 +982,48 @@ function App() {
       </section>
 
       {/* ===== FOOTER ===== */}
-      <footer className="mx-auto max-w-6xl px-6 py-10 text-center lg:px-8">
-        <Logo className="mx-auto h-10 w-auto opacity-60" />
-        <p className="mt-4 text-sm text-cosmos/50">
-          Made with love for little readers everywhere.
-        </p>
-        <div className="mt-3 flex justify-center gap-2">
-          {Object.values(seriesEmoji).map((e, i) => (
-            <span key={i} className="char-bounce text-xl">{e.icon}</span>
-          ))}
+      <footer className="border-t-2 border-dashed border-plumMist/15 bg-white/50">
+        <div className="mx-auto max-w-6xl px-6 py-10 lg:px-8">
+          <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
+            <div className="text-center sm:text-left">
+              <Logo className="mx-auto h-10 w-auto opacity-60 sm:mx-0" />
+              <p className="mt-2 text-sm text-cosmos/40">
+                Made with love for little readers everywhere.
+              </p>
+            </div>
+            <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm">
+              {NAV_LINKS.map((link) => (
+                <button
+                  key={link.page}
+                  onClick={() => navigateTo(link.page)}
+                  className="font-semibold text-cosmos/50 transition hover:text-cosmos"
+                >
+                  {link.label}
+                </button>
+              ))}
+              <button
+                onClick={() => navigateTo('privacy')}
+                className="font-semibold text-cosmos/50 transition hover:text-cosmos"
+              >
+                Privacy
+              </button>
+              <button
+                onClick={() => navigateTo('terms')}
+                className="font-semibold text-cosmos/50 transition hover:text-cosmos"
+              >
+                Terms
+              </button>
+            </div>
+          </div>
+          <div className="mt-6 flex justify-center gap-2">
+            {Object.values(seriesEmoji).map((e, i) => (
+              <span key={i} className="char-bounce text-xl">{e.icon}</span>
+            ))}
+          </div>
         </div>
       </footer>
+      </>
+      )}
 
       {/* ===== SETUP MODAL ===== */}
       {setupModalOpen && authUser && (
