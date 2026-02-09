@@ -1,129 +1,126 @@
-const characters = [
-  {
-    slug: 'adventures-of-rusty',
-    emoji: '\uD83D\uDC36',
-    series: 'The Adventures of Rusty',
-    lead: 'Rusty',
-    leadDescription:
-      'A cheerful little robot dog with a heart of gold and an insatiable curiosity. Rusty loves tinkering, helping friends, and discovering how things work.',
-    cast: [
-      { name: 'Bolt', role: 'Best friend, a speedy robot cat' },
-      { name: 'Sparky', role: 'Playful firefly who lights the way' },
-      { name: 'Daisy', role: 'Gentle garden robot who grows flowers' }
-    ],
-    world: 'Workshops, parks, and friendly neighborhoods',
-    tone: 'Warm, curious, problem-solving',
-    artStyle: 'Soft watercolor with warm sunset tones',
-    color: 'from-peach/20 to-starlight/10',
-    border: 'border-peach/30',
-    badge: 'bg-peach/20'
-  },
-  {
-    slug: 'captain-barnacles-voyages',
-    emoji: '\u2693',
-    series: "Captain Barnacles' Voyages",
-    lead: 'Captain Barnacles',
-    leadDescription:
-      'A jolly sea creature captain with a big hat and an even bigger heart. Barnacles sails the seven seas finding new friends and solving watery mysteries.',
-    cast: [
-      { name: 'Coral', role: 'First mate, a clever seahorse' },
-      { name: 'Gully', role: 'Lookout seagull with sharp eyes' },
-      { name: 'Shelly', role: 'Wise old turtle and navigator' }
-    ],
-    world: 'Oceans, harbors, and rainy shorelines',
-    tone: 'Adventurous, brave, kind-hearted',
-    artStyle: 'Bright ocean blues and sandy watercolor washes',
-    color: 'from-sky/20 to-mint/10',
-    border: 'border-sky/30',
-    badge: 'bg-sky/20'
-  },
-  {
-    slug: 'astro-bun-to-the-moon',
-    emoji: '\uD83D\uDC30',
-    series: 'Astro-Bun to the Moon',
-    lead: 'Astro-Bun',
-    leadDescription:
-      'A fluffy pink bunny in a tiny spacesuit who dreams of exploring every corner of the cosmos. Astro-Bun is brave, gentle, and always shares her snacks.',
-    cast: [
-      { name: 'Cosmo', role: 'Robot co-pilot and best friend' },
-      { name: 'Nova', role: 'Sparkly star who guides the way' },
-      { name: 'Crater', role: 'Friendly moon rock who loves jokes' }
-    ],
-    world: 'Rockets, moons, and observatory skies',
-    tone: 'Dreamy, wonder-filled, encouraging',
-    artStyle: 'Soft pastels with glowing cosmic highlights',
-    color: 'from-lavender/20 to-candy/10',
-    border: 'border-lavender/30',
-    badge: 'bg-lavender/20'
-  },
-  {
-    slug: 'pippa-the-little-plane',
-    emoji: '\u2708\uFE0F',
-    series: 'Pippa the Little Plane',
-    lead: 'Pippa',
-    leadDescription:
-      'A cheerful little propeller plane with a bright yellow body and the biggest smile in the sky. Pippa loves flying through clouds and meeting new friends at every airport.',
-    cast: [
-      { name: 'Breezy', role: 'Playful wind spirit and best friend' },
-      { name: 'Hangar', role: 'Wise old airport building full of stories' },
-      { name: 'Zip', role: 'Speedy little drone who loves races' }
-    ],
-    world: 'Airports, clouds, and sunny flight paths',
-    tone: 'Joyful, free-spirited, optimistic',
-    artStyle: 'Bright skies with fluffy cloud textures',
-    color: 'from-mint/20 to-sky/10',
-    border: 'border-mint/30',
-    badge: 'bg-mint/20'
-  },
-  {
-    slug: 'professor-hoot-mysteries',
-    emoji: '\uD83E\uDD89',
-    series: 'The Mysteries of Professor Hoot',
-    lead: 'Professor Hoot',
-    leadDescription:
-      'A wise old owl with round spectacles and a velvet cape. Professor Hoot loves solving gentle mysteries with patience, observation, and a warm cup of tea.',
-    cast: [
-      { name: 'Clue', role: 'Tiny magnifying-glass beetle assistant' },
-      { name: 'Maple', role: 'Friendly squirrel librarian' },
-      { name: 'Bramble', role: 'Mischievous hedgehog gardener' }
-    ],
-    world: 'Cozy libraries, gardens, and village corners',
-    tone: 'Thoughtful, patient, gently mysterious',
-    artStyle: 'Warm autumn tones with cozy golden lighting',
-    color: 'from-starlight/20 to-peach/10',
-    border: 'border-starlight/30',
-    badge: 'bg-starlight/20'
-  },
-  {
-    slug: 'grug-garden',
-    emoji: '\uD83C\uDF31',
-    series: "Grug's Garden",
-    lead: 'Grug',
-    leadDescription:
-      'A gentle, mossy garden creature who tends to a magical meadow. Grug speaks softly, moves slowly, and believes every tiny seed holds a big adventure.',
-    cast: [
-      { name: 'Pebble', role: 'Smooth river stone friend who rolls along' },
-      { name: 'Fern', role: 'Graceful plant spirit who dances in the breeze' },
-      { name: 'Twig', role: 'Energetic stick insect who loves to build' }
-    ],
-    world: 'Meadows, creeks, and mossy garden trails',
-    tone: 'Gentle, nurturing, nature-loving',
-    artStyle: 'Earthy greens and soft botanical watercolors',
-    color: 'from-candy/20 to-mint/10',
-    border: 'border-candy/30',
-    badge: 'bg-candy/20'
-  }
-];
+import { useTranslation } from '../i18n';
 
 export default function Characters() {
+  const { t } = useTranslation();
+
+  const characters = [
+    {
+      slug: 'adventures-of-rusty',
+      emoji: '\uD83D\uDC36',
+      series: t('characters.series.adventures-of-rusty.series'),
+      lead: t('characters.series.adventures-of-rusty.lead'),
+      leadDescription: t('characters.series.adventures-of-rusty.leadDescription'),
+      cast: [
+        { name: t('characters.series.adventures-of-rusty.cast.0.name'), role: t('characters.series.adventures-of-rusty.cast.0.role') },
+        { name: t('characters.series.adventures-of-rusty.cast.1.name'), role: t('characters.series.adventures-of-rusty.cast.1.role') },
+        { name: t('characters.series.adventures-of-rusty.cast.2.name'), role: t('characters.series.adventures-of-rusty.cast.2.role') }
+      ],
+      world: t('characters.series.adventures-of-rusty.world'),
+      tone: t('characters.series.adventures-of-rusty.tone'),
+      artStyle: t('characters.series.adventures-of-rusty.artStyle'),
+      color: 'from-peach/20 to-starlight/10',
+      border: 'border-peach/30',
+      badge: 'bg-peach/20'
+    },
+    {
+      slug: 'captain-barnacles-voyages',
+      emoji: '\u2693',
+      series: t('characters.series.captain-barnacles-voyages.series'),
+      lead: t('characters.series.captain-barnacles-voyages.lead'),
+      leadDescription: t('characters.series.captain-barnacles-voyages.leadDescription'),
+      cast: [
+        { name: t('characters.series.captain-barnacles-voyages.cast.0.name'), role: t('characters.series.captain-barnacles-voyages.cast.0.role') },
+        { name: t('characters.series.captain-barnacles-voyages.cast.1.name'), role: t('characters.series.captain-barnacles-voyages.cast.1.role') },
+        { name: t('characters.series.captain-barnacles-voyages.cast.2.name'), role: t('characters.series.captain-barnacles-voyages.cast.2.role') }
+      ],
+      world: t('characters.series.captain-barnacles-voyages.world'),
+      tone: t('characters.series.captain-barnacles-voyages.tone'),
+      artStyle: t('characters.series.captain-barnacles-voyages.artStyle'),
+      color: 'from-sky/20 to-mint/10',
+      border: 'border-sky/30',
+      badge: 'bg-sky/20'
+    },
+    {
+      slug: 'astro-bun-to-the-moon',
+      emoji: '\uD83D\uDC30',
+      series: t('characters.series.astro-bun-to-the-moon.series'),
+      lead: t('characters.series.astro-bun-to-the-moon.lead'),
+      leadDescription: t('characters.series.astro-bun-to-the-moon.leadDescription'),
+      cast: [
+        { name: t('characters.series.astro-bun-to-the-moon.cast.0.name'), role: t('characters.series.astro-bun-to-the-moon.cast.0.role') },
+        { name: t('characters.series.astro-bun-to-the-moon.cast.1.name'), role: t('characters.series.astro-bun-to-the-moon.cast.1.role') },
+        { name: t('characters.series.astro-bun-to-the-moon.cast.2.name'), role: t('characters.series.astro-bun-to-the-moon.cast.2.role') }
+      ],
+      world: t('characters.series.astro-bun-to-the-moon.world'),
+      tone: t('characters.series.astro-bun-to-the-moon.tone'),
+      artStyle: t('characters.series.astro-bun-to-the-moon.artStyle'),
+      color: 'from-lavender/20 to-candy/10',
+      border: 'border-lavender/30',
+      badge: 'bg-lavender/20'
+    },
+    {
+      slug: 'pippa-the-little-plane',
+      emoji: '\u2708\uFE0F',
+      series: t('characters.series.pippa-the-little-plane.series'),
+      lead: t('characters.series.pippa-the-little-plane.lead'),
+      leadDescription: t('characters.series.pippa-the-little-plane.leadDescription'),
+      cast: [
+        { name: t('characters.series.pippa-the-little-plane.cast.0.name'), role: t('characters.series.pippa-the-little-plane.cast.0.role') },
+        { name: t('characters.series.pippa-the-little-plane.cast.1.name'), role: t('characters.series.pippa-the-little-plane.cast.1.role') },
+        { name: t('characters.series.pippa-the-little-plane.cast.2.name'), role: t('characters.series.pippa-the-little-plane.cast.2.role') }
+      ],
+      world: t('characters.series.pippa-the-little-plane.world'),
+      tone: t('characters.series.pippa-the-little-plane.tone'),
+      artStyle: t('characters.series.pippa-the-little-plane.artStyle'),
+      color: 'from-mint/20 to-sky/10',
+      border: 'border-mint/30',
+      badge: 'bg-mint/20'
+    },
+    {
+      slug: 'professor-hoot-mysteries',
+      emoji: '\uD83E\uDD89',
+      series: t('characters.series.professor-hoot-mysteries.series'),
+      lead: t('characters.series.professor-hoot-mysteries.lead'),
+      leadDescription: t('characters.series.professor-hoot-mysteries.leadDescription'),
+      cast: [
+        { name: t('characters.series.professor-hoot-mysteries.cast.0.name'), role: t('characters.series.professor-hoot-mysteries.cast.0.role') },
+        { name: t('characters.series.professor-hoot-mysteries.cast.1.name'), role: t('characters.series.professor-hoot-mysteries.cast.1.role') },
+        { name: t('characters.series.professor-hoot-mysteries.cast.2.name'), role: t('characters.series.professor-hoot-mysteries.cast.2.role') }
+      ],
+      world: t('characters.series.professor-hoot-mysteries.world'),
+      tone: t('characters.series.professor-hoot-mysteries.tone'),
+      artStyle: t('characters.series.professor-hoot-mysteries.artStyle'),
+      color: 'from-starlight/20 to-peach/10',
+      border: 'border-starlight/30',
+      badge: 'bg-starlight/20'
+    },
+    {
+      slug: 'grug-garden',
+      emoji: '\uD83C\uDF31',
+      series: t('characters.series.grug-garden.series'),
+      lead: t('characters.series.grug-garden.lead'),
+      leadDescription: t('characters.series.grug-garden.leadDescription'),
+      cast: [
+        { name: t('characters.series.grug-garden.cast.0.name'), role: t('characters.series.grug-garden.cast.0.role') },
+        { name: t('characters.series.grug-garden.cast.1.name'), role: t('characters.series.grug-garden.cast.1.role') },
+        { name: t('characters.series.grug-garden.cast.2.name'), role: t('characters.series.grug-garden.cast.2.role') }
+      ],
+      world: t('characters.series.grug-garden.world'),
+      tone: t('characters.series.grug-garden.tone'),
+      artStyle: t('characters.series.grug-garden.artStyle'),
+      color: 'from-candy/20 to-mint/10',
+      border: 'border-candy/30',
+      badge: 'bg-candy/20'
+    }
+  ];
+
   return (
     <article className="mx-auto max-w-5xl px-6 py-14 lg:px-8">
       <div className="text-center">
-        <span className="sticker border-candy bg-candy/10 text-cosmos">{'\uD83C\uDFA0'} Characters</span>
-        <h1 className="mt-4 font-display text-4xl text-cosmos sm:text-5xl">Meet the Cast</h1>
+        <span className="sticker border-candy bg-candy/10 text-cosmos">{'\uD83C\uDFA0'} {t('characters.sticker')}</span>
+        <h1 className="mt-4 font-display text-4xl text-cosmos sm:text-5xl">{t('characters.title')}</h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-cosmos/70">
-          Six beloved story worlds, each with a unique lead character and supporting friends.
-          Every series has its own art style, tone, and world rules.
+          {t('characters.subtitle')}
         </p>
       </div>
 
@@ -160,7 +157,7 @@ export default function Characters() {
                 </p>
               </div>
               <div>
-                <h3 className="font-display text-lg text-cosmos">Supporting Cast</h3>
+                <h3 className="font-display text-lg text-cosmos">{t('characters.supportingCastLabel')}</h3>
                 <ul className="mt-2 space-y-2">
                   {char.cast.map((member) => (
                     <li key={member.name} className="flex items-start gap-2 text-sm text-cosmos/75">
@@ -175,7 +172,7 @@ export default function Characters() {
             </div>
 
             <p className="mt-4 text-sm text-cosmos/60">
-              {'\uD83C\uDF0D'} World: {char.world}
+              {'\uD83C\uDF0D'} {t('characters.worldLabel')} {char.world}
             </p>
           </div>
         ))}

@@ -16,8 +16,8 @@ html {
 body {
   margin: 0;
   font-family: 'Nunito Sans', sans-serif;
-  font-size: 17px;
-  line-height: 1.7;
+  font-size: 19px;
+  line-height: 1.75;
   background:
     radial-gradient(circle at 10% 8%, rgba(255, 158, 198, 0.15), transparent 22%),
     radial-gradient(circle at 85% 12%, rgba(168, 230, 207, 0.18), transparent 25%),
@@ -83,7 +83,7 @@ body {
   gap: 0.4rem;
   padding: 0.4rem 0.85rem;
   border-radius: 9999px;
-  font-size: 0.875rem;
+  font-size: 0.95rem;
   font-weight: 700;
   border: 2px dashed;
   transform: rotate(-2deg);
@@ -95,12 +95,12 @@ article h2 {
 }
 
 article p, article li {
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   line-height: 1.75;
 }
 
 article ul {
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
 }
 
 /* Character emoji bounce */

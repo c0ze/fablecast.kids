@@ -1,4 +1,4 @@
-export default function Logo({ className = '' }) {
+export default function Logo({ className = '', tagline = 'STORIES THAT SPARKLE' }) {
   return (
     <svg
       viewBox="0 0 320 80"
@@ -85,7 +85,7 @@ export default function Logo({ className = '' }) {
         fill="#7C5CBF"
         letterSpacing="2"
       >
-        STORIES THAT SPARKLE
+        {tagline}
       </text>
     </svg>
   );

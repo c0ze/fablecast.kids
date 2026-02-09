@@ -2,8 +2,10 @@ import { useEffect, useMemo, useRef, useState, useCallback } from 'react';
 import { onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth';
 import { doc, getDoc, serverTimestamp, setDoc } from 'firebase/firestore';
 import { auth, db, googleProvider, hasFirebaseConfig } from './firebase';
+import { useTranslation } from './i18n';
 import Logo from './Logo';
 import HeroBanner from './HeroBanner';
+import LanguageSelector from './components/LanguageSelector';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import About from './pages/About';
@@ -20,13 +22,6 @@ const PAGES = {
   faq: FAQ,
   blog: Blog
 };
-
-const NAV_LINKS = [
-  { page: 'about', label: 'How It Works', emoji: '\u2728' },
-  { page: 'characters', label: 'Characters', emoji: '\uD83C\uDFA0' },
-  { page: 'faq', label: 'FAQ', emoji: '\u2753' },
-  { page: 'blog', label: 'Blog', emoji: '\uD83D\uDCDD' }
-];
 
 const seriesEmoji = {
   'adventures-of-rusty': { icon: '\uD83D\uDC36', color: 'bg-peach', border: 'border-peach' },
@@ -129,80 +124,13 @@ const languageSnippets = {
 
 const langFlags = { English: '\uD83C\uDDFA\uD83C\uDDF8', Turkish: '\uD83C\uDDF9\uD83C\uDDF7', Japanese: '\uD83C\uDDEF\uD83C\uDDF5' };
 
-const pipelineFeatures = [
-  {
-    icon: '\uD83D\uDCD6',
-    title: 'Character Bibles',
-    description:
-      'Every story grows from a lovingly crafted character bible with unique art styles, personalities, and world rules.',
-    accent: 'from-lavender/30 to-candy/20'
-  },
-  {
-    icon: '\uD83C\uDF0D',
-    title: 'Three Languages',
-    description:
-      'English stories are created first, then beautifully translated to Turkish and Japanese while keeping the same lovely illustrations.',
-    accent: 'from-sky/30 to-mint/20'
-  },
-  {
-    icon: '\uD83D\uDEE1\uFE0F',
-    title: 'Safe & Cozy',
-    description:
-      'Every series has guardrails to keep settings safe, age-appropriate, and full of warmth for little readers aged 3\u20138.',
-    accent: 'from-starlight/30 to-peach/20'
-  }
-];
-
-const pricing = [
-  {
-    name: 'Free',
-    subtitle: 'Try a taste of magic',
-    price: '$0',
-    period: '/mo',
-    features: ['2 sample books', 'Child-safe reading mode', 'No card required'],
-    cta: 'Start Free',
-    emoji: '\u2728',
-    accent: 'border-lavender/40'
-  },
-  {
-    name: 'Squire',
-    subtitle: 'Pick your favorite',
-    price: '$4.99',
-    period: '/mo',
-    features: ['1 story series', '1 language', '30 fresh books every month'],
-    cta: 'Choose Squire',
-    emoji: '\uD83D\uDC51',
-    accent: 'border-sky/40'
-  },
-  {
-    name: 'Knight',
-    subtitle: 'Most loved by families',
-    price: '$9.99',
-    period: '/mo',
-    features: ['All 6 series', '1 language', 'Daily drop access'],
-    cta: 'Choose Knight',
-    featured: true,
-    emoji: '\uD83C\uDFC6',
-    accent: 'border-starlight'
-  },
-  {
-    name: 'Emperor',
-    subtitle: 'The full treasure chest',
-    price: '$14.99',
-    period: '/mo',
-    features: ['All 6 series', 'All 3 languages', 'AI-generated audio narration'],
-    cta: 'Choose Emperor',
-    emoji: '\uD83D\uDC8E',
-    accent: 'border-bubblegum/40'
-  }
-];
-
-function formatDropDate(stamp) {
+function formatDropDate(stamp, lang) {
   const datePart = stamp.slice(0, 8);
   const year = Number(datePart.slice(0, 4));
   const month = Number(datePart.slice(4, 6)) - 1;
   const day = Number(datePart.slice(6, 8));
-  return new Date(year, month, day).toLocaleDateString('en-US', {
+  const localeMap = { en: 'en-US', tr: 'tr-TR', ja: 'ja-JP' };
+  return new Date(year, month, day).toLocaleDateString(localeMap[lang] || 'en-US', {
     weekday: 'long',
     month: 'long',
     day: 'numeric'
@@ -210,6 +138,7 @@ function formatDropDate(stamp) {
 }
 
 function App() {
+  const { t, lang } = useTranslation();
   const [activeLang, setActiveLang] = useState('English');
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [selectedPlan, setSelectedPlan] = useState('Free');
@@ -225,6 +154,82 @@ function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const revealRef = useRef(null);
   const touchStartX = useRef(null);
+
+  const NAV_LINKS = useMemo(() => [
+    { page: 'about', label: t('nav.about'), emoji: '\u2728' },
+    { page: 'characters', label: t('nav.characters'), emoji: '\uD83C\uDFA0' },
+    { page: 'faq', label: t('nav.faq'), emoji: '\u2753' },
+    { page: 'blog', label: t('nav.blog'), emoji: '\uD83D\uDCDD' }
+  ], [t]);
+
+  const pipelineFeatures = useMemo(() => [
+    {
+      icon: '\uD83D\uDCD6',
+      title: t('features.characterBibles.title'),
+      description: t('features.characterBibles.description'),
+      accent: 'from-lavender/30 to-candy/20'
+    },
+    {
+      icon: '\uD83C\uDF0D',
+      title: t('features.threeLanguages.title'),
+      description: t('features.threeLanguages.description'),
+      accent: 'from-sky/30 to-mint/20'
+    },
+    {
+      icon: '\uD83D\uDEE1\uFE0F',
+      title: t('features.safeAndCozy.title'),
+      description: t('features.safeAndCozy.description'),
+      accent: 'from-starlight/30 to-peach/20'
+    }
+  ], [t]);
+
+  const pricingPlans = useMemo(() => [
+    {
+      key: 'free',
+      name: t('pricing.free.name'),
+      subtitle: t('pricing.free.subtitle'),
+      price: t('pricing.free.price'),
+      period: t('pricing.free.period'),
+      features: [t('pricing.free.features.0'), t('pricing.free.features.1'), t('pricing.free.features.2')],
+      cta: t('pricing.free.cta'),
+      emoji: '\u2728',
+      accent: 'border-lavender/40'
+    },
+    {
+      key: 'squire',
+      name: t('pricing.squire.name'),
+      subtitle: t('pricing.squire.subtitle'),
+      price: t('pricing.squire.price'),
+      period: t('pricing.squire.period'),
+      features: [t('pricing.squire.features.0'), t('pricing.squire.features.1'), t('pricing.squire.features.2')],
+      cta: t('pricing.squire.cta'),
+      emoji: '\uD83D\uDC51',
+      accent: 'border-sky/40'
+    },
+    {
+      key: 'knight',
+      name: t('pricing.knight.name'),
+      subtitle: t('pricing.knight.subtitle'),
+      price: t('pricing.knight.price'),
+      period: t('pricing.knight.period'),
+      features: [t('pricing.knight.features.0'), t('pricing.knight.features.1'), t('pricing.knight.features.2')],
+      cta: t('pricing.knight.cta'),
+      featured: true,
+      emoji: '\uD83C\uDFC6',
+      accent: 'border-starlight'
+    },
+    {
+      key: 'emperor',
+      name: t('pricing.emperor.name'),
+      subtitle: t('pricing.emperor.subtitle'),
+      price: t('pricing.emperor.price'),
+      period: t('pricing.emperor.period'),
+      features: [t('pricing.emperor.features.0'), t('pricing.emperor.features.1'), t('pricing.emperor.features.2')],
+      cta: t('pricing.emperor.cta'),
+      emoji: '\uD83D\uDC8E',
+      accent: 'border-bubblegum/40'
+    }
+  ], [t]);
 
   const navigateTo = useCallback((page) => {
     setCurrentPage(page);
@@ -300,7 +305,7 @@ function App() {
       }
 
       if (!user.emailVerified) {
-        setAuthError('Only verified Google accounts can continue.');
+        setAuthError(t('auth.errors.unverifiedGoogle'));
         await signOut(auth);
         setAuthBusy(false);
         return;
@@ -331,14 +336,14 @@ function App() {
 
         setSetupModalOpen(!profile?.setupComplete);
       } catch (error) {
-        setAuthError('Could not load your account settings yet.');
+        setAuthError(t('auth.errors.loadFailed'));
       } finally {
         setAuthBusy(false);
       }
     });
 
     return () => unsubscribe();
-  }, []);
+  }, [t]);
 
   useEffect(() => {
     if (selectedPlan !== 'Squire') {
@@ -362,7 +367,7 @@ function App() {
 
   const handleGoogleSignIn = async () => {
     if (!auth || !hasFirebaseConfig) {
-      setAuthError('Google sign-in is not configured yet. Add Firebase web env vars to enable it.');
+      setAuthError(t('auth.errors.firebaseNotConfigured'));
       return;
     }
 
@@ -371,7 +376,7 @@ function App() {
       setAuthError('');
       await signInWithPopup(auth, googleProvider);
     } catch (error) {
-      setAuthError('Google sign-in was canceled or failed. Please try again.');
+      setAuthError(t('auth.errors.signInFailed'));
       setAuthBusy(false);
     }
   };
@@ -380,12 +385,12 @@ function App() {
     event.preventDefault();
 
     if (!authUser || !db) {
-      setAuthError('Please sign in again before saving your preferences.');
+      setAuthError(t('auth.errors.signInRequired'));
       return;
     }
 
     if (selectedPlan === 'Squire' && !setupSeries) {
-      setAuthError('Squire requires a preferred series.');
+      setAuthError(t('auth.errors.squireSeriesRequired'));
       return;
     }
 
@@ -412,7 +417,7 @@ function App() {
       setActiveLang(setupLanguage);
       setSetupModalOpen(false);
     } catch (error) {
-      setAuthError('Could not save your preferences. Please try once more.');
+      setAuthError(t('auth.errors.saveFailed'));
     } finally {
       setSetupSaving(false);
     }
@@ -454,7 +459,7 @@ function App() {
       {/* ===== NAVBAR ===== */}
       <nav className="relative z-20 mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-8">
         <button onClick={() => navigateTo('home')} className="shrink-0">
-          <Logo className="h-14 w-auto sm:h-16" />
+          <Logo className="h-14 w-auto sm:h-16" tagline={t('logo.tagline')} />
         </button>
 
         {/* Desktop nav */}
@@ -472,6 +477,7 @@ function App() {
               {link.emoji} {link.label}
             </button>
           ))}
+          <LanguageSelector className="ml-1" />
           <a
             href={currentPage === 'home' ? '#auth-section' : '#'}
             onClick={(e) => {
@@ -482,7 +488,7 @@ function App() {
             }}
             className="ml-2 rounded-full bg-twilight px-5 py-2.5 text-sm font-bold text-white shadow-candy transition hover:bg-plumMist hover:shadow-glow"
           >
-            Get Started
+            {t('nav.getStarted')}
           </a>
         </div>
 
@@ -490,7 +496,7 @@ function App() {
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-dashed border-twilight/30 text-xl md:hidden"
-          aria-label="Menu"
+          aria-label={t('nav.menuAriaLabel')}
         >
           {mobileMenuOpen ? '\u2715' : '\u2630'}
         </button>
@@ -513,11 +519,14 @@ function App() {
                 {link.emoji} {link.label}
               </button>
             ))}
+            <div className="px-4 py-2">
+              <LanguageSelector />
+            </div>
             <button
               onClick={() => navigateTo('home')}
               className="mt-2 rounded-full bg-twilight px-5 py-2.5 text-sm font-bold text-white shadow-candy"
             >
-              {'\uD83C\uDFE0'} Home
+              {'\uD83C\uDFE0'} {t('nav.home')}
             </button>
           </div>
         </div>
@@ -536,7 +545,7 @@ function App() {
             <div className="mx-auto max-w-6xl px-6 py-10 lg:px-8">
               <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
                 <button onClick={() => navigateTo('home')} className="shrink-0">
-                  <Logo className="h-10 w-auto opacity-60" />
+                  <Logo className="h-10 w-auto opacity-60" tagline={t('logo.tagline')} />
                 </button>
                 <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm">
                   {NAV_LINKS.map((link) => (
@@ -556,7 +565,7 @@ function App() {
                       currentPage === 'privacy' ? 'text-twilight' : 'text-cosmos/50 hover:text-cosmos'
                     }`}
                   >
-                    Privacy
+                    {t('nav.privacy')}
                   </button>
                   <button
                     onClick={() => navigateTo('terms')}
@@ -564,12 +573,12 @@ function App() {
                       currentPage === 'terms' ? 'text-twilight' : 'text-cosmos/50 hover:text-cosmos'
                     }`}
                   >
-                    Terms
+                    {t('nav.terms')}
                   </button>
                 </div>
               </div>
               <p className="mt-6 text-center text-sm text-cosmos/40">
-                Made with love for little readers everywhere.
+                {t('footer.madeWithLove')}
               </p>
             </div>
           </footer>
@@ -599,24 +608,22 @@ function App() {
             <div>
               <div className="mb-4 flex flex-wrap gap-2">
                 <span className="sticker border-bubblegum bg-bubblegum/10 text-bubblegum">
-                  {'\u2728'} 18 stories daily
+                  {'\u2728'} {t('hero.sticker18Stories')}
                 </span>
                 <span className="sticker border-mint bg-mint/10 text-cosmos" style={{ transform: 'rotate(1deg)' }}>
-                  {'\uD83C\uDF0D'} 3 languages
+                  {'\uD83C\uDF0D'} {t('hero.sticker3Languages')}
                 </span>
               </div>
               <h1 className="font-display text-4xl leading-tight text-cosmos sm:text-5xl lg:text-[3.4rem] lg:leading-[1.15]">
-                A New Universe of{' '}
+                {t('hero.titlePart1')}{' '}
                 <span className="relative inline-block">
-                  <span className="relative z-10">Stories</span>
+                  <span className="relative z-10">{t('hero.titleHighlight')}</span>
                   <span className="absolute -bottom-1 left-0 right-0 h-3 rounded-full bg-starlight/40" />
                 </span>
-                , Every Single Morning
+                {t('hero.titlePart2')}
               </h1>
               <p className="mt-5 max-w-xl text-xl leading-relaxed text-cosmos/80">
-                Fresh, illustrated adventures delivered daily with the heart of bedtime
-                storytelling. Six beloved characters, three languages, one magical reading
-                routine.
+                {t('hero.subtitle')}
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
@@ -624,13 +631,13 @@ function App() {
                   onClick={() => setSelectedPlan('Free')}
                   className="group rounded-full bg-twilight px-8 py-3.5 text-base font-bold text-white shadow-glow transition hover:bg-plumMist hover:shadow-candy"
                 >
-                  Start Free Trial {'\uD83D\uDE80'}
+                  {t('hero.ctaFreeTrial')} {'\uD83D\uDE80'}
                 </a>
                 <a
                   href="#daily-drop"
                   className="rounded-full border-2 border-dashed border-twilight/40 bg-white/70 px-7 py-3.5 text-base font-bold text-twilight transition hover:border-twilight hover:bg-white"
                 >
-                  See Today&apos;s Drop {'\u2B07\uFE0F'}
+                  {t('hero.ctaTodaysDrop')} {'\u2B07\uFE0F'}
                 </a>
               </div>
             </div>
@@ -673,12 +680,12 @@ function App() {
       <section data-reveal className="reveal mx-auto max-w-6xl px-6 py-14 lg:px-8">
         <div className="text-center">
           <span className="sticker border-starlight bg-starlight/10 text-cosmos">
-            {'\uD83D\uDCE6'} Daily Broadcast
+            {'\uD83D\uDCE6'} {t('dailyBatch.sticker')}
           </span>
           <h2 className="mt-4 font-display text-3xl text-cosmos sm:text-4xl">
-            {formatDropDate(latestBatch.generatedAt)}
+            {formatDropDate(latestBatch.generatedAt, lang)}
           </h2>
-          <p className="mt-2 text-lg text-cosmos/60">Six fresh stories are baked and ready!</p>
+          <p className="mt-2 text-lg text-cosmos/60">{t('dailyBatch.subtitle')}</p>
         </div>
 
         <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -695,7 +702,7 @@ function App() {
                   </span>
                   <div>
                     <p className="font-display text-lg font-bold leading-tight">{drop.series}</p>
-                    <p className="text-xs text-cosmos/60">Lead: {drop.lead}</p>
+                    <p className="text-xs text-cosmos/60">{t('dailyBatch.leadLabel')} {drop.lead}</p>
                   </div>
                 </div>
                 <p className="mt-3 text-base font-semibold text-cosmos/80">{drop.titles.English}</p>
@@ -710,25 +717,24 @@ function App() {
         <div className="grid gap-10 rounded-[2rem] border-2 border-dashed border-lavender/30 bg-gradient-to-br from-lavender/10 to-sky/10 p-8 lg:grid-cols-2">
           <div>
             <span className="sticker border-sky bg-sky/10 text-cosmos">
-              {'\uD83C\uDF0D'} Multilingual
+              {'\uD83C\uDF0D'} {t('languageDemo.sticker')}
             </span>
-            <h3 className="mt-4 font-display text-3xl text-cosmos">Same Story, Three Languages</h3>
+            <h3 className="mt-4 font-display text-3xl text-cosmos">{t('languageDemo.title')}</h3>
             <p className="mt-3 text-lg text-cosmos/75">
-              One real page from today&apos;s Rusty story, lovingly localized across all three
-              editions.
+              {t('languageDemo.description')}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              {Object.keys(languageSnippets).map((lang) => (
+              {Object.keys(languageSnippets).map((snippetLang) => (
                 <button
-                  key={lang}
-                  onClick={() => setActiveLang(lang)}
+                  key={snippetLang}
+                  onClick={() => setActiveLang(snippetLang)}
                   className={`rounded-full px-5 py-2.5 text-sm font-bold transition ${
-                    activeLang === lang
+                    activeLang === snippetLang
                       ? 'bg-twilight text-white shadow-candy'
                       : 'border-2 border-dashed border-twilight/30 bg-white text-twilight hover:border-twilight'
                   }`}
                 >
-                  {langFlags[lang]} {lang}
+                  {langFlags[snippetLang]} {snippetLang}
                 </button>
               ))}
             </div>
@@ -737,7 +743,7 @@ function App() {
             <div className="mb-3 flex items-center gap-2">
               <span className="text-2xl">{'\uD83D\uDC36'}</span>
               <p className="text-xs font-bold uppercase tracking-wider text-twilight">
-                Rusty&apos;s Warm Winter Friend ({activeLang})
+                {t('languageDemo.storyLabel')} ({activeLang})
               </p>
             </div>
             <p className="text-xl font-semibold leading-relaxed text-cosmos">
@@ -751,9 +757,9 @@ function App() {
       <section data-reveal className="reveal mx-auto max-w-6xl px-6 pb-14 lg:px-8">
         <div className="mb-8 text-center">
           <span className="sticker border-mint bg-mint/10 text-cosmos">
-            {'\u2699\uFE0F'} How It Works
+            {'\u2699\uFE0F'} {t('features.sticker')}
           </span>
-          <h3 className="mt-4 font-display text-3xl text-cosmos">Built with Love (and AI)</h3>
+          <h3 className="mt-4 font-display text-3xl text-cosmos">{t('features.title')}</h3>
         </div>
         <div className="grid gap-5 md:grid-cols-3">
           {pipelineFeatures.map((feature) => (
@@ -777,25 +783,25 @@ function App() {
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
               <span className="sticker border-candy bg-candy/10 text-cosmos">
-                {'\uD83C\uDFA0'} Story Carousel
+                {'\uD83C\uDFA0'} {t('carousel.sticker')}
               </span>
-              <h3 className="mt-3 font-display text-3xl text-cosmos">Meet the Characters</h3>
+              <h3 className="mt-3 font-display text-3xl text-cosmos">{t('carousel.title')}</h3>
               <p className="mt-2 text-lg text-cosmos/70">
-                Real daily titles and cast cards from each live series.
+                {t('carousel.subtitle')}
               </p>
             </div>
             <div className="flex gap-2">
               <button
                 onClick={goToPrevStory}
                 className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-dashed border-candy/40 bg-white text-lg font-bold text-cosmos transition hover:border-candy hover:bg-candy/10"
-                aria-label="Previous story"
+                aria-label={t('carousel.prevAriaLabel')}
               >
                 {'\u25C0'}
               </button>
               <button
                 onClick={goToNextStory}
                 className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-dashed border-candy/40 bg-white text-lg font-bold text-cosmos transition hover:border-candy hover:bg-candy/10"
-                aria-label="Next story"
+                aria-label={t('carousel.nextAriaLabel')}
               >
                 {'\u25B6'}
               </button>
@@ -812,7 +818,7 @@ function App() {
               </span>
               <div>
                 <p className="text-xs font-bold uppercase tracking-wider text-twilight">
-                  Series {carouselIndex + 1} of {dailyDrops.length}
+                  {t('carousel.seriesLabel', { current: carouselIndex + 1, total: dailyDrops.length })}
                 </p>
                 <h4 className="font-display text-2xl">{currentStory.series}</h4>
               </div>
@@ -822,7 +828,7 @@ function App() {
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               <span className="rounded-full bg-twilight/10 px-3 py-1 text-xs font-bold text-twilight">
-                Lead: {currentStory.lead}
+                {t('carousel.leadLabel')} {currentStory.lead}
               </span>
               {currentStory.cast.map((member) => (
                 <span key={member} className="rounded-full bg-cosmos/5 px-3 py-1 text-xs font-semibold text-cosmos/70">
@@ -830,7 +836,7 @@ function App() {
                 </span>
               ))}
             </div>
-            <p className="mt-3 text-sm text-cosmos/60">World: {currentStory.world}</p>
+            <p className="mt-3 text-sm text-cosmos/60">{t('carousel.worldLabel')} {currentStory.world}</p>
           </article>
           <div className="mt-5 flex items-center justify-center gap-2">
             {dailyDrops.map((story, index) => {
@@ -839,7 +845,7 @@ function App() {
                 <button
                   key={story.slug}
                   onClick={() => setCarouselIndex(index)}
-                  aria-label={`View ${story.series}`}
+                  aria-label={t('carousel.viewAriaLabel', { series: story.series })}
                   className={`flex h-8 w-8 items-center justify-center rounded-full border-2 text-sm transition ${
                     index === carouselIndex
                       ? `${e.color}/40 border-${e.border.replace('border-', '')} scale-110`
@@ -858,15 +864,15 @@ function App() {
       <section data-reveal className="reveal mx-auto max-w-6xl px-6 pb-14 lg:px-8">
         <div className="mb-8 text-center">
           <span className="sticker border-starlight bg-starlight/10 text-cosmos">
-            {'\uD83C\uDF81'} Plans
+            {'\uD83C\uDF81'} {t('pricing.sticker')}
           </span>
-          <h3 className="mt-4 font-display text-3xl text-cosmos">Choose Your Story Bounty</h3>
-          <p className="mt-3 text-lg text-cosmos/70">Simple plans for every reading routine.</p>
+          <h3 className="mt-4 font-display text-3xl text-cosmos">{t('pricing.title')}</h3>
+          <p className="mt-3 text-lg text-cosmos/70">{t('pricing.subtitle')}</p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {pricing.map((plan) => (
+          {pricingPlans.map((plan) => (
             <article
-              key={plan.name}
+              key={plan.key}
               className={`card-cute rounded-[2rem] border-2 border-dashed p-6 ${
                 plan.featured
                   ? 'relative border-starlight bg-gradient-to-br from-cosmos to-plumMist text-white shadow-glow'
@@ -875,7 +881,7 @@ function App() {
             >
               {plan.featured && (
                 <span className="absolute -right-2 -top-3 rotate-6 rounded-full bg-starlight px-3 py-1 text-xs font-extrabold text-cosmos shadow-md">
-                  Most Loved
+                  {t('pricing.mostLovedBadge')}
                 </span>
               )}
               <span className="text-3xl">{plan.emoji}</span>
@@ -924,12 +930,12 @@ function App() {
       >
         <div className="mx-auto max-w-3xl px-6 py-14 text-center lg:px-8">
           <span className="text-5xl">{'\uD83D\uDD13'}</span>
-          <h3 className="mt-4 font-display text-3xl text-cosmos">Ready for Storytime?</h3>
+          <h3 className="mt-4 font-display text-3xl text-cosmos">{t('auth.title')}</h3>
           <p className="mt-3 text-lg text-cosmos/70">
-            Sign in with Google for fast, password-free onboarding.
+            {t('auth.subtitle')}
           </p>
           <p className="mt-2 inline-flex items-center gap-2 rounded-full bg-twilight/10 px-4 py-1.5 text-sm font-bold text-twilight">
-            Selected plan: {pricing.find((p) => p.name === selectedPlan)?.emoji} {selectedPlan}
+            {t('auth.selectedPlanLabel')} {pricingPlans.find((p) => p.name === selectedPlan)?.emoji} {selectedPlan}
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -940,7 +946,7 @@ function App() {
                 disabled={authBusy}
                 className="rounded-full bg-twilight px-8 py-3.5 text-base font-bold text-white shadow-glow transition hover:bg-plumMist hover:shadow-candy disabled:cursor-not-allowed disabled:opacity-70"
               >
-                {authBusy ? 'Signing In...' : 'Sign in with Google \uD83D\uDE80'}
+                {authBusy ? t('auth.signingIn') : `${t('auth.signInWithGoogle')} \uD83D\uDE80`}
               </button>
             ) : (
               <>
@@ -949,14 +955,14 @@ function App() {
                   onClick={() => setSetupModalOpen(true)}
                   className="rounded-full bg-twilight px-8 py-3.5 text-base font-bold text-white shadow-glow transition hover:bg-plumMist"
                 >
-                  Continue Setup {'\u2728'}
+                  {t('auth.continueSetup')} {'\u2728'}
                 </button>
                 <button
                   type="button"
                   onClick={handleSignOut}
                   className="rounded-full border-2 border-dashed border-twilight/40 bg-white px-8 py-3.5 text-base font-bold text-twilight transition hover:border-twilight"
                 >
-                  Sign Out
+                  {t('auth.signOut')}
                 </button>
               </>
             )}
@@ -964,7 +970,7 @@ function App() {
 
           {authUser && (
             <p className="mt-5 text-sm font-semibold text-cosmos/80">
-              Signed in as {authUser.email}
+              {t('auth.signedInAs', { email: authUser.email })}
             </p>
           )}
 
@@ -981,9 +987,9 @@ function App() {
         <div className="mx-auto max-w-6xl px-6 py-10 lg:px-8">
           <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
             <div className="text-center sm:text-left">
-              <Logo className="mx-auto h-10 w-auto opacity-60 sm:mx-0" />
+              <Logo className="mx-auto h-10 w-auto opacity-60 sm:mx-0" tagline={t('logo.tagline')} />
               <p className="mt-2 text-sm text-cosmos/40">
-                Made with love for little readers everywhere.
+                {t('footer.madeWithLove')}
               </p>
             </div>
             <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm">
@@ -1000,13 +1006,13 @@ function App() {
                 onClick={() => navigateTo('privacy')}
                 className="font-semibold text-cosmos/50 transition hover:text-cosmos"
               >
-                Privacy
+                {t('nav.privacy')}
               </button>
               <button
                 onClick={() => navigateTo('terms')}
                 className="font-semibold text-cosmos/50 transition hover:text-cosmos"
               >
-                Terms
+                {t('nav.terms')}
               </button>
             </div>
           </div>
@@ -1027,40 +1033,40 @@ function App() {
             <div className="flex items-center gap-3">
               <span className="text-3xl">{'\uD83C\uDF1F'}</span>
               <div>
-                <h4 className="font-display text-2xl text-cosmos">Finish Your Setup</h4>
+                <h4 className="font-display text-2xl text-cosmos">{t('setupModal.title')}</h4>
                 <p className="text-sm text-cosmos/70">
-                  One last step to personalize storytime!
+                  {t('setupModal.subtitle')}
                 </p>
               </div>
             </div>
             <p className="mt-2 inline-flex items-center gap-2 rounded-full bg-twilight/10 px-3 py-1 text-xs font-bold text-twilight">
-              Plan: {pricing.find((p) => p.name === selectedPlan)?.emoji} {selectedPlan}
+              {t('setupModal.planLabel')} {pricingPlans.find((p) => p.name === selectedPlan)?.emoji} {selectedPlan}
             </p>
 
             <form onSubmit={handleSetupSave} className="mt-5 space-y-4">
               <label className="block text-sm font-bold text-cosmos">
-                Preferred Language
+                {t('setupModal.preferredLanguageLabel')}
                 <select
                   value={setupLanguage}
                   onChange={(event) => setSetupLanguage(event.target.value)}
                   className="mt-1 w-full rounded-xl border-2 border-dashed border-lavender/40 bg-white px-4 py-2.5 font-semibold focus:border-twilight focus:outline-none"
                 >
-                  <option>English</option>
-                  <option>Turkish</option>
-                  <option>Japanese</option>
+                  <option value="English">{t('setupModal.languageOptions.english')}</option>
+                  <option value="Turkish">{t('setupModal.languageOptions.turkish')}</option>
+                  <option value="Japanese">{t('setupModal.languageOptions.japanese')}</option>
                 </select>
               </label>
 
               {selectedPlan === 'Squire' && (
                 <label className="block text-sm font-bold text-cosmos">
-                  Preferred Series
+                  {t('setupModal.preferredSeriesLabel')}
                   <select
                     value={setupSeries}
                     onChange={(event) => setSetupSeries(event.target.value)}
                     className="mt-1 w-full rounded-xl border-2 border-dashed border-lavender/40 bg-white px-4 py-2.5 font-semibold focus:border-twilight focus:outline-none"
                     required
                   >
-                    <option value="">Select a series</option>
+                    <option value="">{t('setupModal.seriesPlaceholder')}</option>
                     {dailyDrops.map((drop) => (
                       <option key={drop.slug} value={drop.series}>
                         {seriesEmoji[drop.slug].icon} {drop.series}
@@ -1076,14 +1082,14 @@ function App() {
                   disabled={setupSaving}
                   className="rounded-full bg-twilight px-6 py-2.5 text-sm font-bold text-white shadow-candy transition hover:bg-plumMist disabled:cursor-not-allowed disabled:opacity-70"
                 >
-                  {setupSaving ? 'Saving...' : 'Save Preferences \u2728'}
+                  {setupSaving ? t('setupModal.saving') : `${t('setupModal.savePreferences')} \u2728`}
                 </button>
                 <button
                   type="button"
                   onClick={() => setSetupModalOpen(false)}
                   className="rounded-full border-2 border-dashed border-twilight/40 bg-white px-6 py-2.5 text-sm font-bold text-twilight transition hover:border-twilight"
                 >
-                  Close
+                  {t('setupModal.close')}
                 </button>
               </div>
             </form>
