@@ -3,7 +3,6 @@
     "tagline": "STORIES THAT SPARKLE",
     "ariaLabel": "Fablecast logo"
   },
-
   "nav": {
     "about": "How It Works",
     "characters": "Characters",
@@ -15,7 +14,6 @@
     "terms": "Terms",
     "menuAriaLabel": "Menu"
   },
-
   "hero": {
     "sticker18Stories": "18 stories daily",
     "sticker3Languages": "3 languages",
@@ -26,13 +24,11 @@
     "ctaFreeTrial": "Start Free Trial",
     "ctaTodaysDrop": "See Today's Drop"
   },
-
   "dailyBatch": {
     "sticker": "Daily Broadcast",
     "subtitle": "Six fresh stories are baked and ready!",
     "leadLabel": "Lead:"
   },
-
   "languageDemo": {
     "sticker": "Multilingual",
     "title": "Same Story, Three Languages",
@@ -44,7 +40,6 @@
     },
     "storyLabel": "Rusty's Warm Winter Friend"
   },
-
   "features": {
     "sticker": "How It Works",
     "title": "Built with Love (and AI)",
@@ -61,7 +56,6 @@
       "description": "Every series has guardrails to keep settings safe, age-appropriate, and full of warmth for little readers aged 3\u20138."
     }
   },
-
   "carousel": {
     "sticker": "Story Carousel",
     "title": "Meet the Characters",
@@ -73,7 +67,6 @@
     "worldLabel": "World:",
     "viewAriaLabel": "View {series}"
   },
-
   "pricing": {
     "sticker": "Plans",
     "title": "Choose Your Story Bounty",
@@ -84,9 +77,11 @@
       "subtitle": "Try a taste of magic",
       "price": "$0",
       "period": "/mo",
-      "features.0": "2 sample books",
-      "features.1": "Child-safe reading mode",
-      "features.2": "No card required",
+      "features": [
+        "2 sample books",
+        "Child-safe reading mode",
+        "No card required"
+      ],
       "cta": "Start Free"
     },
     "squire": {
@@ -94,9 +89,11 @@
       "subtitle": "Pick your favorite",
       "price": "$4.99",
       "period": "/mo",
-      "features.0": "1 story series",
-      "features.1": "1 language",
-      "features.2": "30 fresh books every month",
+      "features": [
+        "1 story series",
+        "1 language",
+        "30 fresh books every month"
+      ],
       "cta": "Choose Squire"
     },
     "knight": {
@@ -104,9 +101,11 @@
       "subtitle": "Most loved by families",
       "price": "$9.99",
       "period": "/mo",
-      "features.0": "All 6 series",
-      "features.1": "1 language",
-      "features.2": "Daily drop access",
+      "features": [
+        "All 6 series",
+        "1 language",
+        "Daily drop access"
+      ],
       "cta": "Choose Knight"
     },
     "emperor": {
@@ -114,13 +113,14 @@
       "subtitle": "The full treasure chest",
       "price": "$14.99",
       "period": "/mo",
-      "features.0": "All 6 series",
-      "features.1": "All 3 languages",
-      "features.2": "AI-generated audio narration",
+      "features": [
+        "All 6 series",
+        "All 3 languages",
+        "AI-generated audio narration"
+      ],
       "cta": "Choose Emperor"
     }
   },
-
   "auth": {
     "title": "Ready for Storytime?",
     "subtitle": "Sign in with Google for fast, password-free onboarding.",
@@ -140,7 +140,6 @@
       "saveFailed": "Could not save your preferences. Please try once more."
     }
   },
-
   "setupModal": {
     "title": "Finish Your Setup",
     "subtitle": "One last step to personalize storytime!",
@@ -157,11 +156,9 @@
       "japanese": "Japanese"
     }
   },
-
   "footer": {
     "madeWithLove": "Made with love for little readers everywhere."
   },
-
   "about": {
     "sticker": "About",
     "title": "How Fablecast Works",
@@ -198,7 +195,6 @@
     "adFreeTitle": "Forever Ad-Free",
     "adFreeDescription": "Fablecast will never show advertisements. Your family\u2019s reading time is sacred and will always be free from commercial interruptions."
   },
-
   "characters": {
     "sticker": "Characters",
     "title": "Meet the Cast",
@@ -214,9 +210,18 @@
         "artStyle": "Soft watercolor with warm sunset tones",
         "world": "Workshops, parks, and friendly neighborhoods",
         "cast": {
-          "0": { "name": "Bolt", "role": "Best friend, a speedy robot cat" },
-          "1": { "name": "Sparky", "role": "Playful firefly who lights the way" },
-          "2": { "name": "Daisy", "role": "Gentle garden robot who grows flowers" }
+          "0": {
+            "name": "Bolt",
+            "role": "Best friend, a speedy robot cat"
+          },
+          "1": {
+            "name": "Sparky",
+            "role": "Playful firefly who lights the way"
+          },
+          "2": {
+            "name": "Daisy",
+            "role": "Gentle garden robot who grows flowers"
+          }
         }
       },
       "captain-barnacles-voyages": {
@@ -227,9 +232,18 @@
         "artStyle": "Bright ocean blues and sandy watercolor washes",
         "world": "Oceans, harbors, and rainy shorelines",
         "cast": {
-          "0": { "name": "Coral", "role": "First mate, a clever seahorse" },
-          "1": { "name": "Gully", "role": "Lookout seagull with sharp eyes" },
-          "2": { "name": "Shelly", "role": "Wise old turtle and navigator" }
+          "0": {
+            "name": "Coral",
+            "role": "First mate, a clever seahorse"
+          },
+          "1": {
+            "name": "Gully",
+            "role": "Lookout seagull with sharp eyes"
+          },
+          "2": {
+            "name": "Shelly",
+            "role": "Wise old turtle and navigator"
+          }
         }
       },
       "astro-bun-to-the-moon": {
@@ -240,9 +254,18 @@
         "artStyle": "Soft pastels with glowing cosmic highlights",
         "world": "Rockets, moons, and observatory skies",
         "cast": {
-          "0": { "name": "Cosmo", "role": "Robot co-pilot and best friend" },
-          "1": { "name": "Nova", "role": "Sparkly star who guides the way" },
-          "2": { "name": "Crater", "role": "Friendly moon rock who loves jokes" }
+          "0": {
+            "name": "Cosmo",
+            "role": "Robot co-pilot and best friend"
+          },
+          "1": {
+            "name": "Nova",
+            "role": "Sparkly star who guides the way"
+          },
+          "2": {
+            "name": "Crater",
+            "role": "Friendly moon rock who loves jokes"
+          }
         }
       },
       "pippa-the-little-plane": {
@@ -253,9 +276,18 @@
         "artStyle": "Bright skies with fluffy cloud textures",
         "world": "Airports, clouds, and sunny flight paths",
         "cast": {
-          "0": { "name": "Breezy", "role": "Playful wind spirit and best friend" },
-          "1": { "name": "Hangar", "role": "Wise old airport building full of stories" },
-          "2": { "name": "Zip", "role": "Speedy little drone who loves races" }
+          "0": {
+            "name": "Breezy",
+            "role": "Playful wind spirit and best friend"
+          },
+          "1": {
+            "name": "Hangar",
+            "role": "Wise old airport building full of stories"
+          },
+          "2": {
+            "name": "Zip",
+            "role": "Speedy little drone who loves races"
+          }
         }
       },
       "professor-hoot-mysteries": {
@@ -266,9 +298,18 @@
         "artStyle": "Warm autumn tones with cozy golden lighting",
         "world": "Cozy libraries, gardens, and village corners",
         "cast": {
-          "0": { "name": "Clue", "role": "Tiny magnifying-glass beetle assistant" },
-          "1": { "name": "Maple", "role": "Friendly squirrel librarian" },
-          "2": { "name": "Bramble", "role": "Mischievous hedgehog gardener" }
+          "0": {
+            "name": "Clue",
+            "role": "Tiny magnifying-glass beetle assistant"
+          },
+          "1": {
+            "name": "Maple",
+            "role": "Friendly squirrel librarian"
+          },
+          "2": {
+            "name": "Bramble",
+            "role": "Mischievous hedgehog gardener"
+          }
         }
       },
       "grug-garden": {
@@ -279,14 +320,22 @@
         "artStyle": "Earthy greens and soft botanical watercolors",
         "world": "Meadows, creeks, and mossy garden trails",
         "cast": {
-          "0": { "name": "Pebble", "role": "Smooth river stone friend who rolls along" },
-          "1": { "name": "Fern", "role": "Graceful plant spirit who dances in the breeze" },
-          "2": { "name": "Twig", "role": "Energetic stick insect who loves to build" }
+          "0": {
+            "name": "Pebble",
+            "role": "Smooth river stone friend who rolls along"
+          },
+          "1": {
+            "name": "Fern",
+            "role": "Graceful plant spirit who dances in the breeze"
+          },
+          "2": {
+            "name": "Twig",
+            "role": "Energetic stick insect who loves to build"
+          }
         }
       }
     }
   },
-
   "faq": {
     "sticker": "Help",
     "title": "Frequently Asked Questions",
@@ -386,7 +435,6 @@
     "contactSubtitle": "We'd love to help. Reach out to us anytime.",
     "contactEmail": "support@fablecast.kids"
   },
-
   "blog": {
     "sticker": "Blog",
     "title": "News & Updates",
@@ -397,40 +445,45 @@
         "tag": "Launch",
         "title": "Welcome to Fablecast!",
         "body": "Today we\u2019re launching Fablecast \u2014 a daily children\u2019s story service that delivers 18 fresh, illustrated, and narrated stories every single morning. Six beloved character series, three languages, and one magical reading routine for families with kids aged 3\u20138.",
-        "highlights.0": "6 character series: Rusty, Captain Barnacles, Astro-Bun, Pippa, Professor Hoot, and Grug",
-        "highlights.1": "3 languages: English, Turkish, and Japanese",
-        "highlights.2": "Full illustrations and AI-generated audio narration on every page",
-        "highlights.3": "Mobile-first web reader with progressive text reveal",
-        "highlights.4": "4 subscription tiers from Free to Emperor"
+        "highlights": [
+          "6 character series: Rusty, Captain Barnacles, Astro-Bun, Pippa, Professor Hoot, and Grug",
+          "3 languages: English, Turkish, and Japanese",
+          "Full illustrations and AI-generated audio narration on every page",
+          "Mobile-first web reader with progressive text reveal",
+          "4 subscription tiers from Free to Emperor"
+        ]
       },
       "1": {
         "date": "February 9, 2026",
         "tag": "Roadmap",
         "title": "What\u2019s Coming Next",
         "body": "We have big plans for Fablecast. Here\u2019s a peek at what we\u2019re working on for the months ahead.",
-        "highlights.0": "Spanish (es-US) \u2014 our first expansion language, coming soon",
-        "highlights.1": "Portuguese (pt-BR) \u2014 bringing stories to Brazilian families",
-        "highlights.2": "German (de-DE) \u2014 Geschichten f\u00fcr kleine Leser",
-        "highlights.3": "French (fr-FR) \u2014 des histoires pour les petits lecteurs",
-        "highlights.4": "Story library with search and favorites",
-        "highlights.5": "Offline reading mode for tablets",
-        "highlights.6": "More character series based on subscriber feedback"
+        "highlights": [
+          "Spanish (es-US) \u2014 our first expansion language, coming soon",
+          "Portuguese (pt-BR) \u2014 bringing stories to Brazilian families",
+          "German (de-DE) \u2014 Geschichten f\u00fcr kleine Leser",
+          "French (fr-FR) \u2014 des histoires pour les petits lecteurs",
+          "Story library with search and favorites",
+          "Offline reading mode for tablets",
+          "More character series based on subscriber feedback"
+        ]
       },
       "2": {
         "date": "February 9, 2026",
         "tag": "Promise",
         "title": "Our Ad-Free Promise",
         "body": "Fablecast is built for families, not advertisers. We believe children\u2019s reading time should be sacred and free from commercial interruptions. That\u2019s why we\u2019re making a simple, permanent promise:",
-        "highlights.0": "Fablecast will never show advertisements \u2014 not now, not ever",
-        "highlights.1": "We will never sell or share your data with advertisers",
-        "highlights.2": "Your subscription is what keeps us running, and that\u2019s how it should be",
-        "highlights.3": "Reading time is family time \u2014 we won\u2019t interrupt it"
+        "highlights": [
+          "Fablecast will never show advertisements \u2014 not now, not ever",
+          "We will never sell or share your data with advertisers",
+          "Your subscription is what keeps us running, and that\u2019s how it should be",
+          "Reading time is family time \u2014 we won\u2019t interrupt it"
+        ]
       }
     },
     "stayInLoopTitle": "Stay in the Loop",
     "stayInLoopSubtitle": "Major updates are announced here and sent to subscribers via email. Follow along as we grow the Fablecast universe!"
   },
-
   "privacy": {
     "sticker": "Privacy",
     "title": "Privacy Policy",
@@ -442,19 +495,23 @@
     "s2": {
       "heading": "2. What Data We Collect",
       "intro": "We collect the minimum data necessary to operate the service:",
-      "items.0": "Email address \u2014 provided through Google Sign-In, used solely for account identification and essential service communications.",
-      "items.1": "Display name \u2014 provided through Google Sign-In, used to personalize your experience.",
-      "items.2": "Account preferences \u2014 preferred language and preferred series. You provide these during onboarding.",
-      "items.3": "Subscription status \u2014 your selected plan and subscription dates.",
+      "items": [
+        "Email address \u2014 provided through Google Sign-In, used solely for account identification and essential service communications.",
+        "Display name \u2014 provided through Google Sign-In, used to personalize your experience.",
+        "Account preferences \u2014 preferred language and preferred series. You provide these during onboarding.",
+        "Subscription status \u2014 your selected plan and subscription dates."
+      ],
       "noOtherData": "We do not collect, store, or process any other personal data. We do not collect browsing behavior, device fingerprints, location data, cookies for tracking, or any information from or about children directly."
     },
     "s3": {
       "heading": "3. How We Use Your Data",
       "intro": "Your data is used exclusively to:",
-      "items.0": "Authenticate your account via Google Sign-In.",
-      "items.1": "Deliver stories in your preferred language.",
-      "items.2": "Manage your subscription plan.",
-      "items.3": "Send essential service communications (e.g., subscription confirmations or critical service updates).",
+      "items": [
+        "Authenticate your account via Google Sign-In.",
+        "Deliver stories in your preferred language.",
+        "Manage your subscription plan.",
+        "Send essential service communications (e.g., subscription confirmations or critical service updates)."
+      ],
       "neverUsedFor": "We will never use your data for advertising, profiling, or any purpose beyond operating the Fablecast service."
     },
     "s4": {
@@ -464,7 +521,9 @@
     "s5": {
       "heading": "5. Data Sharing",
       "intro": "We do not sell, rent, or trade your personal data. We share data only with:",
-      "items.0": "Google (Firebase) \u2014 for authentication and secure data storage. Google\u2019s privacy policy applies to their processing of sign-in data.",
+      "items": [
+        "Google (Firebase) \u2014 for authentication and secure data storage. Google\u2019s privacy policy applies to their processing of sign-in data."
+      ],
       "noOtherThirdParties": "We do not use any other third-party services that receive your personal data."
     },
     "s6": {
@@ -481,30 +540,38 @@
       "intro": "Depending on your jurisdiction, you may have the right to:",
       "allUsers": {
         "heading": "All Users",
-        "items.0": "Access the personal data we hold about you.",
-        "items.1": "Request correction of inaccurate data.",
-        "items.2": "Request deletion of your account and all associated data."
+        "items": [
+          "Access the personal data we hold about you.",
+          "Request correction of inaccurate data.",
+          "Request deletion of your account and all associated data."
+        ]
       },
       "euEea": {
         "heading": "EU/EEA Residents (GDPR)",
-        "items.0": "Right to data portability.",
-        "items.1": "Right to restrict or object to processing.",
-        "items.2": "Right to withdraw consent at any time.",
-        "items.3": "Right to lodge a complaint with your local Data Protection Authority.",
+        "items": [
+          "Right to data portability.",
+          "Right to restrict or object to processing.",
+          "Right to withdraw consent at any time.",
+          "Right to lodge a complaint with your local Data Protection Authority."
+        ],
         "legalBasis": "Legal basis for processing: Contractual necessity (providing the service you subscribed to) and legitimate interest (maintaining account security)."
       },
       "japan": {
         "heading": "Japan Residents (APPI)",
-        "items.0": "Right to request disclosure of personal data held.",
-        "items.1": "Right to request correction, addition, or deletion.",
-        "items.2": "Right to request cessation of use."
+        "items": [
+          "Right to request disclosure of personal data held.",
+          "Right to request correction, addition, or deletion.",
+          "Right to request cessation of use."
+        ]
       },
       "us": {
         "heading": "US Residents (CCPA / State Laws)",
-        "items.0": "Right to know what personal information is collected.",
-        "items.1": "Right to request deletion.",
-        "items.2": "Right to non-discrimination for exercising your rights.",
-        "items.3": "We do not sell personal information."
+        "items": [
+          "Right to know what personal information is collected.",
+          "Right to request deletion.",
+          "Right to non-discrimination for exercising your rights.",
+          "We do not sell personal information."
+        ]
       }
     },
     "s9": {
@@ -521,7 +588,6 @@
       "email": "privacy@fablecast.kids"
     }
   },
-
   "terms": {
     "sticker": "Terms",
     "title": "Terms of Service",
@@ -536,25 +602,31 @@
     },
     "s3": {
       "heading": "3. Accounts",
-      "items.0": "You must be at least 18 years old (or the age of majority in your jurisdiction) to create an account.",
-      "items.1": "Accounts are created via Google Sign-In. You are responsible for maintaining the security of your Google account.",
-      "items.2": "One account per household. Accounts are non-transferable.",
-      "items.3": "You are responsible for all activity under your account."
+      "items": [
+        "You must be at least 18 years old (or the age of majority in your jurisdiction) to create an account.",
+        "Accounts are created via Google Sign-In. You are responsible for maintaining the security of your Google account.",
+        "One account per household. Accounts are non-transferable.",
+        "You are responsible for all activity under your account."
+      ]
     },
     "s4": {
       "heading": "4. Subscription Plans & Billing",
       "plans": {
         "subheading": "Plans",
-        "items.0": "Free \u2014 Limited access to 2 sample books. No payment required.",
-        "items.1": "Squire ($4.99/month) \u2014 1 story series, 1 language, 30 fresh books per month.",
-        "items.2": "Knight ($9.99/month) \u2014 All 6 series, 1 language, daily drop access.",
-        "items.3": "Emperor ($14.99/month) \u2014 All 6 series, all languages, AI-generated audio narration."
+        "items": [
+          "Free \u2014 Limited access to 2 sample books. No payment required.",
+          "Squire ($4.99/month) \u2014 1 story series, 1 language, 30 fresh books per month.",
+          "Knight ($9.99/month) \u2014 All 6 series, 1 language, daily drop access.",
+          "Emperor ($14.99/month) \u2014 All 6 series, all languages, AI-generated audio narration."
+        ]
       },
       "billing": {
         "subheading": "Billing",
-        "items.0": "Subscriptions are billed monthly on the anniversary of your sign-up date.",
-        "items.1": "Prices are in USD and may be subject to applicable taxes.",
-        "items.2": "We reserve the right to change pricing with 30 days\u2019 advance notice."
+        "items": [
+          "Subscriptions are billed monthly on the anniversary of your sign-up date.",
+          "Prices are in USD and may be subject to applicable taxes.",
+          "We reserve the right to change pricing with 30 days\u2019 advance notice."
+        ]
       },
       "refunds": {
         "subheading": "Refunds",
@@ -563,33 +635,41 @@
     },
     "s5": {
       "heading": "5. Cancellation",
-      "items.0": "You may cancel your subscription at any time through your account settings.",
-      "items.1": "Upon cancellation, you will retain full access to the Service and all stories until the end of your current billing period.",
-      "items.2": "After the billing period ends, your account will revert to the Free plan.",
-      "items.3": "Previously generated stories from your subscription period will remain accessible on the Free plan for 30 days after cancellation."
+      "items": [
+        "You may cancel your subscription at any time through your account settings.",
+        "Upon cancellation, you will retain full access to the Service and all stories until the end of your current billing period.",
+        "After the billing period ends, your account will revert to the Free plan.",
+        "Previously generated stories from your subscription period will remain accessible on the Free plan for 30 days after cancellation."
+      ]
     },
     "s6": {
       "heading": "6. Preference Changes",
-      "items.0": "Squire plan subscribers may change their preferred character series once per month.",
-      "items.1": "Language preference may be changed once per month on any paid plan.",
-      "items.2": "Changes take effect at the start of the next daily story generation cycle."
+      "items": [
+        "Squire plan subscribers may change their preferred character series once per month.",
+        "Language preference may be changed once per month on any paid plan.",
+        "Changes take effect at the start of the next daily story generation cycle."
+      ]
     },
     "s7": {
       "heading": "7. Content & Intellectual Property",
-      "items.0": "All stories, illustrations, narrations, characters, and related content are owned by Fablecast.",
-      "items.1": "Content is generated using AI and is reviewed for age-appropriateness and safety.",
-      "items.2": "You are granted a personal, non-commercial, non-transferable license to access and enjoy stories through the Service.",
-      "items.3": "You may not redistribute, republish, sell, or commercially exploit any content from the Service.",
-      "items.4": "You may not use automated tools to scrape, download, or bulk-extract content."
+      "items": [
+        "All stories, illustrations, narrations, characters, and related content are owned by Fablecast.",
+        "Content is generated using AI and is reviewed for age-appropriateness and safety.",
+        "You are granted a personal, non-commercial, non-transferable license to access and enjoy stories through the Service.",
+        "You may not redistribute, republish, sell, or commercially exploit any content from the Service.",
+        "You may not use automated tools to scrape, download, or bulk-extract content."
+      ]
     },
     "s8": {
       "heading": "8. Acceptable Use",
       "intro": "You agree not to:",
-      "items.0": "Share your account credentials with others.",
-      "items.1": "Use the Service for any unlawful purpose.",
-      "items.2": "Attempt to interfere with or disrupt the Service.",
-      "items.3": "Reverse-engineer, decompile, or attempt to extract the source code of the Service.",
-      "items.4": "Use the Service to compete with or replicate Fablecast."
+      "items": [
+        "Share your account credentials with others.",
+        "Use the Service for any unlawful purpose.",
+        "Attempt to interfere with or disrupt the Service.",
+        "Reverse-engineer, decompile, or attempt to extract the source code of the Service.",
+        "Use the Service to compete with or replicate Fablecast."
+      ]
     },
     "s9": {
       "heading": "9. AI-Generated Content Disclaimer",
@@ -597,9 +677,11 @@
     },
     "s10": {
       "heading": "10. Service Availability",
-      "items.0": "We aim to deliver new stories daily but do not guarantee uninterrupted service.",
-      "items.1": "Maintenance, API issues, or unforeseen circumstances may occasionally affect story generation.",
-      "items.2": "We will make reasonable efforts to notify users of planned downtime."
+      "items": [
+        "We aim to deliver new stories daily but do not guarantee uninterrupted service.",
+        "Maintenance, API issues, or unforeseen circumstances may occasionally affect story generation.",
+        "We will make reasonable efforts to notify users of planned downtime."
+      ]
     },
     "s11": {
       "heading": "11. Limitation of Liability",

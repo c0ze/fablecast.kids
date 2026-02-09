@@ -3,7 +3,6 @@
     "tagline": "IŞILDAYAN HİKAYELER",
     "ariaLabel": "Fablecast logosu"
   },
-
   "nav": {
     "about": "Nasıl Çalışır",
     "characters": "Karakterler",
@@ -15,7 +14,6 @@
     "terms": "Şartlar",
     "menuAriaLabel": "Menü"
   },
-
   "hero": {
     "sticker18Stories": "Günde 18 hikaye",
     "sticker3Languages": "3 dil",
@@ -26,13 +24,11 @@
     "ctaFreeTrial": "Ücretsiz Dene",
     "ctaTodaysDrop": "Bugünün Hikayelerini Gör"
   },
-
   "dailyBatch": {
     "sticker": "Günlük Yayın",
     "subtitle": "Altı taze hikaye hazır ve sizi bekliyor!",
     "leadLabel": "Baş Karakter:"
   },
-
   "languageDemo": {
     "sticker": "Çok Dilli",
     "title": "Aynı Hikaye, Üç Dil",
@@ -44,7 +40,6 @@
     },
     "storyLabel": "Rusty'nin Sıcacık Kış Arkadaşı"
   },
-
   "features": {
     "sticker": "Nasıl Çalışır",
     "title": "Sevgiyle (ve Yapay Zeka ile) Yapıldı",
@@ -61,7 +56,6 @@
       "description": "Her serinin, ortamları güvenli, yaşa uygun ve 3–8 yaş arası küçük okurlar için sıcaklık dolu tutan koruma kuralları vardır."
     }
   },
-
   "carousel": {
     "sticker": "Hikaye Atlıkarıncası",
     "title": "Karakterlerle Tanışın",
@@ -73,7 +67,6 @@
     "worldLabel": "Dünya:",
     "viewAriaLabel": "{series} serisini gör"
   },
-
   "pricing": {
     "sticker": "Planlar",
     "title": "Hikaye Paketinizi Seçin",
@@ -84,9 +77,11 @@
       "subtitle": "Bir tutam sihir deneyin",
       "price": "$0",
       "period": "/mo",
-      "features.0": "2 örnek kitap",
-      "features.1": "Çocuklara güvenli okuma modu",
-      "features.2": "Kart gerekmez",
+      "features": [
+        "2 örnek kitap",
+        "Çocuklara güvenli okuma modu",
+        "Kart gerekmez"
+      ],
       "cta": "Ücretsiz Başla"
     },
     "squire": {
@@ -94,9 +89,11 @@
       "subtitle": "Favorinizi seçin",
       "price": "$4.99",
       "period": "/mo",
-      "features.0": "1 hikaye serisi",
-      "features.1": "1 dil",
-      "features.2": "Ayda 30 taze kitap",
+      "features": [
+        "1 hikaye serisi",
+        "1 dil",
+        "Ayda 30 taze kitap"
+      ],
       "cta": "Squire Seç"
     },
     "knight": {
@@ -104,9 +101,11 @@
       "subtitle": "Ailelerin en sevdiği",
       "price": "$9.99",
       "period": "/mo",
-      "features.0": "Tüm 6 seri",
-      "features.1": "1 dil",
-      "features.2": "Günlük hikaye erişimi",
+      "features": [
+        "Tüm 6 seri",
+        "1 dil",
+        "Günlük hikaye erişimi"
+      ],
       "cta": "Knight Seç"
     },
     "emperor": {
@@ -114,13 +113,14 @@
       "subtitle": "Tam dolu hazine sandığı",
       "price": "$14.99",
       "period": "/mo",
-      "features.0": "Tüm 6 seri",
-      "features.1": "Tüm 3 dil",
-      "features.2": "Yapay zeka sesli anlatım",
+      "features": [
+        "Tüm 6 seri",
+        "Tüm 3 dil",
+        "Yapay zeka sesli anlatım"
+      ],
       "cta": "Emperor Seç"
     }
   },
-
   "auth": {
     "title": "Hikaye Zamanına Hazır mısınız?",
     "subtitle": "Hızlı ve şifresiz kayıt için Google ile giriş yapın.",
@@ -140,7 +140,6 @@
       "saveFailed": "Tercihleriniz kaydedilemedi. Lütfen bir kez daha deneyin."
     }
   },
-
   "setupModal": {
     "title": "Kurulumu Tamamlayın",
     "subtitle": "Hikaye zamanını kişiselleştirmek için son bir adım!",
@@ -157,11 +156,9 @@
       "japanese": "Japonca"
     }
   },
-
   "footer": {
     "madeWithLove": "Her yerdeki küçük okurlar için sevgiyle yapıldı."
   },
-
   "about": {
     "sticker": "Hakkında",
     "title": "Fablecast Nasıl Çalışır",
@@ -198,7 +195,6 @@
     "adFreeTitle": "Sonsuza Kadar Reklamsız",
     "adFreeDescription": "Fablecast asla reklam göstermeyecektir. Ailenizin okuma zamanı kutsaldır ve her zaman ticari kesintilerden uzak kalacaktır."
   },
-
   "characters": {
     "sticker": "Karakterler",
     "title": "Kadroyla Tanışın",
@@ -214,9 +210,18 @@
         "artStyle": "Sıcak gün batımı tonlarında yumuşak suluboya",
         "world": "Atölyeler, parklar ve samimi mahalleler",
         "cast": {
-          "0": { "name": "Bolt", "role": "En yakın arkadaşı, hızlı bir robot kedi" },
-          "1": { "name": "Sparky", "role": "Yolu aydınlatan oyuncu bir ateşböceği" },
-          "2": { "name": "Daisy", "role": "Çiçek yetiştiren nazik bir bahçe robotu" }
+          "0": {
+            "name": "Bolt",
+            "role": "En yakın arkadaşı, hızlı bir robot kedi"
+          },
+          "1": {
+            "name": "Sparky",
+            "role": "Yolu aydınlatan oyuncu bir ateşböceği"
+          },
+          "2": {
+            "name": "Daisy",
+            "role": "Çiçek yetiştiren nazik bir bahçe robotu"
+          }
         }
       },
       "captain-barnacles-voyages": {
@@ -227,9 +232,18 @@
         "artStyle": "Parlak okyanus mavisi ve kumlu suluboya tonları",
         "world": "Okyanuslar, limanlar ve yağmurlu kıyılar",
         "cast": {
-          "0": { "name": "Coral", "role": "Birinci kaptan yardımcısı, zeki bir denizatı" },
-          "1": { "name": "Gully", "role": "Keskin gözlü gözcü martı" },
-          "2": { "name": "Shelly", "role": "Bilge yaşlı kaplumbağa ve navigator" }
+          "0": {
+            "name": "Coral",
+            "role": "Birinci kaptan yardımcısı, zeki bir denizatı"
+          },
+          "1": {
+            "name": "Gully",
+            "role": "Keskin gözlü gözcü martı"
+          },
+          "2": {
+            "name": "Shelly",
+            "role": "Bilge yaşlı kaplumbağa ve navigator"
+          }
         }
       },
       "astro-bun-to-the-moon": {
@@ -240,9 +254,18 @@
         "artStyle": "Parlayan kozmik vurgularla yumuşak pastel tonlar",
         "world": "Roketler, aylar ve gözlemevi gökyüzleri",
         "cast": {
-          "0": { "name": "Cosmo", "role": "Robot yardımcı pilot ve en iyi arkadaş" },
-          "1": { "name": "Nova", "role": "Yolu gösteren ışıltılı yıldız" },
-          "2": { "name": "Crater", "role": "Şakayı seven cana yakın bir ay taşı" }
+          "0": {
+            "name": "Cosmo",
+            "role": "Robot yardımcı pilot ve en iyi arkadaş"
+          },
+          "1": {
+            "name": "Nova",
+            "role": "Yolu gösteren ışıltılı yıldız"
+          },
+          "2": {
+            "name": "Crater",
+            "role": "Şakayı seven cana yakın bir ay taşı"
+          }
         }
       },
       "pippa-the-little-plane": {
@@ -253,9 +276,18 @@
         "artStyle": "Kabarık bulut dokuları ile parlak gökyüzleri",
         "world": "Havaalanları, bulutlar ve güneşli uçuş yolları",
         "cast": {
-          "0": { "name": "Breezy", "role": "Oyuncu bir rüzgar ruhu ve en iyi arkadaş" },
-          "1": { "name": "Hangar", "role": "Hikayelerle dolu bilge yaşlı bir havaalanı binası" },
-          "2": { "name": "Zip", "role": "Yarışmayı seven hızlı küçük bir dron" }
+          "0": {
+            "name": "Breezy",
+            "role": "Oyuncu bir rüzgar ruhu ve en iyi arkadaş"
+          },
+          "1": {
+            "name": "Hangar",
+            "role": "Hikayelerle dolu bilge yaşlı bir havaalanı binası"
+          },
+          "2": {
+            "name": "Zip",
+            "role": "Yarışmayı seven hızlı küçük bir dron"
+          }
         }
       },
       "professor-hoot-mysteries": {
@@ -266,9 +298,18 @@
         "artStyle": "Sıcak sonbahar tonları ve samimi altın ışıklandırma",
         "world": "Sıcacık kütüphaneler, bahçeler ve köy köşeleri",
         "cast": {
-          "0": { "name": "Clue", "role": "Minik büyüteç böceği asistan" },
-          "1": { "name": "Maple", "role": "Cana yakın sincap kütüphaneci" },
-          "2": { "name": "Bramble", "role": "Yaramaz kirpi bahçıvan" }
+          "0": {
+            "name": "Clue",
+            "role": "Minik büyüteç böceği asistan"
+          },
+          "1": {
+            "name": "Maple",
+            "role": "Cana yakın sincap kütüphaneci"
+          },
+          "2": {
+            "name": "Bramble",
+            "role": "Yaramaz kirpi bahçıvan"
+          }
         }
       },
       "grug-garden": {
@@ -279,14 +320,22 @@
         "artStyle": "Toprak yeşilleri ve yumuşak botanik suluboyalar",
         "world": "Çayırlar, dereler ve yosunlu bahçe patikalar",
         "cast": {
-          "0": { "name": "Pebble", "role": "Yuvarlanarak gelen pürüzsüz nehir taşı arkadaş" },
-          "1": { "name": "Fern", "role": "Esintide dans eden zarif bir bitki ruhu" },
-          "2": { "name": "Twig", "role": "İnşa etmeyi seven enerjik bir çöp böceği" }
+          "0": {
+            "name": "Pebble",
+            "role": "Yuvarlanarak gelen pürüzsüz nehir taşı arkadaş"
+          },
+          "1": {
+            "name": "Fern",
+            "role": "Esintide dans eden zarif bir bitki ruhu"
+          },
+          "2": {
+            "name": "Twig",
+            "role": "İnşa etmeyi seven enerjik bir çöp böceği"
+          }
         }
       }
     }
   },
-
   "faq": {
     "sticker": "Yardım",
     "title": "Sıkça Sorulan Sorular",
@@ -386,7 +435,6 @@
     "contactSubtitle": "Size yardımcı olmaktan memnuniyet duyarız. İstediğiniz zaman bize ulaşın.",
     "contactEmail": "support@fablecast.kids"
   },
-
   "blog": {
     "sticker": "Blog",
     "title": "Haberler ve Güncellemeler",
@@ -397,40 +445,45 @@
         "tag": "Lansman",
         "title": "Fablecast'e Hoş Geldiniz!",
         "body": "Bugün Fablecast'i başlatıyoruz — her sabah 18 taze, resimli ve sesli hikaye sunan günlük bir çocuk hikayesi hizmeti. Altı sevilen karakter serisi, üç dil ve 3–8 yaş arası çocuklu aileler için büyülü bir okuma rutini.",
-        "highlights.0": "6 karakter serisi: Rusty, Captain Barnacles, Astro-Bun, Pippa, Professor Hoot ve Grug",
-        "highlights.1": "3 dil: İngilizce, Türkçe ve Japonca",
-        "highlights.2": "Her sayfada tam illüstrasyonlar ve yapay zeka sesli anlatım",
-        "highlights.3": "Kademeli metin gösterimli mobil öncelikli web okuyucu",
-        "highlights.4": "Free'den Emperor'a kadar 4 abonelik kademesi"
+        "highlights": [
+          "6 karakter serisi: Rusty, Captain Barnacles, Astro-Bun, Pippa, Professor Hoot ve Grug",
+          "3 dil: İngilizce, Türkçe ve Japonca",
+          "Her sayfada tam illüstrasyonlar ve yapay zeka sesli anlatım",
+          "Kademeli metin gösterimli mobil öncelikli web okuyucu",
+          "Free'den Emperor'a kadar 4 abonelik kademesi"
+        ]
       },
       "1": {
         "date": "9 Şubat 2026",
         "tag": "Yol Haritası",
         "title": "Sırada Ne Var",
         "body": "Fablecast için büyük planlarımız var. Önümüzdeki aylar için üzerinde çalıştıklarımıza bir göz atın.",
-        "highlights.0": "İspanyolca (es-US) — ilk genişleme dilimiz, yakında geliyor",
-        "highlights.1": "Portekizce (pt-BR) — hikayeleri Brezilyalı ailelere ulaştırıyoruz",
-        "highlights.2": "Almanca (de-DE) — Geschichten für kleine Leser",
-        "highlights.3": "Fransızca (fr-FR) — des histoires pour les petits lecteurs",
-        "highlights.4": "Arama ve favoriler özellikli hikaye kütüphanesi",
-        "highlights.5": "Tabletler için çevrimdışı okuma modu",
-        "highlights.6": "Abone geri bildirimlerine dayalı daha fazla karakter serisi"
+        "highlights": [
+          "İspanyolca (es-US) — ilk genişleme dilimiz, yakında geliyor",
+          "Portekizce (pt-BR) — hikayeleri Brezilyalı ailelere ulaştırıyoruz",
+          "Almanca (de-DE) — Geschichten für kleine Leser",
+          "Fransızca (fr-FR) — des histoires pour les petits lecteurs",
+          "Arama ve favoriler özellikli hikaye kütüphanesi",
+          "Tabletler için çevrimdışı okuma modu",
+          "Abone geri bildirimlerine dayalı daha fazla karakter serisi"
+        ]
       },
       "2": {
         "date": "9 Şubat 2026",
         "tag": "Söz",
         "title": "Reklamsızlık Sözümüz",
         "body": "Fablecast aileler için inşa edildi, reklamcılar için değil. Çocukların okuma zamanının kutsal olması ve ticari kesintilerden uzak kalması gerektiğine inanıyoruz. Bu yüzden basit ve kalıcı bir söz veriyoruz:",
-        "highlights.0": "Fablecast asla reklam göstermeyecektir — ne şimdi, ne de gelecekte",
-        "highlights.1": "Verilerinizi asla reklamcılarla satmayacak veya paylaşmayacağız",
-        "highlights.2": "Aboneliğiniz bizi ayakta tutan şeydir ve böyle olması gerekir",
-        "highlights.3": "Okuma zamanı aile zamanıdır — onu kesintiye uğratmayacağız"
+        "highlights": [
+          "Fablecast asla reklam göstermeyecektir — ne şimdi, ne de gelecekte",
+          "Verilerinizi asla reklamcılarla satmayacak veya paylaşmayacağız",
+          "Aboneliğiniz bizi ayakta tutan şeydir ve böyle olması gerekir",
+          "Okuma zamanı aile zamanıdır — onu kesintiye uğratmayacağız"
+        ]
       }
     },
     "stayInLoopTitle": "Gelişmelerden Haberdar Olun",
     "stayInLoopSubtitle": "Önemli güncellemeler burada duyurulur ve abonelere e-posta ile gönderilir. Fablecast evrenini büyütürken bizi takip edin!"
   },
-
   "privacy": {
     "sticker": "Gizlilik",
     "title": "Gizlilik Politikası",
@@ -442,19 +495,23 @@
     "s2": {
       "heading": "2. Hangi Verileri Topluyoruz",
       "intro": "Hizmeti işletmek için gerekli minimum veriyi topluyoruz:",
-      "items.0": "E-posta adresi — Google ile Giriş aracılığıyla sağlanır, yalnızca hesap tanımlama ve temel hizmet iletişimleri için kullanılır.",
-      "items.1": "Görünen ad — Google ile Giriş aracılığıyla sağlanır, deneyiminizi kişiselleştirmek için kullanılır.",
-      "items.2": "Hesap tercihleri — tercih edilen dil ve tercih edilen seri. Bunları kayıt sırasında siz sağlarsınız.",
-      "items.3": "Abonelik durumu — seçtiğiniz plan ve abonelik tarihleri.",
+      "items": [
+        "E-posta adresi — Google ile Giriş aracılığıyla sağlanır, yalnızca hesap tanımlama ve temel hizmet iletişimleri için kullanılır.",
+        "Görünen ad — Google ile Giriş aracılığıyla sağlanır, deneyiminizi kişiselleştirmek için kullanılır.",
+        "Hesap tercihleri — tercih edilen dil ve tercih edilen seri. Bunları kayıt sırasında siz sağlarsınız.",
+        "Abonelik durumu — seçtiğiniz plan ve abonelik tarihleri."
+      ],
       "noOtherData": "Başka hiçbir kişisel veri toplamıyoruz, saklamıyoruz veya işlemiyoruz. Tarama davranışı, cihaz parmak izi, konum verisi, izleme amaçlı çerezler veya çocuklardan doğrudan herhangi bir bilgi toplamıyoruz."
     },
     "s3": {
       "heading": "3. Verilerinizi Nasıl Kullanıyoruz",
       "intro": "Verileriniz yalnızca şu amaçlarla kullanılır:",
-      "items.0": "Google ile Giriş aracılığıyla hesabınızın kimlik doğrulaması.",
-      "items.1": "Tercih ettiğiniz dilde hikayelerin sunulması.",
-      "items.2": "Abonelik planınızın yönetimi.",
-      "items.3": "Temel hizmet iletişimlerinin gönderilmesi (ör. abonelik onayları veya kritik hizmet güncellemeleri).",
+      "items": [
+        "Google ile Giriş aracılığıyla hesabınızın kimlik doğrulaması.",
+        "Tercih ettiğiniz dilde hikayelerin sunulması.",
+        "Abonelik planınızın yönetimi.",
+        "Temel hizmet iletişimlerinin gönderilmesi (ör. abonelik onayları veya kritik hizmet güncellemeleri)."
+      ],
       "neverUsedFor": "Verilerinizi asla reklam, profilleme veya Fablecast hizmetini işletmenin ötesinde herhangi bir amaçla kullanmayacağız."
     },
     "s4": {
@@ -464,7 +521,9 @@
     "s5": {
       "heading": "5. Veri Paylaşımı",
       "intro": "Kişisel verilerinizi satmıyoruz, kiralamıyoruz veya takas etmiyoruz. Verileri yalnızca şunlarla paylaşıyoruz:",
-      "items.0": "Google (Firebase) — kimlik doğrulama ve güvenli veri depolama için. Google'ın gizlilik politikası, giriş verilerinin işlenmesi için geçerlidir.",
+      "items": [
+        "Google (Firebase) — kimlik doğrulama ve güvenli veri depolama için. Google'ın gizlilik politikası, giriş verilerinin işlenmesi için geçerlidir."
+      ],
       "noOtherThirdParties": "Kişisel verilerinizi alan başka herhangi bir üçüncü taraf hizmeti kullanmıyoruz."
     },
     "s6": {
@@ -481,30 +540,38 @@
       "intro": "Bulunduğunuz yargı bölgesine bağlı olarak, aşağıdaki haklara sahip olabilirsiniz:",
       "allUsers": {
         "heading": "Tüm Kullanıcılar",
-        "items.0": "Hakkınızda tuttuğumuz kişisel verilere erişim.",
-        "items.1": "Hatalı verilerin düzeltilmesini talep etme.",
-        "items.2": "Hesabınızın ve tüm ilişkili verilerin silinmesini talep etme."
+        "items": [
+          "Hakkınızda tuttuğumuz kişisel verilere erişim.",
+          "Hatalı verilerin düzeltilmesini talep etme.",
+          "Hesabınızın ve tüm ilişkili verilerin silinmesini talep etme."
+        ]
       },
       "euEea": {
         "heading": "AB/AEA Sakinleri (GDPR)",
-        "items.0": "Veri taşınabilirliği hakkı.",
-        "items.1": "İşlemeyi kısıtlama veya itiraz etme hakkı.",
-        "items.2": "İstediğiniz zaman onayı geri çekme hakkı.",
-        "items.3": "Yerel Veri Koruma Otoritenize şikayette bulunma hakkı.",
+        "items": [
+          "Veri taşınabilirliği hakkı.",
+          "İşlemeyi kısıtlama veya itiraz etme hakkı.",
+          "İstediğiniz zaman onayı geri çekme hakkı.",
+          "Yerel Veri Koruma Otoritenize şikayette bulunma hakkı."
+        ],
         "legalBasis": "İşlemenin yasal dayanağı: Sözleşmesel gereklilik (abone olduğunuz hizmetin sağlanması) ve meşru menfaat (hesap güvenliğinin sürdürülmesi)."
       },
       "japan": {
         "heading": "Japonya Sakinleri (APPI)",
-        "items.0": "Tutulan kişisel verilerin açıklanmasını talep etme hakkı.",
-        "items.1": "Düzeltme, ekleme veya silme talep etme hakkı.",
-        "items.2": "Kullanımın durdurulmasını talep etme hakkı."
+        "items": [
+          "Tutulan kişisel verilerin açıklanmasını talep etme hakkı.",
+          "Düzeltme, ekleme veya silme talep etme hakkı.",
+          "Kullanımın durdurulmasını talep etme hakkı."
+        ]
       },
       "us": {
         "heading": "ABD Sakinleri (CCPA / Eyalet Yasaları)",
-        "items.0": "Hangi kişisel bilgilerin toplandığını bilme hakkı.",
-        "items.1": "Silme talep etme hakkı.",
-        "items.2": "Haklarınızı kullanmanız nedeniyle ayrımcılığa maruz kalmama hakkı.",
-        "items.3": "Kişisel bilgileri satmıyoruz."
+        "items": [
+          "Hangi kişisel bilgilerin toplandığını bilme hakkı.",
+          "Silme talep etme hakkı.",
+          "Haklarınızı kullanmanız nedeniyle ayrımcılığa maruz kalmama hakkı.",
+          "Kişisel bilgileri satmıyoruz."
+        ]
       }
     },
     "s9": {
@@ -521,7 +588,6 @@
       "email": "privacy@fablecast.kids"
     }
   },
-
   "terms": {
     "sticker": "Şartlar",
     "title": "Hizmet Şartları",
@@ -536,25 +602,31 @@
     },
     "s3": {
       "heading": "3. Hesaplar",
-      "items.0": "Hesap oluşturmak için en az 18 yaşında (veya bulunduğunuz yargı bölgesindeki reşitlik yaşında) olmalısınız.",
-      "items.1": "Hesaplar Google ile Giriş aracılığıyla oluşturulur. Google hesabınızın güvenliğini sağlamak sizin sorumluluğunuzdadır.",
-      "items.2": "Hane başına bir hesap. Hesaplar devredilemez.",
-      "items.3": "Hesabınız altındaki tüm etkinliklerden siz sorumlusunuz."
+      "items": [
+        "Hesap oluşturmak için en az 18 yaşında (veya bulunduğunuz yargı bölgesindeki reşitlik yaşında) olmalısınız.",
+        "Hesaplar Google ile Giriş aracılığıyla oluşturulur. Google hesabınızın güvenliğini sağlamak sizin sorumluluğunuzdadır.",
+        "Hane başına bir hesap. Hesaplar devredilemez.",
+        "Hesabınız altındaki tüm etkinliklerden siz sorumlusunuz."
+      ]
     },
     "s4": {
       "heading": "4. Abonelik Planları ve Faturalandırma",
       "plans": {
         "subheading": "Planlar",
-        "items.0": "Free — 2 örnek kitaba sınırlı erişim. Ödeme gerekmez.",
-        "items.1": "Squire ($4.99/ay) — 1 hikaye serisi, 1 dil, ayda 30 taze kitap.",
-        "items.2": "Knight ($9.99/ay) — Tüm 6 seri, 1 dil, günlük hikaye erişimi.",
-        "items.3": "Emperor ($14.99/ay) — Tüm 6 seri, tüm diller, yapay zeka sesli anlatım."
+        "items": [
+          "Free — 2 örnek kitaba sınırlı erişim. Ödeme gerekmez.",
+          "Squire ($4.99/ay) — 1 hikaye serisi, 1 dil, ayda 30 taze kitap.",
+          "Knight ($9.99/ay) — Tüm 6 seri, 1 dil, günlük hikaye erişimi.",
+          "Emperor ($14.99/ay) — Tüm 6 seri, tüm diller, yapay zeka sesli anlatım."
+        ]
       },
       "billing": {
         "subheading": "Faturalandırma",
-        "items.0": "Abonelikler, kayıt tarihinizin yıl dönümünde aylık olarak faturalandırılır.",
-        "items.1": "Fiyatlar ABD doları cinsindendir ve geçerli vergilere tabi olabilir.",
-        "items.2": "30 gün önceden bildirimde bulunarak fiyatları değiştirme hakkımızı saklı tutarız."
+        "items": [
+          "Abonelikler, kayıt tarihinizin yıl dönümünde aylık olarak faturalandırılır.",
+          "Fiyatlar ABD doları cinsindendir ve geçerli vergilere tabi olabilir.",
+          "30 gün önceden bildirimde bulunarak fiyatları değiştirme hakkımızı saklı tutarız."
+        ]
       },
       "refunds": {
         "subheading": "İadeler",
@@ -563,33 +635,41 @@
     },
     "s5": {
       "heading": "5. İptal",
-      "items.0": "Aboneliğinizi istediğiniz zaman hesap ayarlarınızdan iptal edebilirsiniz.",
-      "items.1": "İptal üzerine, mevcut fatura döneminizin sonuna kadar Hizmete ve tüm hikayelere tam erişiminiz devam edecektir.",
-      "items.2": "Fatura dönemi sona erdikten sonra, hesabınız Ücretsiz plana dönecektir.",
-      "items.3": "Abonelik döneminizden daha önce oluşturulmuş hikayeler, iptalden sonra 30 gün boyunca Ücretsiz planda erişilebilir kalacaktır."
+      "items": [
+        "Aboneliğinizi istediğiniz zaman hesap ayarlarınızdan iptal edebilirsiniz.",
+        "İptal üzerine, mevcut fatura döneminizin sonuna kadar Hizmete ve tüm hikayelere tam erişiminiz devam edecektir.",
+        "Fatura dönemi sona erdikten sonra, hesabınız Ücretsiz plana dönecektir.",
+        "Abonelik döneminizden daha önce oluşturulmuş hikayeler, iptalden sonra 30 gün boyunca Ücretsiz planda erişilebilir kalacaktır."
+      ]
     },
     "s6": {
       "heading": "6. Tercih Değişiklikleri",
-      "items.0": "Squire plan aboneleri, tercih ettikleri karakter serisini ayda bir kez değiştirebilir.",
-      "items.1": "Dil tercihi, herhangi bir ücretli planda ayda bir kez değiştirilebilir.",
-      "items.2": "Değişiklikler, bir sonraki günlük hikaye üretim döngüsünün başlangıcında geçerli olur."
+      "items": [
+        "Squire plan aboneleri, tercih ettikleri karakter serisini ayda bir kez değiştirebilir.",
+        "Dil tercihi, herhangi bir ücretli planda ayda bir kez değiştirilebilir.",
+        "Değişiklikler, bir sonraki günlük hikaye üretim döngüsünün başlangıcında geçerli olur."
+      ]
     },
     "s7": {
       "heading": "7. İçerik ve Fikri Mülkiyet",
-      "items.0": "Tüm hikayeler, illüstrasyonlar, seslendirmeler, karakterler ve ilgili içerikler Fablecast'e aittir.",
-      "items.1": "İçerik yapay zeka kullanılarak üretilir ve yaşa uygunluk ile güvenlik açısından incelenir.",
-      "items.2": "Size, Hizmet aracılığıyla hikayelere erişmeniz ve keyfini çıkarmanız için kişisel, ticari olmayan, devredilemez bir lisans verilmiştir.",
-      "items.3": "Hizmetten herhangi bir içeriği yeniden dağıtamaz, yeniden yayınlayamaz, satamaz veya ticari olarak kullanamazsınız.",
-      "items.4": "İçeriği kazımak, indirmek veya toplu olarak çıkarmak için otomatik araçlar kullanamazsınız."
+      "items": [
+        "Tüm hikayeler, illüstrasyonlar, seslendirmeler, karakterler ve ilgili içerikler Fablecast'e aittir.",
+        "İçerik yapay zeka kullanılarak üretilir ve yaşa uygunluk ile güvenlik açısından incelenir.",
+        "Size, Hizmet aracılığıyla hikayelere erişmeniz ve keyfini çıkarmanız için kişisel, ticari olmayan, devredilemez bir lisans verilmiştir.",
+        "Hizmetten herhangi bir içeriği yeniden dağıtamaz, yeniden yayınlayamaz, satamaz veya ticari olarak kullanamazsınız.",
+        "İçeriği kazımak, indirmek veya toplu olarak çıkarmak için otomatik araçlar kullanamazsınız."
+      ]
     },
     "s8": {
       "heading": "8. Kabul Edilebilir Kullanım",
       "intro": "Aşağıdakileri yapmamayı kabul edersiniz:",
-      "items.0": "Hesap kimlik bilgilerinizi başkalarıyla paylaşmak.",
-      "items.1": "Hizmeti herhangi bir yasadışı amaçla kullanmak.",
-      "items.2": "Hizmeti engellemeye veya bozmaya çalışmak.",
-      "items.3": "Hizmetin kaynak kodunu tersine mühendislik yapmak, derlemesini çözmek veya çıkarmaya çalışmak.",
-      "items.4": "Hizmeti Fablecast ile rekabet etmek veya onu kopyalamak için kullanmak."
+      "items": [
+        "Hesap kimlik bilgilerinizi başkalarıyla paylaşmak.",
+        "Hizmeti herhangi bir yasadışı amaçla kullanmak.",
+        "Hizmeti engellemeye veya bozmaya çalışmak.",
+        "Hizmetin kaynak kodunu tersine mühendislik yapmak, derlemesini çözmek veya çıkarmaya çalışmak.",
+        "Hizmeti Fablecast ile rekabet etmek veya onu kopyalamak için kullanmak."
+      ]
     },
     "s9": {
       "heading": "9. Yapay Zeka Üretimli İçerik Uyarısı",
@@ -597,9 +677,11 @@
     },
     "s10": {
       "heading": "10. Hizmet Erişilebilirliği",
-      "items.0": "Her gün yeni hikayeler sunmayı hedefliyoruz ancak kesintisiz hizmet garantisi vermiyoruz.",
-      "items.1": "Bakım, API sorunları veya öngörülemeyen durumlar zaman zaman hikaye üretimini etkileyebilir.",
-      "items.2": "Planlı kesintiler hakkında kullanıcıları bilgilendirmek için makul çaba göstereceğiz."
+      "items": [
+        "Her gün yeni hikayeler sunmayı hedefliyoruz ancak kesintisiz hizmet garantisi vermiyoruz.",
+        "Bakım, API sorunları veya öngörülemeyen durumlar zaman zaman hikaye üretimini etkileyebilir.",
+        "Planlı kesintiler hakkında kullanıcıları bilgilendirmek için makul çaba göstereceğiz."
+      ]
     },
     "s11": {
       "heading": "11. Sorumluluk Sınırlandırması",
