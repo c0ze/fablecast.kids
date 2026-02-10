@@ -43,11 +43,22 @@ export default function Legal() {
 
         <section>
           <h2 className="font-display text-2xl text-cosmos">{t('legal.s3.heading')}</h2>
-          <ul className="mt-2 ml-6 list-disc space-y-1.5">
-            <li>{t('legal.s3.items.0')}</li>
-            <li>{t('legal.s3.items.1')}</li>
-          </ul>
+          {t('legal.s3.body') && t('legal.s3.body') !== 'legal.s3.body' ? (
+            <p className="mt-2">{t('legal.s3.body')}</p>
+          ) : (
+            <ul className="mt-2 ml-6 list-disc space-y-1.5">
+              <li>{t('legal.s3.items.0')}</li>
+              <li>{t('legal.s3.items.1')}</li>
+            </ul>
+          )}
         </section>
+
+        {t('legal.s_extra', { returnObjects: true })?.heading && (
+          <section>
+            <h2 className="font-display text-2xl text-cosmos">{t('legal.s_extra.heading')}</h2>
+            <p className="mt-2">{t('legal.s_extra.body')}</p>
+          </section>
+        )}
 
         <section>
           <h2 className="font-display text-2xl text-cosmos">{t('legal.s4.heading')}</h2>
@@ -66,11 +77,15 @@ export default function Legal() {
 
         <section>
           <h2 className="font-display text-2xl text-cosmos">{t('legal.s7.heading')}</h2>
-          <ul className="mt-2 ml-6 list-disc space-y-1.5">
-            <li>{t('legal.s7.items.0')}</li>
-            <li>{t('legal.s7.items.1')}</li>
-            <li>{t('legal.s7.items.2')}</li>
-          </ul>
+          {t('legal.s7.body') && t('legal.s7.body') !== 'legal.s7.body' ? (
+            <p className="mt-2">{t('legal.s7.body')}</p>
+          ) : (
+            <ul className="mt-2 ml-6 list-disc space-y-1.5">
+              <li>{t('legal.s7.items.0')}</li>
+              <li>{t('legal.s7.items.1')}</li>
+              <li>{t('legal.s7.items.2')}</li>
+            </ul>
+          )}
         </section>
 
         <section>
