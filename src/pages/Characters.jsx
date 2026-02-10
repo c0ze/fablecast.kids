@@ -108,11 +108,11 @@ export default function Characters() {
     else goPrev();
   };
 
-  const mainImg = `/characters/${series.slug}/main.png`;
+  const mainImg = `/characters/${series.slug}/main.webp`;
   const castMembers = series.castFiles.map((file, i) => ({
     name: t(`${tKey}.cast.${i}.name`),
     role: t(`${tKey}.cast.${i}.role`),
-    img: `/characters/${series.slug}/supporting_${file}.png`
+    img: `/characters/${series.slug}/supporting_${file}.webp`
   }));
 
   return (
@@ -146,11 +146,10 @@ export default function Characters() {
               key={s.slug}
               onClick={() => goTo(i)}
               aria-label={t(`characters.series.${s.slug}.series`)}
-              className={`flex h-12 w-12 items-center justify-center rounded-2xl border-2 text-xl transition-all duration-300 ${
-                i === activeIndex
+              className={`flex h-12 w-12 items-center justify-center rounded-2xl border-2 text-xl transition-all duration-300 ${i === activeIndex
                   ? `${s.badge} border-dashed ${s.border} scale-110 shadow-soft`
                   : 'border-transparent bg-white/60 opacity-50 hover:opacity-80'
-              }`}
+                }`}
             >
               {s.emoji}
             </button>
@@ -268,11 +267,10 @@ export default function Characters() {
             key={s.slug}
             onClick={() => goTo(i)}
             aria-label={t(`characters.series.${s.slug}.series`)}
-            className={`h-2.5 rounded-full transition-all duration-300 ${
-              i === activeIndex
+            className={`h-2.5 rounded-full transition-all duration-300 ${i === activeIndex
                 ? `w-8 ${s.accent}`
                 : 'w-2.5 bg-cosmos/15 hover:bg-cosmos/30'
-            }`}
+              }`}
           />
         ))}
       </div>
