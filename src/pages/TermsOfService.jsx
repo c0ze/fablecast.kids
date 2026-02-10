@@ -41,8 +41,6 @@ export default function TermsOfService() {
           <ul className="mt-2 ml-6 list-disc space-y-1.5">
             <li>{t('terms.s4.plans.items.0')}</li>
             <li>{t('terms.s4.plans.items.1')}</li>
-            <li>{t('terms.s4.plans.items.2')}</li>
-            <li>{t('terms.s4.plans.items.3')}</li>
           </ul>
 
           <h3 className="mt-4 font-display text-lg text-cosmos">{t('terms.s4.billing.subheading')}</h3>
@@ -64,7 +62,6 @@ export default function TermsOfService() {
             <li>{t('terms.s5.items.0')}</li>
             <li>{t('terms.s5.items.1')}</li>
             <li>{t('terms.s5.items.2')}</li>
-            <li>{t('terms.s5.items.3')}</li>
           </ul>
         </section>
 
@@ -73,7 +70,6 @@ export default function TermsOfService() {
           <ul className="mt-2 ml-6 list-disc space-y-1.5">
             <li>{t('terms.s6.items.0')}</li>
             <li>{t('terms.s6.items.1')}</li>
-            <li>{t('terms.s6.items.2')}</li>
           </ul>
         </section>
 

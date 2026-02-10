@@ -103,6 +103,44 @@ article ul {
   font-size: 1.125rem;
 }
 
+/* Gallery slide transitions */
+.gallery-slide {
+  animation: galleryFadeIn 0.4s ease-out both;
+}
+
+.gallery-slide-from-right {
+  animation: gallerySlideFromRight 0.4s ease-out both;
+}
+
+.gallery-slide-from-left {
+  animation: gallerySlideFromLeft 0.4s ease-out both;
+}
+
+@keyframes galleryFadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes gallerySlideFromRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes gallerySlideFromLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Supporting cast card entrance */
+.cast-card {
+  animation: castPop 0.45s ease-out both;
+}
+
+@keyframes castPop {
+  from { opacity: 0; transform: translateY(16px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
 /* Character emoji bounce */
 .char-bounce {
   display: inline-block;

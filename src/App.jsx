@@ -12,11 +12,13 @@ import About from './pages/About';
 import Characters from './pages/Characters';
 import FAQ from './pages/FAQ';
 import Blog from './pages/Blog';
+import Legal from './pages/Legal';
 
 const PAGES = {
   home: null,
   privacy: PrivacyPolicy,
   terms: TermsOfService,
+  legal: Legal,
   about: About,
   characters: Characters,
   faq: FAQ,
@@ -141,14 +143,13 @@ function App() {
   const { t, lang } = useTranslation();
   const [activeLang, setActiveLang] = useState('English');
   const [carouselIndex, setCarouselIndex] = useState(0);
-  const [selectedPlan, setSelectedPlan] = useState('Free');
+  const [selectedPlan, setSelectedPlan] = useState('free');
   const [authUser, setAuthUser] = useState(null);
   const [authBusy, setAuthBusy] = useState(false);
   const [authError, setAuthError] = useState('');
   const [setupModalOpen, setSetupModalOpen] = useState(false);
   const [setupSaving, setSetupSaving] = useState(false);
   const [setupLanguage, setSetupLanguage] = useState('English');
-  const [setupSeries, setSetupSeries] = useState('');
   const [revealReady, setRevealReady] = useState(false);
   const [currentPage, setCurrentPage] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -186,48 +187,26 @@ function App() {
   const pricingPlans = useMemo(() => [
     {
       key: 'free',
-      name: t('pricing.free.name'),
-      subtitle: t('pricing.free.subtitle'),
-      price: t('pricing.free.price'),
-      period: t('pricing.free.period'),
-      features: [t('pricing.free.features.0'), t('pricing.free.features.1'), t('pricing.free.features.2')],
-      cta: t('pricing.free.cta'),
+      name: t('membership.free.name'),
+      subtitle: t('membership.free.subtitle'),
+      price: t('membership.free.price'),
+      period: t('membership.free.period'),
+      features: [t('membership.free.features.0'), t('membership.free.features.1'), t('membership.free.features.2')],
+      cta: t('membership.free.cta'),
       emoji: '\u2728',
       accent: 'border-lavender/40'
     },
     {
-      key: 'squire',
-      name: t('pricing.squire.name'),
-      subtitle: t('pricing.squire.subtitle'),
-      price: t('pricing.squire.price'),
-      period: t('pricing.squire.period'),
-      features: [t('pricing.squire.features.0'), t('pricing.squire.features.1'), t('pricing.squire.features.2')],
-      cta: t('pricing.squire.cta'),
-      emoji: '\uD83D\uDC51',
-      accent: 'border-sky/40'
-    },
-    {
-      key: 'knight',
-      name: t('pricing.knight.name'),
-      subtitle: t('pricing.knight.subtitle'),
-      price: t('pricing.knight.price'),
-      period: t('pricing.knight.period'),
-      features: [t('pricing.knight.features.0'), t('pricing.knight.features.1'), t('pricing.knight.features.2')],
-      cta: t('pricing.knight.cta'),
+      key: 'member',
+      name: t('membership.member.name'),
+      subtitle: t('membership.member.subtitle'),
+      price: t('membership.member.price'),
+      period: t('membership.member.period'),
+      features: [t('membership.member.features.0'), t('membership.member.features.1'), t('membership.member.features.2')],
+      cta: t('membership.member.cta'),
       featured: true,
-      emoji: '\uD83C\uDFC6',
+      emoji: '\uD83D\uDC51',
       accent: 'border-starlight'
-    },
-    {
-      key: 'emperor',
-      name: t('pricing.emperor.name'),
-      subtitle: t('pricing.emperor.subtitle'),
-      price: t('pricing.emperor.price'),
-      period: t('pricing.emperor.period'),
-      features: [t('pricing.emperor.features.0'), t('pricing.emperor.features.1'), t('pricing.emperor.features.2')],
-      cta: t('pricing.emperor.cta'),
-      emoji: '\uD83D\uDC8E',
-      accent: 'border-bubblegum/40'
     }
   ], [t]);
 
@@ -252,6 +231,25 @@ function App() {
     window.addEventListener('hashchange', handleHash);
     return () => window.removeEventListener('hashchange', handleHash);
   }, []);
+
+  // Dynamic document title + meta description per page
+  useEffect(() => {
+    const pageSeo = {
+      home:       { title: t('seo.home.title'),       desc: t('seo.home.description') },
+      about:      { title: t('seo.about.title'),      desc: t('seo.about.description') },
+      characters: { title: t('seo.characters.title'), desc: t('seo.characters.description') },
+      faq:        { title: t('seo.faq.title'),        desc: t('seo.faq.description') },
+      blog:       { title: t('seo.blog.title'),       desc: t('seo.blog.description') },
+      privacy:    { title: t('seo.privacy.title'),    desc: t('seo.privacy.description') },
+      terms:      { title: t('seo.terms.title'),      desc: t('seo.terms.description') },
+      legal:      { title: t('seo.legal.title'),      desc: t('seo.legal.description') }
+    };
+    const seo = pageSeo[currentPage] || pageSeo.home;
+    document.title = seo.title;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', seo.desc);
+    document.documentElement.lang = lang;
+  }, [currentPage, t, lang]);
 
   const latestBatch = useMemo(
     () => [...dailyDrops].sort((a, b) => b.generatedAt.localeCompare(a.generatedAt))[0],
@@ -327,9 +325,6 @@ function App() {
           setSetupLanguage(profile.preferredLanguage);
           setActiveLang(profile.preferredLanguage);
         }
-        if (profile?.preferredSeries) {
-          setSetupSeries(profile.preferredSeries);
-        }
         if (profile?.plan) {
           setSelectedPlan(profile.plan);
         }
@@ -345,11 +340,6 @@ function App() {
     return () => unsubscribe();
   }, [t]);
 
-  useEffect(() => {
-    if (selectedPlan !== 'Squire') {
-      setSetupSeries('');
-    }
-  }, [selectedPlan]);
 
   const currentStory = dailyDrops[carouselIndex];
   const currentEmoji = seriesEmoji[currentStory.slug];
@@ -389,11 +379,6 @@ function App() {
       return;
     }
 
-    if (selectedPlan === 'Squire' && !setupSeries) {
-      setAuthError(t('auth.errors.squireSeriesRequired'));
-      return;
-    }
-
     try {
       setSetupSaving(true);
       setAuthError('');
@@ -406,7 +391,6 @@ function App() {
           displayName: authUser.displayName,
           plan: selectedPlan,
           preferredLanguage: setupLanguage,
-          preferredSeries: selectedPlan === 'Squire' ? setupSeries : null,
           setupComplete: true,
           updatedAt: serverTimestamp(),
           setupCompletedAt: serverTimestamp()
@@ -417,6 +401,7 @@ function App() {
       setActiveLang(setupLanguage);
       setSetupModalOpen(false);
     } catch (error) {
+      console.error("Error saving preferences:", error);
       setAuthError(t('auth.errors.saveFailed'));
     } finally {
       setSetupSaving(false);
@@ -468,11 +453,10 @@ function App() {
             <button
               key={link.page}
               onClick={() => navigateTo(link.page)}
-              className={`rounded-full px-4 py-2 text-sm font-bold transition ${
-                currentPage === link.page
+              className={`rounded-full px-4 py-2 text-sm font-bold transition ${currentPage === link.page
                   ? 'bg-twilight/10 text-twilight'
                   : 'text-cosmos/70 hover:bg-twilight/5 hover:text-cosmos'
-              }`}
+                }`}
             >
               {link.emoji} {link.label}
             </button>
@@ -510,11 +494,10 @@ function App() {
               <button
                 key={link.page}
                 onClick={() => navigateTo(link.page)}
-                className={`rounded-xl px-4 py-3 text-left text-sm font-bold transition ${
-                  currentPage === link.page
+                className={`rounded-xl px-4 py-3 text-left text-sm font-bold transition ${currentPage === link.page
                     ? 'bg-twilight/10 text-twilight'
                     : 'text-cosmos/70 hover:bg-twilight/5'
-                }`}
+                  }`}
               >
                 {link.emoji} {link.label}
               </button>
@@ -552,28 +535,32 @@ function App() {
                     <button
                       key={link.page}
                       onClick={() => navigateTo(link.page)}
-                      className={`font-semibold transition ${
-                        currentPage === link.page ? 'text-twilight' : 'text-cosmos/50 hover:text-cosmos'
-                      }`}
+                      className={`font-semibold transition ${currentPage === link.page ? 'text-twilight' : 'text-cosmos/50 hover:text-cosmos'
+                        }`}
                     >
                       {link.label}
                     </button>
                   ))}
                   <button
                     onClick={() => navigateTo('privacy')}
-                    className={`font-semibold transition ${
-                      currentPage === 'privacy' ? 'text-twilight' : 'text-cosmos/50 hover:text-cosmos'
-                    }`}
+                    className={`font-semibold transition ${currentPage === 'privacy' ? 'text-twilight' : 'text-cosmos/50 hover:text-cosmos'
+                      }`}
                   >
                     {t('nav.privacy')}
                   </button>
                   <button
                     onClick={() => navigateTo('terms')}
-                    className={`font-semibold transition ${
-                      currentPage === 'terms' ? 'text-twilight' : 'text-cosmos/50 hover:text-cosmos'
-                    }`}
+                    className={`font-semibold transition ${currentPage === 'terms' ? 'text-twilight' : 'text-cosmos/50 hover:text-cosmos'
+                      }`}
                   >
                     {t('nav.terms')}
+                  </button>
+                  <button
+                    onClick={() => navigateTo('legal')}
+                    className={`font-semibold transition ${currentPage === 'legal' ? 'text-twilight' : 'text-cosmos/50 hover:text-cosmos'
+                      }`}
+                  >
+                    {t('nav.legal')}
                   </button>
                 </div>
               </div>
@@ -587,443 +574,438 @@ function App() {
 
       {/* ===== LANDING PAGE ===== */}
       {currentPage === 'home' && (
-      <>
-      {/* ===== HERO ===== */}
-      <section className="relative overflow-hidden">
-        {/* Floating decorative blobs */}
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute -left-10 top-10 h-40 w-40 animate-drift rounded-full bg-candy/20 blur-3xl" />
-          <div className="absolute -right-8 top-20 h-36 w-36 animate-drift-slow rounded-full bg-mint/25 blur-3xl" />
-          <div className="absolute bottom-10 left-1/4 h-32 w-32 animate-drift rounded-full bg-lavender/20 blur-3xl" />
-          <div className="absolute bottom-0 right-1/3 h-28 w-28 animate-drift-slow rounded-full bg-starlight/30 blur-3xl" />
-        </div>
-
-        <div
-          data-reveal
-          className={`reveal relative mx-auto max-w-6xl px-6 pb-6 pt-4 sm:pt-6 lg:px-8 ${
-            revealReady ? '' : 'opacity-100'
-          }`}
-        >
-          <div className="grid items-center gap-8 lg:grid-cols-2">
-            <div>
-              <div className="mb-4 flex flex-wrap gap-2">
-                <span className="sticker border-bubblegum bg-bubblegum/10 text-bubblegum">
-                  {'\u2728'} {t('hero.sticker18Stories')}
-                </span>
-                <span className="sticker border-mint bg-mint/10 text-cosmos" style={{ transform: 'rotate(1deg)' }}>
-                  {'\uD83C\uDF0D'} {t('hero.sticker3Languages')}
-                </span>
-              </div>
-              <h1 className="font-display text-4xl leading-tight text-cosmos sm:text-5xl lg:text-[3.4rem] lg:leading-[1.15]">
-                {t('hero.titlePart1')}{' '}
-                <span className="relative inline-block">
-                  <span className="relative z-10">{t('hero.titleHighlight')}</span>
-                  <span className="absolute -bottom-1 left-0 right-0 h-3 rounded-full bg-starlight/40" />
-                </span>
-                {t('hero.titlePart2')}
-              </h1>
-              <p className="mt-5 max-w-xl text-xl leading-relaxed text-cosmos/80">
-                {t('hero.subtitle')}
-              </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <a
-                  href="#auth-section"
-                  onClick={() => setSelectedPlan('Free')}
-                  className="group rounded-full bg-twilight px-8 py-3.5 text-base font-bold text-white shadow-glow transition hover:bg-plumMist hover:shadow-candy"
-                >
-                  {t('hero.ctaFreeTrial')} {'\uD83D\uDE80'}
-                </a>
-                <a
-                  href="#daily-drop"
-                  className="rounded-full border-2 border-dashed border-twilight/40 bg-white/70 px-7 py-3.5 text-base font-bold text-twilight transition hover:border-twilight hover:bg-white"
-                >
-                  {t('hero.ctaTodaysDrop')} {'\u2B07\uFE0F'}
-                </a>
-              </div>
+        <>
+          {/* ===== HERO ===== */}
+          <section className="relative overflow-hidden">
+            {/* Floating decorative blobs */}
+            <div className="pointer-events-none absolute inset-0 overflow-hidden">
+              <div className="absolute -left-10 top-10 h-40 w-40 animate-drift rounded-full bg-candy/20 blur-3xl" />
+              <div className="absolute -right-8 top-20 h-36 w-36 animate-drift-slow rounded-full bg-mint/25 blur-3xl" />
+              <div className="absolute bottom-10 left-1/4 h-32 w-32 animate-drift rounded-full bg-lavender/20 blur-3xl" />
+              <div className="absolute bottom-0 right-1/3 h-28 w-28 animate-drift-slow rounded-full bg-starlight/30 blur-3xl" />
             </div>
 
-            {/* Banner illustration */}
-            <div className="animate-float">
-              <HeroBanner className="w-full rounded-3xl shadow-soft" />
-            </div>
-          </div>
-        </div>
-      </section>
+            <div
+              data-reveal
+              className={`reveal relative mx-auto max-w-6xl px-6 pb-6 pt-4 sm:pt-6 lg:px-8 ${revealReady ? '' : 'opacity-100'
+                }`}
+            >
+              <div className="grid items-center gap-8 lg:grid-cols-2">
+                <div>
+                  <div className="mb-4 flex flex-wrap gap-2">
+                    <span className="sticker border-bubblegum bg-bubblegum/10 text-bubblegum">
+                      {'\u2728'} {t('hero.stickerGrowingLibrary')}
+                    </span>
+                    <span className="sticker border-mint bg-mint/10 text-cosmos" style={{ transform: 'rotate(1deg)' }}>
+                      {'\uD83C\uDF0D'} {t('hero.sticker3Languages')}
+                    </span>
+                  </div>
+                  <h1 className="font-display text-4xl leading-tight text-cosmos sm:text-5xl lg:text-[3.4rem] lg:leading-[1.15]">
+                    {t('hero.titlePart1')}{' '}
+                    <span className="relative inline-block">
+                      <span className="relative z-10">{t('hero.titleHighlight')}</span>
+                      <span className="absolute -bottom-1 left-0 right-0 h-3 rounded-full bg-starlight/40" />
+                    </span>
+                    {t('hero.titlePart2')}
+                  </h1>
+                  <p className="mt-5 max-w-xl text-xl leading-relaxed text-cosmos/80">
+                    {t('hero.subtitle')}
+                  </p>
+                  <div className="mt-8 flex flex-wrap gap-4">
+                    <a
+                      href="#auth-section"
+                      onClick={() => setSelectedPlan('free')}
+                      className="group rounded-full bg-twilight px-8 py-3.5 text-base font-bold text-white shadow-glow transition hover:bg-plumMist hover:shadow-candy"
+                    >
+                      {t('hero.ctaStartReading')} {'\uD83D\uDE80'}
+                    </a>
+                    <a
+                      href="#daily-drop"
+                      className="rounded-full border-2 border-dashed border-twilight/40 bg-white/70 px-7 py-3.5 text-base font-bold text-twilight transition hover:border-twilight hover:bg-white"
+                    >
+                      {t('hero.ctaLatestStories')} {'\u2B07\uFE0F'}
+                    </a>
+                  </div>
+                </div>
 
-      {/* ===== DAILY DROP MARQUEE ===== */}
-      <section
-        id="daily-drop"
-        data-reveal
-        className="reveal wavy-top mt-6 border-y-2 border-dashed border-starlight/30 bg-gradient-to-r from-starlight/10 via-candy/5 to-mint/10 py-5"
-      >
-        <div className="mx-auto max-w-6xl overflow-hidden px-6 lg:px-8">
-          <div className="whitespace-nowrap">
-            <div className="inline-flex min-w-full animate-marquee gap-4 pr-4">
-              {[...dailyDrops, ...dailyDrops].map((drop, index) => {
+                {/* Banner illustration */}
+                <div className="animate-float">
+                  <HeroBanner className="w-full rounded-3xl shadow-soft" />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* ===== DAILY DROP MARQUEE ===== */}
+          <section
+            id="daily-drop"
+            data-reveal
+            className="reveal wavy-top mt-6 border-y-2 border-dashed border-starlight/30 bg-gradient-to-r from-starlight/10 via-candy/5 to-mint/10 py-5"
+          >
+            <div className="mx-auto max-w-6xl overflow-hidden px-6 lg:px-8">
+              <div className="whitespace-nowrap">
+                <div className="inline-flex min-w-full animate-marquee gap-4 pr-4">
+                  {[...dailyDrops, ...dailyDrops].map((drop, index) => {
+                    const emoji = seriesEmoji[drop.slug];
+                    return (
+                      <span
+                        key={`${drop.slug}-${index}`}
+                        className={`inline-flex items-center gap-2 rounded-full border-2 border-dashed ${emoji.border}/40 ${emoji.color}/15 px-5 py-2.5 text-sm font-bold`}
+                      >
+                        <span className="text-lg">{emoji.icon}</span>
+                        {drop.titles.English}
+                      </span>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* ===== LATEST STORIES SNAPSHOT ===== */}
+          <section data-reveal className="reveal mx-auto max-w-6xl px-6 py-14 lg:px-8">
+            <div className="text-center">
+              <span className="sticker border-starlight bg-starlight/10 text-cosmos">
+                {'\uD83D\uDCE6'} {t('latestStories.sticker')}
+              </span>
+              <h2 className="mt-4 font-display text-3xl text-cosmos sm:text-4xl">
+                {formatDropDate(latestBatch.generatedAt, lang)}
+              </h2>
+              <p className="mt-2 text-lg text-cosmos/60">{t('latestStories.subtitle')}</p>
+            </div>
+
+            <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {dailyDrops.map((drop) => {
                 const emoji = seriesEmoji[drop.slug];
                 return (
-                  <span
-                    key={`${drop.slug}-${index}`}
-                    className={`inline-flex items-center gap-2 rounded-full border-2 border-dashed ${emoji.border}/40 ${emoji.color}/15 px-5 py-2.5 text-sm font-bold`}
+                  <div
+                    key={drop.slug}
+                    className={`card-cute rounded-2xl border-2 border-dashed ${emoji.border}/30 ${emoji.color}/10 p-5 dots-pattern`}
                   >
-                    <span className="text-lg">{emoji.icon}</span>
-                    {drop.titles.English}
-                  </span>
+                    <div className="flex items-center gap-3">
+                      <span className={`flex h-10 w-10 items-center justify-center rounded-xl ${emoji.color}/30 text-xl`}>
+                        {emoji.icon}
+                      </span>
+                      <div>
+                        <p className="font-display text-lg font-bold leading-tight">{drop.series}</p>
+                        <p className="text-xs text-cosmos/60">{t('latestStories.leadLabel')} {drop.lead}</p>
+                      </div>
+                    </div>
+                    <p className="mt-3 text-base font-semibold text-cosmos/80">{drop.titles.English}</p>
+                  </div>
                 );
               })}
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      {/* ===== DAILY BATCH SNAPSHOT ===== */}
-      <section data-reveal className="reveal mx-auto max-w-6xl px-6 py-14 lg:px-8">
-        <div className="text-center">
-          <span className="sticker border-starlight bg-starlight/10 text-cosmos">
-            {'\uD83D\uDCE6'} {t('dailyBatch.sticker')}
-          </span>
-          <h2 className="mt-4 font-display text-3xl text-cosmos sm:text-4xl">
-            {formatDropDate(latestBatch.generatedAt, lang)}
-          </h2>
-          <p className="mt-2 text-lg text-cosmos/60">{t('dailyBatch.subtitle')}</p>
-        </div>
+          {/* ===== LANGUAGE DEMO ===== */}
+          <section data-reveal className="reveal mx-auto max-w-6xl px-6 pb-14 lg:px-8">
+            <div className="grid gap-10 rounded-[2rem] border-2 border-dashed border-lavender/30 bg-gradient-to-br from-lavender/10 to-sky/10 p-8 lg:grid-cols-2">
+              <div>
+                <span className="sticker border-sky bg-sky/10 text-cosmos">
+                  {'\uD83C\uDF0D'} {t('languageDemo.sticker')}
+                </span>
+                <h3 className="mt-4 font-display text-3xl text-cosmos">{t('languageDemo.title')}</h3>
+                <p className="mt-3 text-lg text-cosmos/75">
+                  {t('languageDemo.description')}
+                </p>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  {Object.keys(languageSnippets).map((snippetLang) => (
+                    <button
+                      key={snippetLang}
+                      onClick={() => setActiveLang(snippetLang)}
+                      className={`rounded-full px-5 py-2.5 text-sm font-bold transition ${activeLang === snippetLang
+                          ? 'bg-twilight text-white shadow-candy'
+                          : 'border-2 border-dashed border-twilight/30 bg-white text-twilight hover:border-twilight'
+                        }`}
+                    >
+                      {langFlags[snippetLang]} {snippetLang}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <article className="rounded-2xl border-2 border-dashed border-peach/40 bg-moonbeam p-6 shadow-soft">
+                <div className="mb-3 flex items-center gap-2">
+                  <span className="text-2xl">{'\uD83D\uDC36'}</span>
+                  <p className="text-xs font-bold uppercase tracking-wider text-twilight">
+                    {t('languageDemo.storyLabel')} ({activeLang})
+                  </p>
+                </div>
+                <p className="text-xl font-semibold leading-relaxed text-cosmos">
+                  {languageSnippets[activeLang]}
+                </p>
+              </article>
+            </div>
+          </section>
 
-        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {dailyDrops.map((drop) => {
-            const emoji = seriesEmoji[drop.slug];
-            return (
-              <div
-                key={drop.slug}
-                className={`card-cute rounded-2xl border-2 border-dashed ${emoji.border}/30 ${emoji.color}/10 p-5 dots-pattern`}
+          {/* ===== FEATURES ===== */}
+          <section data-reveal className="reveal mx-auto max-w-6xl px-6 pb-14 lg:px-8">
+            <div className="mb-8 text-center">
+              <span className="sticker border-mint bg-mint/10 text-cosmos">
+                {'\u2699\uFE0F'} {t('features.sticker')}
+              </span>
+              <h3 className="mt-4 font-display text-3xl text-cosmos">{t('features.title')}</h3>
+            </div>
+            <div className="grid gap-5 md:grid-cols-3">
+              {pipelineFeatures.map((feature) => (
+                <article
+                  key={feature.title}
+                  className={`card-cute rounded-2xl border-2 border-dashed border-plumMist/20 bg-gradient-to-br ${feature.accent} p-6`}
+                >
+                  <span className="text-4xl">{feature.icon}</span>
+                  <h4 className="mt-3 font-display text-xl text-cosmos">{feature.title}</h4>
+                  <p className="mt-2 text-base leading-relaxed text-cosmos/75">
+                    {feature.description}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          {/* ===== STORY CAROUSEL ===== */}
+          <section data-reveal className="reveal mx-auto max-w-6xl px-6 pb-14 lg:px-8">
+            <div className="rounded-[2rem] border-2 border-dashed border-candy/30 bg-gradient-to-br from-candy/8 to-starlight/8 p-8">
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <div>
+                  <span className="sticker border-candy bg-candy/10 text-cosmos">
+                    {'\uD83C\uDFA0'} {t('carousel.sticker')}
+                  </span>
+                  <h3 className="mt-3 font-display text-3xl text-cosmos">{t('carousel.title')}</h3>
+                  <p className="mt-2 text-lg text-cosmos/70">
+                    {t('carousel.subtitle')}
+                  </p>
+                </div>
+                <div className="flex gap-2">
+                  <button
+                    onClick={goToPrevStory}
+                    className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-dashed border-candy/40 bg-white text-lg font-bold text-cosmos transition hover:border-candy hover:bg-candy/10"
+                    aria-label={t('carousel.prevAriaLabel')}
+                  >
+                    {'\u25C0'}
+                  </button>
+                  <button
+                    onClick={goToNextStory}
+                    className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-dashed border-candy/40 bg-white text-lg font-bold text-cosmos transition hover:border-candy hover:bg-candy/10"
+                    aria-label={t('carousel.nextAriaLabel')}
+                  >
+                    {'\u25B6'}
+                  </button>
+                </div>
+              </div>
+              <article
+                className={`mt-6 rounded-2xl border-2 border-dashed ${currentEmoji.border}/30 ${currentEmoji.color}/15 bg-white/80 p-6 shadow-soft dots-pattern`}
+                onTouchStart={handleCarouselTouchStart}
+                onTouchEnd={handleCarouselTouchEnd}
               >
                 <div className="flex items-center gap-3">
-                  <span className={`flex h-10 w-10 items-center justify-center rounded-xl ${emoji.color}/30 text-xl`}>
-                    {emoji.icon}
+                  <span className={`flex h-14 w-14 items-center justify-center rounded-2xl ${currentEmoji.color}/30 text-3xl`}>
+                    {currentEmoji.icon}
                   </span>
                   <div>
-                    <p className="font-display text-lg font-bold leading-tight">{drop.series}</p>
-                    <p className="text-xs text-cosmos/60">{t('dailyBatch.leadLabel')} {drop.lead}</p>
+                    <p className="text-xs font-bold uppercase tracking-wider text-twilight">
+                      {t('carousel.seriesLabel', { current: carouselIndex + 1, total: dailyDrops.length })}
+                    </p>
+                    <h4 className="font-display text-2xl">{currentStory.series}</h4>
                   </div>
                 </div>
-                <p className="mt-3 text-base font-semibold text-cosmos/80">{drop.titles.English}</p>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* ===== LANGUAGE DEMO ===== */}
-      <section data-reveal className="reveal mx-auto max-w-6xl px-6 pb-14 lg:px-8">
-        <div className="grid gap-10 rounded-[2rem] border-2 border-dashed border-lavender/30 bg-gradient-to-br from-lavender/10 to-sky/10 p-8 lg:grid-cols-2">
-          <div>
-            <span className="sticker border-sky bg-sky/10 text-cosmos">
-              {'\uD83C\uDF0D'} {t('languageDemo.sticker')}
-            </span>
-            <h3 className="mt-4 font-display text-3xl text-cosmos">{t('languageDemo.title')}</h3>
-            <p className="mt-3 text-lg text-cosmos/75">
-              {t('languageDemo.description')}
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              {Object.keys(languageSnippets).map((snippetLang) => (
-                <button
-                  key={snippetLang}
-                  onClick={() => setActiveLang(snippetLang)}
-                  className={`rounded-full px-5 py-2.5 text-sm font-bold transition ${
-                    activeLang === snippetLang
-                      ? 'bg-twilight text-white shadow-candy'
-                      : 'border-2 border-dashed border-twilight/30 bg-white text-twilight hover:border-twilight'
-                  }`}
-                >
-                  {langFlags[snippetLang]} {snippetLang}
-                </button>
-              ))}
-            </div>
-          </div>
-          <article className="rounded-2xl border-2 border-dashed border-peach/40 bg-moonbeam p-6 shadow-soft">
-            <div className="mb-3 flex items-center gap-2">
-              <span className="text-2xl">{'\uD83D\uDC36'}</span>
-              <p className="text-xs font-bold uppercase tracking-wider text-twilight">
-                {t('languageDemo.storyLabel')} ({activeLang})
-              </p>
-            </div>
-            <p className="text-xl font-semibold leading-relaxed text-cosmos">
-              {languageSnippets[activeLang]}
-            </p>
-          </article>
-        </div>
-      </section>
-
-      {/* ===== FEATURES ===== */}
-      <section data-reveal className="reveal mx-auto max-w-6xl px-6 pb-14 lg:px-8">
-        <div className="mb-8 text-center">
-          <span className="sticker border-mint bg-mint/10 text-cosmos">
-            {'\u2699\uFE0F'} {t('features.sticker')}
-          </span>
-          <h3 className="mt-4 font-display text-3xl text-cosmos">{t('features.title')}</h3>
-        </div>
-        <div className="grid gap-5 md:grid-cols-3">
-          {pipelineFeatures.map((feature) => (
-            <article
-              key={feature.title}
-              className={`card-cute rounded-2xl border-2 border-dashed border-plumMist/20 bg-gradient-to-br ${feature.accent} p-6`}
-            >
-              <span className="text-4xl">{feature.icon}</span>
-              <h4 className="mt-3 font-display text-xl text-cosmos">{feature.title}</h4>
-              <p className="mt-2 text-base leading-relaxed text-cosmos/75">
-                {feature.description}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* ===== STORY CAROUSEL ===== */}
-      <section data-reveal className="reveal mx-auto max-w-6xl px-6 pb-14 lg:px-8">
-        <div className="rounded-[2rem] border-2 border-dashed border-candy/30 bg-gradient-to-br from-candy/8 to-starlight/8 p-8">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div>
-              <span className="sticker border-candy bg-candy/10 text-cosmos">
-                {'\uD83C\uDFA0'} {t('carousel.sticker')}
-              </span>
-              <h3 className="mt-3 font-display text-3xl text-cosmos">{t('carousel.title')}</h3>
-              <p className="mt-2 text-lg text-cosmos/70">
-                {t('carousel.subtitle')}
-              </p>
-            </div>
-            <div className="flex gap-2">
-              <button
-                onClick={goToPrevStory}
-                className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-dashed border-candy/40 bg-white text-lg font-bold text-cosmos transition hover:border-candy hover:bg-candy/10"
-                aria-label={t('carousel.prevAriaLabel')}
-              >
-                {'\u25C0'}
-              </button>
-              <button
-                onClick={goToNextStory}
-                className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-dashed border-candy/40 bg-white text-lg font-bold text-cosmos transition hover:border-candy hover:bg-candy/10"
-                aria-label={t('carousel.nextAriaLabel')}
-              >
-                {'\u25B6'}
-              </button>
-            </div>
-          </div>
-          <article
-            className={`mt-6 rounded-2xl border-2 border-dashed ${currentEmoji.border}/30 ${currentEmoji.color}/15 bg-white/80 p-6 shadow-soft dots-pattern`}
-            onTouchStart={handleCarouselTouchStart}
-            onTouchEnd={handleCarouselTouchEnd}
-          >
-            <div className="flex items-center gap-3">
-              <span className={`flex h-14 w-14 items-center justify-center rounded-2xl ${currentEmoji.color}/30 text-3xl`}>
-                {currentEmoji.icon}
-              </span>
-              <div>
-                <p className="text-xs font-bold uppercase tracking-wider text-twilight">
-                  {t('carousel.seriesLabel', { current: carouselIndex + 1, total: dailyDrops.length })}
+                <p className="mt-4 text-xl font-semibold leading-relaxed">
+                  {currentStory.titles[activeLang]}
                 </p>
-                <h4 className="font-display text-2xl">{currentStory.series}</h4>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <span className="rounded-full bg-twilight/10 px-3 py-1 text-xs font-bold text-twilight">
+                    {t('carousel.leadLabel')} {currentStory.lead}
+                  </span>
+                  {currentStory.cast.map((member) => (
+                    <span key={member} className="rounded-full bg-cosmos/5 px-3 py-1 text-xs font-semibold text-cosmos/70">
+                      {member}
+                    </span>
+                  ))}
+                </div>
+                <p className="mt-3 text-sm text-cosmos/60">{t('carousel.worldLabel')} {currentStory.world}</p>
+              </article>
+              <div className="mt-5 flex items-center justify-center gap-2">
+                {dailyDrops.map((story, index) => {
+                  const e = seriesEmoji[story.slug];
+                  return (
+                    <button
+                      key={story.slug}
+                      onClick={() => setCarouselIndex(index)}
+                      aria-label={t('carousel.viewAriaLabel', { series: story.series })}
+                      className={`flex h-8 w-8 items-center justify-center rounded-full border-2 text-sm transition ${index === carouselIndex
+                          ? `${e.color}/40 border-${e.border.replace('border-', '')} scale-110`
+                          : 'border-transparent bg-white/60 opacity-60 hover:opacity-100'
+                        }`}
+                    >
+                      {e.icon}
+                    </button>
+                  );
+                })}
               </div>
             </div>
-            <p className="mt-4 text-xl font-semibold leading-relaxed">
-              {currentStory.titles[activeLang]}
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              <span className="rounded-full bg-twilight/10 px-3 py-1 text-xs font-bold text-twilight">
-                {t('carousel.leadLabel')} {currentStory.lead}
+          </section>
+
+          {/* ===== MEMBERSHIP ===== */}
+          <section data-reveal className="reveal mx-auto max-w-6xl px-6 pb-14 lg:px-8">
+            <div className="mb-8 text-center">
+              <span className="sticker border-starlight bg-starlight/10 text-cosmos">
+                {'\uD83C\uDF81'} {t('membership.sticker')}
               </span>
-              {currentStory.cast.map((member) => (
-                <span key={member} className="rounded-full bg-cosmos/5 px-3 py-1 text-xs font-semibold text-cosmos/70">
-                  {member}
-                </span>
+              <h3 className="mt-4 font-display text-3xl text-cosmos">{t('membership.title')}</h3>
+              <p className="mt-3 text-lg text-cosmos/70">{t('membership.subtitle')}</p>
+            </div>
+            <div className="mx-auto grid max-w-3xl gap-6 md:grid-cols-2">
+              {pricingPlans.map((plan) => (
+                <article
+                  key={plan.key}
+                  className={`card-cute rounded-[2rem] border-2 border-dashed p-6 ${plan.featured
+                      ? 'relative border-starlight bg-gradient-to-br from-cosmos to-plumMist text-white shadow-glow'
+                      : `${plan.accent} bg-white/80`
+                    }`}
+                >
+                  <span className="text-3xl">{plan.emoji}</span>
+                  <h4 className="mt-2 font-display text-2xl">{plan.name}</h4>
+                  <p className={`mt-1 text-sm ${plan.featured ? 'text-starlight' : 'text-cosmos/60'}`}>
+                    {plan.subtitle}
+                  </p>
+                  <p className="mt-4 text-4xl font-extrabold">
+                    {plan.price}
+                    <span
+                      className={`text-base font-semibold ${plan.featured ? 'text-starlight' : 'text-cosmos/60'
+                        }`}
+                    >
+                      {plan.period}
+                    </span>
+                  </p>
+                  <ul className="mt-4 space-y-2.5 text-base">
+                    {plan.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-2">
+                        <span className="mt-0.5 text-mint">{'\u2714'}</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <button
+                    onClick={() => handlePlanSelect(plan.key)}
+                    className={`mt-6 w-full rounded-full px-4 py-3 text-sm font-bold transition ${plan.featured
+                        ? 'bg-starlight text-cosmos shadow-md hover:bg-lemon'
+                        : 'bg-twilight text-white shadow-candy hover:bg-plumMist'
+                      }`}
+                  >
+                    {plan.cta}
+                  </button>
+                </article>
               ))}
             </div>
-            <p className="mt-3 text-sm text-cosmos/60">{t('carousel.worldLabel')} {currentStory.world}</p>
-          </article>
-          <div className="mt-5 flex items-center justify-center gap-2">
-            {dailyDrops.map((story, index) => {
-              const e = seriesEmoji[story.slug];
-              return (
-                <button
-                  key={story.slug}
-                  onClick={() => setCarouselIndex(index)}
-                  aria-label={t('carousel.viewAriaLabel', { series: story.series })}
-                  className={`flex h-8 w-8 items-center justify-center rounded-full border-2 text-sm transition ${
-                    index === carouselIndex
-                      ? `${e.color}/40 border-${e.border.replace('border-', '')} scale-110`
-                      : 'border-transparent bg-white/60 opacity-60 hover:opacity-100'
-                  }`}
-                >
-                  {e.icon}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+          </section>
 
-      {/* ===== PRICING ===== */}
-      <section data-reveal className="reveal mx-auto max-w-6xl px-6 pb-14 lg:px-8">
-        <div className="mb-8 text-center">
-          <span className="sticker border-starlight bg-starlight/10 text-cosmos">
-            {'\uD83C\uDF81'} {t('pricing.sticker')}
-          </span>
-          <h3 className="mt-4 font-display text-3xl text-cosmos">{t('pricing.title')}</h3>
-          <p className="mt-3 text-lg text-cosmos/70">{t('pricing.subtitle')}</p>
-        </div>
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {pricingPlans.map((plan) => (
-            <article
-              key={plan.key}
-              className={`card-cute rounded-[2rem] border-2 border-dashed p-6 ${
-                plan.featured
-                  ? 'relative border-starlight bg-gradient-to-br from-cosmos to-plumMist text-white shadow-glow'
-                  : `${plan.accent} bg-white/80`
-              }`}
-            >
-              {plan.featured && (
-                <span className="absolute -right-2 -top-3 rotate-6 rounded-full bg-starlight px-3 py-1 text-xs font-extrabold text-cosmos shadow-md">
-                  {t('pricing.mostLovedBadge')}
-                </span>
+          {/* ===== AUTH SECTION ===== */}
+          <section
+            id="auth-section"
+            data-reveal
+            className="reveal border-y-2 border-dashed border-lavender/30 bg-gradient-to-br from-lavender/10 to-sky/10"
+          >
+            <div className="mx-auto max-w-3xl px-6 py-14 text-center lg:px-8">
+              <span className="text-5xl">{'\uD83D\uDD13'}</span>
+              <h3 className="mt-4 font-display text-3xl text-cosmos">{t('auth.title')}</h3>
+              <p className="mt-3 text-lg text-cosmos/70">
+                {t('auth.subtitle')}
+              </p>
+              <p className="mt-2 inline-flex items-center gap-2 rounded-full bg-twilight/10 px-4 py-1.5 text-sm font-bold text-twilight">
+                {pricingPlans.find((p) => p.key === selectedPlan)?.emoji} {pricingPlans.find((p) => p.key === selectedPlan)?.name}
+              </p>
+
+              <div className="mt-8 flex flex-wrap justify-center gap-3">
+                {!authUser ? (
+                  <button
+                    type="button"
+                    onClick={handleGoogleSignIn}
+                    disabled={authBusy}
+                    className="rounded-full bg-twilight px-8 py-3.5 text-base font-bold text-white shadow-glow transition hover:bg-plumMist hover:shadow-candy disabled:cursor-not-allowed disabled:opacity-70"
+                  >
+                    {authBusy ? t('auth.signingIn') : `${t('auth.signInWithGoogle')} \uD83D\uDE80`}
+                  </button>
+                ) : (
+                  <>
+                    <button
+                      type="button"
+                      onClick={() => setSetupModalOpen(true)}
+                      className="rounded-full bg-twilight px-8 py-3.5 text-base font-bold text-white shadow-glow transition hover:bg-plumMist"
+                    >
+                      {t('auth.continueSetup')} {'\u2728'}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleSignOut}
+                      className="rounded-full border-2 border-dashed border-twilight/40 bg-white px-8 py-3.5 text-base font-bold text-twilight transition hover:border-twilight"
+                    >
+                      {t('auth.signOut')}
+                    </button>
+                  </>
+                )}
+              </div>
+
+              {authUser && (
+                <p className="mt-5 text-sm font-semibold text-cosmos/80">
+                  {t('auth.signedInAs', { email: authUser.email })}
+                </p>
               )}
-              <span className="text-3xl">{plan.emoji}</span>
-              <h4 className="mt-2 font-display text-2xl">{plan.name}</h4>
-              <p className={`mt-1 text-sm ${plan.featured ? 'text-starlight' : 'text-cosmos/60'}`}>
-                {plan.subtitle}
-              </p>
-              <p className="mt-4 text-4xl font-extrabold">
-                {plan.price}
-                <span
-                  className={`text-base font-semibold ${
-                    plan.featured ? 'text-starlight' : 'text-cosmos/60'
-                  }`}
-                >
-                  {plan.period}
-                </span>
-              </p>
-              <ul className="mt-4 space-y-2.5 text-base">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-2">
-                    <span className="mt-0.5 text-mint">{'\u2714'}</span>
-                    {feature}
-                  </li>
+
+              {authError && (
+                <p className="mt-5 rounded-2xl border-2 border-dashed border-bubblegum/40 bg-bubblegum/10 px-4 py-3 text-sm font-semibold text-cosmos">
+                  {authError}
+                </p>
+              )}
+            </div>
+          </section>
+
+          {/* ===== FOOTER ===== */}
+          <footer className="border-t-2 border-dashed border-plumMist/15 bg-white/50">
+            <div className="mx-auto max-w-6xl px-6 py-10 lg:px-8">
+              <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
+                <div className="text-center sm:text-left">
+                  <Logo className="mx-auto h-10 w-auto opacity-60 sm:mx-0" tagline={t('logo.tagline')} />
+                  <p className="mt-2 text-sm text-cosmos/40">
+                    {t('footer.madeWithLove')}
+                  </p>
+                </div>
+                <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm">
+                  {NAV_LINKS.map((link) => (
+                    <button
+                      key={link.page}
+                      onClick={() => navigateTo(link.page)}
+                      className="font-semibold text-cosmos/50 transition hover:text-cosmos"
+                    >
+                      {link.label}
+                    </button>
+                  ))}
+                  <button
+                    onClick={() => navigateTo('privacy')}
+                    className="font-semibold text-cosmos/50 transition hover:text-cosmos"
+                  >
+                    {t('nav.privacy')}
+                  </button>
+                  <button
+                    onClick={() => navigateTo('terms')}
+                    className="font-semibold text-cosmos/50 transition hover:text-cosmos"
+                  >
+                    {t('nav.terms')}
+                  </button>
+                  <button
+                    onClick={() => navigateTo('legal')}
+                    className="font-semibold text-cosmos/50 transition hover:text-cosmos"
+                  >
+                    {t('nav.legal')}
+                  </button>
+                </div>
+              </div>
+              <div className="mt-6 flex justify-center gap-2">
+                {Object.values(seriesEmoji).map((e, i) => (
+                  <span key={i} className="char-bounce text-xl">{e.icon}</span>
                 ))}
-              </ul>
-              <button
-                onClick={() => handlePlanSelect(plan.name)}
-                className={`mt-6 w-full rounded-full px-4 py-3 text-sm font-bold transition ${
-                  plan.featured
-                    ? 'bg-starlight text-cosmos shadow-md hover:bg-lemon'
-                    : 'bg-twilight text-white shadow-candy hover:bg-plumMist'
-                }`}
-              >
-                {plan.cta}
-              </button>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* ===== AUTH SECTION ===== */}
-      <section
-        id="auth-section"
-        data-reveal
-        className="reveal border-y-2 border-dashed border-lavender/30 bg-gradient-to-br from-lavender/10 to-sky/10"
-      >
-        <div className="mx-auto max-w-3xl px-6 py-14 text-center lg:px-8">
-          <span className="text-5xl">{'\uD83D\uDD13'}</span>
-          <h3 className="mt-4 font-display text-3xl text-cosmos">{t('auth.title')}</h3>
-          <p className="mt-3 text-lg text-cosmos/70">
-            {t('auth.subtitle')}
-          </p>
-          <p className="mt-2 inline-flex items-center gap-2 rounded-full bg-twilight/10 px-4 py-1.5 text-sm font-bold text-twilight">
-            {t('auth.selectedPlanLabel')} {pricingPlans.find((p) => p.name === selectedPlan)?.emoji} {selectedPlan}
-          </p>
-
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            {!authUser ? (
-              <button
-                type="button"
-                onClick={handleGoogleSignIn}
-                disabled={authBusy}
-                className="rounded-full bg-twilight px-8 py-3.5 text-base font-bold text-white shadow-glow transition hover:bg-plumMist hover:shadow-candy disabled:cursor-not-allowed disabled:opacity-70"
-              >
-                {authBusy ? t('auth.signingIn') : `${t('auth.signInWithGoogle')} \uD83D\uDE80`}
-              </button>
-            ) : (
-              <>
-                <button
-                  type="button"
-                  onClick={() => setSetupModalOpen(true)}
-                  className="rounded-full bg-twilight px-8 py-3.5 text-base font-bold text-white shadow-glow transition hover:bg-plumMist"
-                >
-                  {t('auth.continueSetup')} {'\u2728'}
-                </button>
-                <button
-                  type="button"
-                  onClick={handleSignOut}
-                  className="rounded-full border-2 border-dashed border-twilight/40 bg-white px-8 py-3.5 text-base font-bold text-twilight transition hover:border-twilight"
-                >
-                  {t('auth.signOut')}
-                </button>
-              </>
-            )}
-          </div>
-
-          {authUser && (
-            <p className="mt-5 text-sm font-semibold text-cosmos/80">
-              {t('auth.signedInAs', { email: authUser.email })}
-            </p>
-          )}
-
-          {authError && (
-            <p className="mt-5 rounded-2xl border-2 border-dashed border-bubblegum/40 bg-bubblegum/10 px-4 py-3 text-sm font-semibold text-cosmos">
-              {authError}
-            </p>
-          )}
-        </div>
-      </section>
-
-      {/* ===== FOOTER ===== */}
-      <footer className="border-t-2 border-dashed border-plumMist/15 bg-white/50">
-        <div className="mx-auto max-w-6xl px-6 py-10 lg:px-8">
-          <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
-            <div className="text-center sm:text-left">
-              <Logo className="mx-auto h-10 w-auto opacity-60 sm:mx-0" tagline={t('logo.tagline')} />
-              <p className="mt-2 text-sm text-cosmos/40">
-                {t('footer.madeWithLove')}
-              </p>
+              </div>
             </div>
-            <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm">
-              {NAV_LINKS.map((link) => (
-                <button
-                  key={link.page}
-                  onClick={() => navigateTo(link.page)}
-                  className="font-semibold text-cosmos/50 transition hover:text-cosmos"
-                >
-                  {link.label}
-                </button>
-              ))}
-              <button
-                onClick={() => navigateTo('privacy')}
-                className="font-semibold text-cosmos/50 transition hover:text-cosmos"
-              >
-                {t('nav.privacy')}
-              </button>
-              <button
-                onClick={() => navigateTo('terms')}
-                className="font-semibold text-cosmos/50 transition hover:text-cosmos"
-              >
-                {t('nav.terms')}
-              </button>
-            </div>
-          </div>
-          <div className="mt-6 flex justify-center gap-2">
-            {Object.values(seriesEmoji).map((e, i) => (
-              <span key={i} className="char-bounce text-xl">{e.icon}</span>
-            ))}
-          </div>
-        </div>
-      </footer>
-      </>
+          </footer>
+        </>
       )}
 
       {/* ===== SETUP MODAL ===== */}
@@ -1040,7 +1022,7 @@ function App() {
               </div>
             </div>
             <p className="mt-2 inline-flex items-center gap-2 rounded-full bg-twilight/10 px-3 py-1 text-xs font-bold text-twilight">
-              {t('setupModal.planLabel')} {pricingPlans.find((p) => p.name === selectedPlan)?.emoji} {selectedPlan}
+              {t('setupModal.planLabel')} {pricingPlans.find((p) => p.key === selectedPlan)?.emoji} {pricingPlans.find((p) => p.key === selectedPlan)?.name}
             </p>
 
             <form onSubmit={handleSetupSave} className="mt-5 space-y-4">
@@ -1056,25 +1038,6 @@ function App() {
                   <option value="Japanese">{t('setupModal.languageOptions.japanese')}</option>
                 </select>
               </label>
-
-              {selectedPlan === 'Squire' && (
-                <label className="block text-sm font-bold text-cosmos">
-                  {t('setupModal.preferredSeriesLabel')}
-                  <select
-                    value={setupSeries}
-                    onChange={(event) => setSetupSeries(event.target.value)}
-                    className="mt-1 w-full rounded-xl border-2 border-dashed border-lavender/40 bg-white px-4 py-2.5 font-semibold focus:border-twilight focus:outline-none"
-                    required
-                  >
-                    <option value="">{t('setupModal.seriesPlaceholder')}</option>
-                    {dailyDrops.map((drop) => (
-                      <option key={drop.slug} value={drop.series}>
-                        {seriesEmoji[drop.slug].icon} {drop.series}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-              )}
 
               <div className="mt-4 flex flex-wrap gap-3">
                 <button

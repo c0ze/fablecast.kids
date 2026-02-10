@@ -3,11 +3,123 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta -->
+    <title>Fablecast | AI Children's Story Library in English, Turkish & Japanese</title>
     <meta
       name="description"
-      content="Fablecast delivers 18 fresh children's books daily across English, Turkish, and Japanese."
+      content="A growing library of illustrated, narrated bedtime stories for ages 3-8. Six beloved character series in English, Turkish, and Japanese — new stories every week."
     />
-    <title>Fablecast | New Story Universes Daily</title>
+    <meta
+      name="keywords"
+      content="children's stories, kids books, bedtime stories, AI stories, illustrated stories, narrated stories, English stories for kids, Turkish stories for kids, Japanese stories for kids, multilingual children's books, read aloud, story library, ages 3-8, picture books, audio stories, weekly stories, Fablecast"
+    />
+    <meta name="author" content="Fablecast" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://fablecast.kids/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fablecast.kids/" />
+    <meta property="og:title" content="Fablecast — AI Children's Story Library" />
+    <meta
+      property="og:description"
+      content="Illustrated, narrated bedtime stories for ages 3-8 in English, Turkish & Japanese. Six character series, new stories every week."
+    />
+    <meta property="og:image" content="https://fablecast.kids/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Fablecast" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="tr_TR" />
+    <meta property="og:locale:alternate" content="ja_JP" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Fablecast — AI Children's Story Library" />
+    <meta
+      name="twitter:description"
+      content="Illustrated, narrated bedtime stories for ages 3-8 in English, Turkish & Japanese. New stories every week."
+    />
+    <meta name="twitter:image" content="https://fablecast.kids/og-image.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#2C194A" />
+
+    <!-- Alternate languages -->
+    <link rel="alternate" hreflang="en" href="https://fablecast.kids/" />
+    <link rel="alternate" hreflang="tr" href="https://fablecast.kids/?lang=tr" />
+    <link rel="alternate" hreflang="ja" href="https://fablecast.kids/?lang=ja" />
+    <link rel="alternate" hreflang="x-default" href="https://fablecast.kids/" />
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Fablecast",
+      "url": "https://fablecast.kids",
+      "logo": "https://fablecast.kids/favicon.svg",
+      "description": "AI-powered children's story library with illustrated, narrated adventures for ages 3-8.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@fablecast.kids",
+        "contactType": "customer service"
+      }
+    }
+    </script>
+
+    <!-- Structured Data: WebSite (enables sitelinks search) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Fablecast",
+      "url": "https://fablecast.kids",
+      "description": "A growing library of illustrated, narrated bedtime stories for children aged 3-8 in English, Turkish, and Japanese.",
+      "inLanguage": ["en", "tr", "ja"]
+    }
+    </script>
+
+    <!-- Structured Data: Product / Subscription -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Fablecast Membership",
+      "description": "Full access to the Fablecast children's story library — all series, all languages, new stories weekly, AI-generated audio narration.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Fablecast"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "6 sample books — one per series, with full reading experience and audio.",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Member",
+          "price": "4.99",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "4.99",
+            "priceCurrency": "USD",
+            "billingDuration": "P1M"
+          },
+          "description": "Full library access — all series, all languages, weekly new stories, AI narration.",
+          "availability": "https://schema.org/InStock"
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

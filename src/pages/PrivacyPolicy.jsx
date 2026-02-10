@@ -59,6 +59,7 @@ export default function PrivacyPolicy() {
           <p className="mt-2">{t('privacy.s5.intro')}</p>
           <ul className="mt-3 ml-6 list-disc space-y-1.5">
             <li>{t('privacy.s5.items.0')}</li>
+            <li>{t('privacy.s5.items.1')}</li>
           </ul>
           <p className="mt-3">{t('privacy.s5.noOtherThirdParties')}</p>
         </section>

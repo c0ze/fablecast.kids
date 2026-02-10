@@ -12,27 +12,62 @@
     "home": "Home",
     "privacy": "Privacy",
     "terms": "Terms",
+    "legal": "Legal",
     "menuAriaLabel": "Menu"
   },
+  "seo": {
+    "home": {
+      "title": "Fablecast | AI Children's Story Library in English, Turkish & Japanese",
+      "description": "A growing library of illustrated, narrated bedtime stories for ages 3\u20138. Six beloved character series in English, Turkish, and Japanese \u2014 new stories every week."
+    },
+    "about": {
+      "title": "How It Works | Fablecast",
+      "description": "Learn how Fablecast creates illustrated, narrated children\u2019s stories using AI \u2014 from character bibles to multilingual audio narration."
+    },
+    "characters": {
+      "title": "Meet the Characters | Fablecast",
+      "description": "Explore six beloved character series: Rusty the robot dog, Captain Barnacles, Astro-Bun, Pippa the plane, Professor Hoot, and Grug. Adventures for ages 3\u20138."
+    },
+    "faq": {
+      "title": "FAQ | Fablecast",
+      "description": "Frequently asked questions about Fablecast \u2014 how to get started, membership pricing, supported languages, and more."
+    },
+    "blog": {
+      "title": "Blog | Fablecast",
+      "description": "Updates, behind-the-scenes stories, and news from the Fablecast children\u2019s story library."
+    },
+    "privacy": {
+      "title": "Privacy Policy | Fablecast",
+      "description": "Fablecast\u2019s privacy policy \u2014 minimal data collection, no tracking, no ads. Learn how we protect your family\u2019s information."
+    },
+    "terms": {
+      "title": "Terms of Service | Fablecast",
+      "description": "Terms of service for Fablecast \u2014 membership, billing, content licensing, and AI-generated content disclaimer."
+    },
+    "legal": {
+      "title": "Legal \u2014 Specified Commercial Transactions Act | Fablecast",
+      "description": "Fablecast commercial transaction disclosures under the Specified Commercial Transactions Act (\u7279\u5B9A\u5546\u53D6\u5F15\u6CD5)."
+    }
+  },
   "hero": {
-    "sticker18Stories": "18 stories daily",
+    "stickerGrowingLibrary": "Growing library",
     "sticker3Languages": "3 languages",
     "titlePart1": "A New Universe of",
     "titleHighlight": "Stories",
-    "titlePart2": ", Every Single Morning",
-    "subtitle": "Fresh, illustrated adventures delivered daily with the heart of bedtime storytelling. Six beloved characters, three languages, one magical reading routine.",
-    "ctaFreeTrial": "Start Free Trial",
-    "ctaTodaysDrop": "See Today's Drop"
+    "titlePart2": ", Growing Every Week",
+    "subtitle": "A growing library of illustrated, narrated adventures with the heart of bedtime storytelling. Six beloved characters, three languages, one magical reading routine.",
+    "ctaStartReading": "Start Reading Free",
+    "ctaLatestStories": "See Latest Stories"
   },
-  "dailyBatch": {
-    "sticker": "Daily Broadcast",
-    "subtitle": "Six fresh stories are baked and ready!",
+  "latestStories": {
+    "sticker": "Latest Stories",
+    "subtitle": "Fresh stories from the library!",
     "leadLabel": "Lead:"
   },
   "languageDemo": {
     "sticker": "Multilingual",
     "title": "Same Story, Three Languages",
-    "description": "One real page from today's Rusty story, lovingly localized across all three editions.",
+    "description": "One real page from a Rusty story, lovingly localized across all three editions.",
     "snippets": {
       "English": "Little Rusty peeked out. Soft snowflakes danced, turning everything snowy white and bright!",
       "Turkish": "K\u00fc\u00e7\u00fck Rusty ba\u015f\u0131n\u0131 uzatt\u0131. Yumu\u015fac\u0131k kar taneleri dans ediyordu, her yeri bembeyaz ve \u0131\u015f\u0131l \u0131\u015f\u0131l yap\u0131yordu!",
@@ -59,7 +94,7 @@
   "carousel": {
     "sticker": "Story Carousel",
     "title": "Meet the Characters",
-    "subtitle": "Real daily titles and cast cards from each live series.",
+    "subtitle": "Real titles and cast cards from each live series.",
     "prevAriaLabel": "Previous story",
     "nextAriaLabel": "Next story",
     "seriesLabel": "Series {current} of {total}",
@@ -67,64 +102,38 @@
     "worldLabel": "World:",
     "viewAriaLabel": "View {series}"
   },
-  "pricing": {
-    "sticker": "Plans",
-    "title": "Choose Your Story Bounty",
-    "subtitle": "Simple plans for every reading routine.",
-    "mostLovedBadge": "Most Loved",
+  "membership": {
+    "sticker": "Membership",
+    "title": "One Simple Plan",
+    "subtitle": "Everything Fablecast has to offer, for one family-friendly price.",
     "free": {
       "name": "Free",
-      "subtitle": "Try a taste of magic",
+      "subtitle": "Explore the magic",
       "price": "$0",
-      "period": "/mo",
+      "period": "",
       "features": [
-        "2 sample books",
-        "Child-safe reading mode",
+        "6 sample books \u2014 one per series",
+        "Full reading experience with audio",
         "No card required"
       ],
-      "cta": "Start Free"
+      "cta": "Start Reading"
     },
-    "squire": {
-      "name": "Squire",
-      "subtitle": "Pick your favorite",
+    "member": {
+      "name": "Member",
+      "subtitle": "The full treasure chest",
       "price": "$4.99",
       "period": "/mo",
       "features": [
-        "1 story series",
-        "1 language",
-        "30 fresh books every month"
-      ],
-      "cta": "Choose Squire"
-    },
-    "knight": {
-      "name": "Knight",
-      "subtitle": "Most loved by families",
-      "price": "$9.99",
-      "period": "/mo",
-      "features": [
-        "All 6 series",
-        "1 language",
-        "Daily drop access"
-      ],
-      "cta": "Choose Knight"
-    },
-    "emperor": {
-      "name": "Emperor",
-      "subtitle": "The full treasure chest",
-      "price": "$14.99",
-      "period": "/mo",
-      "features": [
-        "All 6 series",
-        "All 3 languages",
+        "Full library \u2014 all series, all languages",
+        "New stories added weekly",
         "AI-generated audio narration"
       ],
-      "cta": "Choose Emperor"
+      "cta": "Become a Member"
     }
   },
   "auth": {
     "title": "Ready for Storytime?",
-    "subtitle": "Sign in with Google for fast, password-free onboarding.",
-    "selectedPlanLabel": "Selected plan:",
+    "subtitle": "Sign in with Google for fast, password-free access.",
     "signingIn": "Signing In...",
     "signInWithGoogle": "Sign in with Google",
     "continueSetup": "Continue Setup",
@@ -136,17 +145,13 @@
       "firebaseNotConfigured": "Google sign-in is not configured yet. Add Firebase web env vars to enable it.",
       "signInFailed": "Google sign-in was canceled or failed. Please try again.",
       "signInRequired": "Please sign in again before saving your preferences.",
-      "squireSeriesRequired": "Squire requires a preferred series.",
       "saveFailed": "Could not save your preferences. Please try once more."
     }
   },
   "setupModal": {
     "title": "Finish Your Setup",
     "subtitle": "One last step to personalize storytime!",
-    "planLabel": "Plan:",
     "preferredLanguageLabel": "Preferred Language",
-    "preferredSeriesLabel": "Preferred Series",
-    "seriesPlaceholder": "Select a series",
     "saving": "Saving...",
     "savePreferences": "Save Preferences",
     "close": "Close",
@@ -162,7 +167,7 @@
   "about": {
     "sticker": "About",
     "title": "How Fablecast Works",
-    "subtitle": "Every morning, a magical pipeline turns character bibles into fully illustrated, narrated children's books across three languages. Here's how the magic happens.",
+    "subtitle": "A magical pipeline turns character bibles into fully illustrated, narrated children's books across three languages. Here's how the magic happens.",
     "stepLabel": "Step {number}",
     "steps": {
       "0": {
@@ -171,7 +176,7 @@
       },
       "1": {
         "title": "Story Generation",
-        "description": "Every morning, our AI story engine writes a brand-new adventure for each series. Stories follow age-appropriate narrative structures \u2014 friendship arcs, gentle mysteries, discovery journeys \u2014 with emotional beats calibrated for children aged 3\u20138."
+        "description": "Our AI story engine writes brand-new adventures for each series. Stories follow age-appropriate narrative structures \u2014 friendship arcs, gentle mysteries, discovery journeys \u2014 with emotional beats calibrated for children aged 3\u20138."
       },
       "2": {
         "title": "Illustration",
@@ -186,8 +191,8 @@
         "description": "AI-powered text-to-speech generates warm, expressive narration for every page. Each language has its own carefully selected voice. Audio syncs with progressive text reveal for an immersive read-along experience."
       },
       "5": {
-        "title": "Daily Delivery",
-        "description": "By morning, 18 fresh stories (6 series \u00d7 3 languages) are packaged as beautiful, mobile-friendly web books and delivered to your library. Every single day, a new adventure awaits."
+        "title": "Weekly Updates",
+        "description": "New stories are added to the library every week across all 6 series and 3 languages. The library keeps growing, so there\u2019s always a fresh adventure waiting."
       }
     },
     "safetyTitle": "Safety First, Always",
@@ -212,15 +217,15 @@
         "cast": {
           "0": {
             "name": "Bolt",
-            "role": "Best friend, a speedy robot cat"
+            "role": "Best friend, a trusty robot wrench"
           },
           "1": {
             "name": "Sparky",
-            "role": "Playful firefly who lights the way"
+            "role": "Playful light bulb who lights the way"
           },
           "2": {
             "name": "Daisy",
-            "role": "Gentle garden robot who grows flowers"
+            "role": "Gentle wind-up duck who grows flowers"
           }
         }
       },
@@ -242,7 +247,7 @@
           },
           "2": {
             "name": "Shelly",
-            "role": "Wise old turtle and navigator"
+            "role": "Wise old shellfish and navigator"
           }
         }
       },
@@ -260,7 +265,7 @@
           },
           "1": {
             "name": "Nova",
-            "role": "Sparkly star who guides the way"
+            "role": "Sparkly space-jelly who guides the way"
           },
           "2": {
             "name": "Crater",
@@ -300,7 +305,7 @@
         "cast": {
           "0": {
             "name": "Clue",
-            "role": "Tiny magnifying-glass beetle assistant"
+            "role": "Tiny magnifying-glass mouse assistant"
           },
           "1": {
             "name": "Maple",
@@ -326,7 +331,7 @@
           },
           "1": {
             "name": "Fern",
-            "role": "Graceful plant spirit who dances in the breeze"
+            "role": "Graceful little frog who dances in the breeze"
           },
           "2": {
             "name": "Twig",
@@ -344,7 +349,7 @@
       "category": "Getting Started",
       "0": {
         "q": "What is Fablecast?",
-        "a": "Fablecast is a daily children\u2019s story subscription. Every morning, we generate 18 fresh, fully illustrated and narrated stories across 6 character series and 3 languages. It\u2019s like having a new storybook delivered to your doorstep each day \u2014 but digital and instant."
+        "a": "Fablecast is a children\u2019s story library. We create fully illustrated and narrated stories across 6 character series and 3 languages, with new stories added every week. It\u2019s like a storybook shelf that keeps growing \u2014 digital and always available."
       },
       "1": {
         "q": "Who is Fablecast for?",
@@ -352,11 +357,11 @@
       },
       "2": {
         "q": "How do I sign up?",
-        "a": "Click \"Get Started\" on the landing page and sign in with your Google account. You\u2019ll choose a plan and preferred language, and you\u2019re ready to go. No separate password to remember."
+        "a": "Click \"Get Started\" on the landing page and sign in with your Google account. You\u2019ll choose your preferred language and you\u2019re ready to go. No separate password to remember."
       },
       "3": {
-        "q": "Is there a free trial?",
-        "a": "Yes! The Free plan gives you access to 2 sample books with the full reading experience \u2014 illustrations, text, and audio \u2014 so you can see if Fablecast is right for your family before subscribing."
+        "q": "Can I try it for free?",
+        "a": "Yes! Free readers get access to 6 sample books \u2014 one from each character series \u2014 with the full reading experience including illustrations and audio. It\u2019s a great way to see if Fablecast is right for your family."
       }
     },
     "storiesAndContent": {
@@ -366,12 +371,12 @@
         "a": "Each story is generated by AI using carefully crafted character bibles that define the characters, art styles, world rules, and tone. The AI writes the text, generates unique illustrations, and creates audio narration. Safety guardrails ensure all content is age-appropriate."
       },
       "1": {
-        "q": "How many stories do I get?",
-        "a": "A new story is generated daily for each series you have access to. On the Knight and Emperor plans, that\u2019s 6 new stories every single day. On Squire, it\u2019s 1 new story per day from your chosen series."
+        "q": "How often are new stories added?",
+        "a": "New stories are added to the library every week across all six series and three languages. As a member, you get immediate access to every new story as it arrives."
       },
       "2": {
         "q": "Can I re-read past stories?",
-        "a": "Yes! Stories remain in your library after generation. You can revisit any story from your subscription period anytime."
+        "a": "Yes! All stories in the library remain available. You can revisit any story anytime."
       },
       "3": {
         "q": "What languages are available?",
@@ -385,20 +390,20 @@
     "subscriptionAndBilling": {
       "category": "Subscription & Billing",
       "0": {
-        "q": "Can I cancel anytime?",
-        "a": "Yes. You can cancel your subscription at any time through your account settings. You\u2019ll keep full access until the end of your current billing period, then your account reverts to the Free plan."
+        "q": "How much does a membership cost?",
+        "a": "Membership is $4.99 per month. It gives you full access to every story in the library across all 6 series, all 3 languages, including audio narration and all future stories."
       },
       "1": {
-        "q": "Are there refunds?",
-        "a": "Subscription payments are non-refundable with no prorated refunds for partial months. We encourage trying the Free plan first to make sure Fablecast is a good fit."
+        "q": "Can I cancel anytime?",
+        "a": "Yes. You can cancel your membership at any time through your account settings. You\u2019ll keep full access until the end of your current billing period, then your account reverts to free access."
       },
       "2": {
-        "q": "Can I switch plans?",
-        "a": "Yes. You can upgrade or downgrade at any time. Plan changes take effect at the start of your next billing cycle."
+        "q": "Are there refunds?",
+        "a": "Membership payments are non-refundable with no prorated refunds for partial months. We encourage trying the free sample books first to make sure Fablecast is a good fit."
       },
       "3": {
-        "q": "Can I change my preferred series or language?",
-        "a": "You can change your preferred character series (Squire plan) or language once per month. Changes apply to the next day\u2019s story generation."
+        "q": "Can I change my preferred language?",
+        "a": "Yes! You can change your preferred language anytime in your account settings."
       }
     },
     "technical": {
@@ -413,14 +418,14 @@
       },
       "2": {
         "q": "Is there audio narration?",
-        "a": "Yes! All stories include AI-generated narration with progressive text reveal. Audio is available on all paid plans, with the Emperor plan including the highest quality multi-language narration."
+        "a": "Yes! All stories include AI-generated narration with progressive text reveal. Audio is included for all members."
       }
     },
     "privacyAndSafety": {
       "category": "Privacy & Safety",
       "0": {
         "q": "What data do you collect?",
-        "a": "Only the minimum necessary: your email (from Google Sign-In), display name, and your chosen preferences (language, series). We don\u2019t collect any data from children directly, and we don\u2019t track browsing behavior."
+        "a": "Only the minimum necessary: your email (from Google Sign-In), display name, and your language preference. We don\u2019t collect any data from children directly, and we don\u2019t track browsing behavior."
       },
       "1": {
         "q": "Are there ads?",
@@ -444,13 +449,13 @@
         "date": "February 9, 2026",
         "tag": "Launch",
         "title": "Welcome to Fablecast!",
-        "body": "Today we\u2019re launching Fablecast \u2014 a daily children\u2019s story service that delivers 18 fresh, illustrated, and narrated stories every single morning. Six beloved character series, three languages, and one magical reading routine for families with kids aged 3\u20138.",
+        "body": "Today we\u2019re launching Fablecast \u2014 a children\u2019s story library that grows every week with fresh, illustrated, and narrated adventures. Six beloved character series, three languages, and one magical reading routine for families with kids aged 3\u20138.",
         "highlights": [
           "6 character series: Rusty, Captain Barnacles, Astro-Bun, Pippa, Professor Hoot, and Grug",
           "3 languages: English, Turkish, and Japanese",
           "Full illustrations and AI-generated audio narration on every page",
           "Mobile-first web reader with progressive text reveal",
-          "4 subscription tiers from Free to Emperor"
+          "Simple membership: free samples or full access for $4.99/mo"
         ]
       },
       "1": {
@@ -476,13 +481,13 @@
         "highlights": [
           "Fablecast will never show advertisements \u2014 not now, not ever",
           "We will never sell or share your data with advertisers",
-          "Your subscription is what keeps us running, and that\u2019s how it should be",
+          "Your membership is what keeps us running, and that\u2019s how it should be",
           "Reading time is family time \u2014 we won\u2019t interrupt it"
         ]
       }
     },
     "stayInLoopTitle": "Stay in the Loop",
-    "stayInLoopSubtitle": "Major updates are announced here and sent to subscribers via email. Follow along as we grow the Fablecast universe!"
+    "stayInLoopSubtitle": "Major updates are announced here and sent to members via email. Follow along as we grow the Fablecast universe!"
   },
   "privacy": {
     "sticker": "Privacy",
@@ -490,7 +495,7 @@
     "lastUpdated": "Last updated: February 9, 2026",
     "s1": {
       "heading": "1. Who We Are",
-      "body": "Fablecast (\"we\", \"us\", \"our\") operates fablecast.kids, a children\u2019s story subscription service. This policy explains how we handle your information when you use our service. We are committed to protecting the privacy of our users and their families."
+      "body": "Fablecast (\"we\", \"us\", \"our\") operates fablecast.kids, a children\u2019s story library service. This policy explains how we handle your information when you use our service. We are committed to protecting the privacy of our users and their families."
     },
     "s2": {
       "heading": "2. What Data We Collect",
@@ -498,10 +503,10 @@
       "items": [
         "Email address \u2014 provided through Google Sign-In, used solely for account identification and essential service communications.",
         "Display name \u2014 provided through Google Sign-In, used to personalize your experience.",
-        "Account preferences \u2014 preferred language and preferred series. You provide these during onboarding.",
-        "Subscription status \u2014 your selected plan and subscription dates."
+        "Account preferences \u2014 preferred language. You provide this during onboarding.",
+        "Membership status \u2014 whether you are a free reader or a member."
       ],
-      "noOtherData": "We do not collect, store, or process any other personal data. We do not collect browsing behavior, device fingerprints, location data, cookies for tracking, or any information from or about children directly."
+      "noOtherData": "We do not collect, store, or process any other personal data. We do not collect browsing behavior, device fingerprints, or location data. We use only functional session cookies required for authentication \u2014 we do not use tracking cookies, advertising cookies, or analytics cookies. We do not collect any information from or about children directly."
     },
     "s3": {
       "heading": "3. How We Use Your Data",
@@ -509,8 +514,8 @@
       "items": [
         "Authenticate your account via Google Sign-In.",
         "Deliver stories in your preferred language.",
-        "Manage your subscription plan.",
-        "Send essential service communications (e.g., subscription confirmations or critical service updates)."
+        "Manage your membership.",
+        "Send essential service communications (e.g., membership confirmations or critical service updates)."
       ],
       "neverUsedFor": "We will never use your data for advertising, profiling, or any purpose beyond operating the Fablecast service."
     },
@@ -522,9 +527,10 @@
       "heading": "5. Data Sharing",
       "intro": "We do not sell, rent, or trade your personal data. We share data only with:",
       "items": [
-        "Google (Firebase) \u2014 for authentication and secure data storage. Google\u2019s privacy policy applies to their processing of sign-in data."
+        "Google (Firebase) \u2014 for authentication and secure data storage. Google\u2019s privacy policy applies to their processing of sign-in data.",
+        "Stripe \u2014 for payment processing. Stripe receives only the payment information necessary to process your membership subscription. Fablecast never stores your credit card number or full payment details. Stripe\u2019s privacy policy applies to their handling of payment data."
       ],
-      "noOtherThirdParties": "We do not use any other third-party services that receive your personal data."
+      "noOtherThirdParties": "We do not use any other third-party services that receive your personal data beyond the two listed above."
     },
     "s6": {
       "heading": "6. Data Storage & Security",
@@ -598,7 +604,7 @@
     },
     "s2": {
       "heading": "2. Description of Service",
-      "body": "Fablecast is a subscription-based digital children\u2019s story service. We generate and deliver illustrated, narrated stories daily across multiple languages and character series. Stories are generated using artificial intelligence and are intended for children aged 3\u20138, to be enjoyed with parental guidance."
+      "body": "Fablecast is a children\u2019s story library service. We generate illustrated, narrated stories across multiple languages and character series, with new stories added weekly. Stories are generated using artificial intelligence and are intended for children aged 3\u20138, to be enjoyed with parental guidance."
     },
     "s3": {
       "heading": "3. Accounts",
@@ -610,51 +616,47 @@
       ]
     },
     "s4": {
-      "heading": "4. Subscription Plans & Billing",
+      "heading": "4. Membership & Billing",
       "plans": {
-        "subheading": "Plans",
+        "subheading": "Access Levels",
         "items": [
-          "Free \u2014 Limited access to 2 sample books. No payment required.",
-          "Squire ($4.99/month) \u2014 1 story series, 1 language, 30 fresh books per month.",
-          "Knight ($9.99/month) \u2014 All 6 series, 1 language, daily drop access.",
-          "Emperor ($14.99/month) \u2014 All 6 series, all languages, AI-generated audio narration."
+          "Free \u2014 Access to 6 sample books (one per series). No payment required.",
+          "Member ($4.99/month) \u2014 Full access to the entire library, all series, all languages, and AI-generated audio narration."
         ]
       },
       "billing": {
         "subheading": "Billing",
         "items": [
-          "Subscriptions are billed monthly on the anniversary of your sign-up date.",
+          "Memberships are billed monthly on the anniversary of your sign-up date.",
           "Prices are in USD and may be subject to applicable taxes.",
           "We reserve the right to change pricing with 30 days\u2019 advance notice."
         ]
       },
       "refunds": {
         "subheading": "Refunds",
-        "body": "All subscription payments are non-refundable. There are no prorated refunds for partial months. We encourage you to try the Free plan before subscribing to ensure the Service meets your needs."
+        "body": "All membership payments are non-refundable. There are no prorated refunds for partial months. We encourage you to try the free sample books before subscribing to ensure the Service meets your needs."
       }
     },
     "s5": {
       "heading": "5. Cancellation",
       "items": [
-        "You may cancel your subscription at any time through your account settings.",
+        "You may cancel your membership at any time through your account settings.",
         "Upon cancellation, you will retain full access to the Service and all stories until the end of your current billing period.",
-        "After the billing period ends, your account will revert to the Free plan.",
-        "Previously generated stories from your subscription period will remain accessible on the Free plan for 30 days after cancellation."
+        "After the billing period ends, your account will revert to free access with sample books only."
       ]
     },
     "s6": {
       "heading": "6. Preference Changes",
       "items": [
-        "Squire plan subscribers may change their preferred character series once per month.",
-        "Language preference may be changed once per month on any paid plan.",
-        "Changes take effect at the start of the next daily story generation cycle."
+        "Language preference may be changed anytime in your account settings.",
+        "Changes take effect immediately."
       ]
     },
     "s7": {
       "heading": "7. Content & Intellectual Property",
       "items": [
-        "All stories, illustrations, narrations, characters, and related content are owned by Fablecast.",
-        "Content is generated using AI and is reviewed for age-appropriateness and safety.",
+        "All stories, illustrations, narrations, characters, and related content are published and controlled by Fablecast. The legal landscape around AI-generated content ownership continues to evolve; regardless, Fablecast retains all rights to the content as published on the Service.",
+        "Content is generated using artificial intelligence. Automated safety guardrails are in place, though content is not individually reviewed page by page.",
         "You are granted a personal, non-commercial, non-transferable license to access and enjoy stories through the Service.",
         "You may not redistribute, republish, sell, or commercially exploit any content from the Service.",
         "You may not use automated tools to scrape, download, or bulk-extract content."
@@ -673,12 +675,12 @@
     },
     "s9": {
       "heading": "9. AI-Generated Content Disclaimer",
-      "body": "Stories are generated using artificial intelligence. While we implement safety guardrails and review processes, AI-generated content may occasionally contain unexpected elements. We encourage parents to read stories alongside their children. If you encounter any content that seems inappropriate, please report it to us immediately."
+      "body": "All stories, illustrations, and narrations on Fablecast are generated using artificial intelligence. Content is not manually reviewed on a page-by-page basis. While we implement automated safety guardrails to ensure age-appropriateness, AI-generated content may occasionally contain unexpected or imperfect elements. We strongly encourage parents and guardians to read stories alongside their children. If you encounter any content that seems inappropriate, please report it to us immediately at legal@fablecast.kids."
     },
     "s10": {
       "heading": "10. Service Availability",
       "items": [
-        "We aim to deliver new stories daily but do not guarantee uninterrupted service.",
+        "We aim to add new stories weekly but do not guarantee uninterrupted service.",
         "Maintenance, API issues, or unforeseen circumstances may occasionally affect story generation.",
         "We will make reasonable efforts to notify users of planned downtime."
       ]
@@ -703,6 +705,59 @@
       "heading": "15. Contact",
       "body": "For questions about these Terms, please contact us at:",
       "email": "legal@fablecast.kids"
+    }
+  },
+  "legal": {
+    "sticker": "Legal",
+    "title": "Specified Commercial Transactions Act",
+    "lastUpdated": "Last updated: February 10, 2026",
+    "s1": {
+      "heading": "Operator Information",
+      "nameLabel": "Business Name:",
+      "name": "Fablecast",
+      "representativeLabel": "Representative:",
+      "representative": "Arda Karaduman",
+      "addressLabel": "Address:",
+      "address": "[GMO Virtual Office \u2014 address to be updated]",
+      "phoneLabel": "Phone:",
+      "phone": "[050-XXXX-XXXX \u2014 to be updated]",
+      "emailLabel": "Email:",
+      "email": "legal@fablecast.kids"
+    },
+    "s2": {
+      "heading": "Service Description",
+      "body": "Fablecast is a children\u2019s story library service. We provide AI-generated illustrated and narrated stories for children aged 3\u20138, available in English, Turkish, and Japanese. Stories are published across six character series, with new stories added weekly. The service is accessed through the website at fablecast.kids."
+    },
+    "s3": {
+      "heading": "Pricing",
+      "items": [
+        "Free \u2014 $0. Access to 6 sample books (one per series), with full reading experience including audio narration. No payment required.",
+        "Member \u2014 $4.99 per month (USD). Full access to the entire library: all series, all languages, new weekly stories, and AI-generated audio narration."
+      ]
+    },
+    "s4": {
+      "heading": "Payment Method",
+      "body": "Credit card payments processed securely through Stripe. Fablecast does not store credit card numbers or full payment details."
+    },
+    "s5": {
+      "heading": "Payment Timing",
+      "body": "Membership is billed monthly on the anniversary of the sign-up date. Payment is charged at the beginning of each billing cycle."
+    },
+    "s6": {
+      "heading": "Delivery",
+      "body": "The service is delivered digitally via the website at fablecast.kids. Stories are available immediately upon account creation (free) or payment confirmation (member). No physical products are shipped."
+    },
+    "s7": {
+      "heading": "Cancellation & Refunds",
+      "items": [
+        "You may cancel your membership at any time through your account settings.",
+        "Upon cancellation, you retain full access until the end of the current billing period. After that, your account reverts to free access with sample books only.",
+        "All membership payments are non-refundable. There are no prorated refunds for partial months. We encourage you to try the free sample books before subscribing."
+      ]
+    },
+    "s8": {
+      "heading": "Operating Environment",
+      "body": "Fablecast works on modern web browsers (Chrome, Safari, Firefox, Edge) on desktop and mobile devices. A stable internet connection is required for reading and audio playback."
     }
   }
 }

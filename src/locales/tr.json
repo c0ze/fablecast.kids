@@ -12,21 +12,56 @@
     "home": "Ana Sayfa",
     "privacy": "Gizlilik",
     "terms": "Şartlar",
-    "menuAriaLabel": "Menü"
+    "legal": "Yasal",
+    "menuAriaLabel": "Men\u00FC"
+  },
+  "seo": {
+    "home": {
+      "title": "Fablecast | \u0130ngilizce, T\u00FCrk\u00E7e ve Japonca Yapay Zeka \u00C7ocuk Hikaye K\u00FCt\u00FCphanesi",
+      "description": "3\u20138 ya\u015F aras\u0131 \u00E7ocuklar i\u00E7in resimli, sesli uyku \u00F6ncesi hikayeleri. Alt\u0131 sevilen karakter serisi, \u0130ngilizce, T\u00FCrk\u00E7e ve Japonca \u2014 her hafta yeni hikayeler."
+    },
+    "about": {
+      "title": "Nas\u0131l \u00C7al\u0131\u015F\u0131r | Fablecast",
+      "description": "Fablecast\u2019in yapay zeka ile resimli, sesli \u00E7ocuk hikayeleri nas\u0131l olu\u015Fturdu\u011Funu \u00F6\u011Frenin \u2014 karakter kitaplar\u0131ndan \u00E7ok dilli seslendirmeye."
+    },
+    "characters": {
+      "title": "Karakterlerle Tan\u0131\u015F\u0131n | Fablecast",
+      "description": "Alt\u0131 sevilen karakter serisini ke\u015Ffedin: Robot k\u00F6pek Rusty, Kaptan Barnacles, Astro-Tav\u015Fan, U\u00E7ak Pippa, Profes\u00F6r Hoot ve Grug. 3\u20138 ya\u015F maceralar\u0131."
+    },
+    "faq": {
+      "title": "S\u0131k\u00E7a Sorulan Sorular | Fablecast",
+      "description": "Fablecast hakk\u0131nda s\u0131k sorulan sorular \u2014 nas\u0131l ba\u015Flan\u0131r, \u00FCyelik fiyatlar\u0131, desteklenen diller ve daha fazlas\u0131."
+    },
+    "blog": {
+      "title": "Blog | Fablecast",
+      "description": "Fablecast \u00E7ocuk hikaye k\u00FCt\u00FCphanesinden g\u00FCncellemeler, kamera arkas\u0131 hikayeler ve haberler."
+    },
+    "privacy": {
+      "title": "Gizlilik Politikas\u0131 | Fablecast",
+      "description": "Fablecast gizlilik politikas\u0131 \u2014 minimum veri toplama, izleme yok, reklam yok. Ailenizin bilgilerini nas\u0131l korudu\u011Fumuzu \u00F6\u011Frenin."
+    },
+    "terms": {
+      "title": "Hizmet \u015Eartlar\u0131 | Fablecast",
+      "description": "Fablecast hizmet \u015Fartlar\u0131 \u2014 \u00FCyelik, faturaland\u0131rma, i\u00E7erik lisans\u0131 ve yapay zeka i\u00E7erik uyar\u0131s\u0131."
+    },
+    "legal": {
+      "title": "Yasal \u2014 Belirli Ticari \u0130\u015Flemler Yasas\u0131 | Fablecast",
+      "description": "Belirli Ticari \u0130\u015Flemler Yasas\u0131 (\u7279\u5B9A\u5546\u53D6\u5F15\u6CD5) kapsam\u0131nda Fablecast ticari i\u015Flem bilgileri."
+    }
   },
   "hero": {
-    "sticker18Stories": "Günde 18 hikaye",
+    "stickerGrowingLibrary": "Büyüyen kütüphane",
     "sticker3Languages": "3 dil",
-    "titlePart1": "Her Sabah Yepyeni Bir",
+    "titlePart1": "Her Hafta Büyüyen Bir",
     "titleHighlight": "Hikaye",
     "titlePart2": " Evreni",
-    "subtitle": "Her gün taze, resimli maceralar; uyku öncesi hikaye anlatımının sıcaklığıyla. Altı sevilen karakter, üç dil, bir büyülü okuma rutini.",
-    "ctaFreeTrial": "Ücretsiz Dene",
-    "ctaTodaysDrop": "Bugünün Hikayelerini Gör"
+    "subtitle": "Uyku öncesi hikaye anlatımının sıcaklığıyla büyüyen resimli macera kütüphanesi. Altı sevilen karakter, üç dil, bir büyülü okuma rutini.",
+    "ctaStartReading": "Ücretsiz Okumaya Başla",
+    "ctaLatestStories": "Son Hikayeleri Gör"
   },
-  "dailyBatch": {
-    "sticker": "Günlük Yayın",
-    "subtitle": "Altı taze hikaye hazır ve sizi bekliyor!",
+  "latestStories": {
+    "sticker": "Son Hikayeler",
+    "subtitle": "Kütüphaneden taze hikayeler!",
     "leadLabel": "Baş Karakter:"
   },
   "languageDemo": {
@@ -67,58 +102,33 @@
     "worldLabel": "Dünya:",
     "viewAriaLabel": "{series} serisini gör"
   },
-  "pricing": {
-    "sticker": "Planlar",
-    "title": "Hikaye Paketinizi Seçin",
-    "subtitle": "Her okuma rutini için basit planlar.",
-    "mostLovedBadge": "En Sevilen",
+  "membership": {
+    "sticker": "Üyelik",
+    "title": "Tek Basit Plan",
+    "subtitle": "Fablecast'in sunduğu her şey, aile dostu tek bir fiyata.",
     "free": {
-      "name": "Free",
-      "subtitle": "Bir tutam sihir deneyin",
+      "name": "Ücretsiz",
+      "subtitle": "Sihri keşfedin",
       "price": "$0",
-      "period": "/mo",
+      "period": "",
       "features": [
-        "2 örnek kitap",
-        "Çocuklara güvenli okuma modu",
+        "6 örnek kitap \u2014 her seriden bir tane",
+        "Sesli tam okuma deneyimi",
         "Kart gerekmez"
       ],
-      "cta": "Ücretsiz Başla"
+      "cta": "Okumaya Başla"
     },
-    "squire": {
-      "name": "Squire",
-      "subtitle": "Favorinizi seçin",
-      "price": "$4.99",
-      "period": "/mo",
-      "features": [
-        "1 hikaye serisi",
-        "1 dil",
-        "Ayda 30 taze kitap"
-      ],
-      "cta": "Squire Seç"
-    },
-    "knight": {
-      "name": "Knight",
-      "subtitle": "Ailelerin en sevdiği",
-      "price": "$9.99",
-      "period": "/mo",
-      "features": [
-        "Tüm 6 seri",
-        "1 dil",
-        "Günlük hikaye erişimi"
-      ],
-      "cta": "Knight Seç"
-    },
-    "emperor": {
-      "name": "Emperor",
+    "member": {
+      "name": "Üye",
       "subtitle": "Tam dolu hazine sandığı",
-      "price": "$14.99",
-      "period": "/mo",
+      "price": "$4.99",
+      "period": "/ay",
       "features": [
-        "Tüm 6 seri",
-        "Tüm 3 dil",
+        "Tüm kütüphane \u2014 tüm seriler, tüm diller",
+        "Her hafta yeni hikayeler eklenir",
         "Yapay zeka sesli anlatım"
       ],
-      "cta": "Emperor Seç"
+      "cta": "Üye Ol"
     }
   },
   "auth": {
@@ -136,7 +146,6 @@
       "firebaseNotConfigured": "Google ile giriş henüz yapılandırılmadı. Etkinleştirmek için Firebase web ortam değişkenlerini ekleyin.",
       "signInFailed": "Google ile giriş iptal edildi veya başarısız oldu. Lütfen tekrar deneyin.",
       "signInRequired": "Tercihlerinizi kaydetmeden önce lütfen tekrar giriş yapın.",
-      "squireSeriesRequired": "Squire planı için tercih edilen bir seri gereklidir.",
       "saveFailed": "Tercihleriniz kaydedilemedi. Lütfen bir kez daha deneyin."
     }
   },
@@ -145,8 +154,6 @@
     "subtitle": "Hikaye zamanını kişiselleştirmek için son bir adım!",
     "planLabel": "Plan:",
     "preferredLanguageLabel": "Tercih Edilen Dil",
-    "preferredSeriesLabel": "Tercih Edilen Seri",
-    "seriesPlaceholder": "Bir seri seçin",
     "saving": "Kaydediliyor...",
     "savePreferences": "Tercihleri Kaydet",
     "close": "Kapat",
@@ -162,7 +169,7 @@
   "about": {
     "sticker": "Hakkında",
     "title": "Fablecast Nasıl Çalışır",
-    "subtitle": "Her sabah, büyülü bir süreç karakter kitapçıklarını üç dilde tam resimli, sesli çocuk kitaplarına dönüştürür. İşte sihir böyle gerçekleşiyor.",
+    "subtitle": "Büyülü bir süreç, karakter kitapçıklarını üç dilde tam resimli, sesli çocuk kitaplarına dönüştürür. İşte sihir böyle gerçekleşiyor.",
     "stepLabel": "Adım {number}",
     "steps": {
       "0": {
@@ -171,7 +178,7 @@
       },
       "1": {
         "title": "Hikaye Oluşturma",
-        "description": "Her sabah, yapay zeka hikaye motorumuz her seri için yepyeni bir macera yazar. Hikayeler yaşa uygun anlatı yapılarını takip eder — arkadaşlık hikayeleri, nazik gizemler, keşif yolculukları — 3–8 yaş çocuklar için kalibre edilmiş duygusal anlarla."
+        "description": "Yapay zeka hikaye motorumuz her seri için yepyeni maceralar yazar. Hikayeler yaşa uygun anlatı yapılarını takip eder — arkadaşlık hikayeleri, nazik gizemler, keşif yolculukları — 3–8 yaş çocuklar için kalibre edilmiş duygusal anlarla."
       },
       "2": {
         "title": "Resimleme",
@@ -186,8 +193,8 @@
         "description": "Yapay zeka destekli metin-konuşma teknolojisi, her sayfa için sıcak ve ifadeli bir seslendirme oluşturur. Her dilin özenle seçilmiş kendi sesi vardır. Ses, sürükleyici bir birlikte okuma deneyimi için kademeli metin gösterimiyle senkronize edilir."
       },
       "5": {
-        "title": "Günlük Teslimat",
-        "description": "Sabaha kadar, 18 taze hikaye (6 seri × 3 dil) güzel, mobil uyumlu web kitapları olarak paketlenir ve kütüphanenize teslim edilir. Her gün, yeni bir macera sizi bekliyor."
+        "title": "Haftalık Güncellemeler",
+        "description": "Kütüphaneye her hafta 6 seri ve 3 dilde yeni hikayeler eklenir. Kütüphane büyümeye devam eder, böylece her zaman sizi bekleyen taze bir macera vardır."
       }
     },
     "safetyTitle": "Güvenlik Her Zaman Önceliğimiz",
@@ -212,15 +219,15 @@
         "cast": {
           "0": {
             "name": "Bolt",
-            "role": "En yakın arkadaşı, hızlı bir robot kedi"
+            "role": "En yakın arkadaşı, güvenilir bir robot İngiliz anahtarı"
           },
           "1": {
             "name": "Sparky",
-            "role": "Yolu aydınlatan oyuncu bir ateşböceği"
+            "role": "Yolu aydınlatan oyuncu bir ampul"
           },
           "2": {
             "name": "Daisy",
-            "role": "Çiçek yetiştiren nazik bir bahçe robotu"
+            "role": "Çiçek yetiştiren nazik bir kurmalı ördek"
           }
         }
       },
@@ -242,7 +249,7 @@
           },
           "2": {
             "name": "Shelly",
-            "role": "Bilge yaşlı kaplumbağa ve navigator"
+            "role": "Bilge yaşlı kabuklu deniz canlısı ve navigator"
           }
         }
       },
@@ -260,7 +267,7 @@
           },
           "1": {
             "name": "Nova",
-            "role": "Yolu gösteren ışıltılı yıldız"
+            "role": "Yolu gösteren ışıltılı uzay jölesi"
           },
           "2": {
             "name": "Crater",
@@ -300,7 +307,7 @@
         "cast": {
           "0": {
             "name": "Clue",
-            "role": "Minik büyüteç böceği asistan"
+            "role": "Minik büyüteçli fare asistan"
           },
           "1": {
             "name": "Maple",
@@ -326,7 +333,7 @@
           },
           "1": {
             "name": "Fern",
-            "role": "Esintide dans eden zarif bir bitki ruhu"
+            "role": "Esintide dans eden zarif küçük bir kurbağa"
           },
           "2": {
             "name": "Twig",
@@ -344,7 +351,7 @@
       "category": "Başlarken",
       "0": {
         "q": "Fablecast nedir?",
-        "a": "Fablecast günlük bir çocuk hikayesi aboneliğidir. Her sabah, 6 karakter serisi ve 3 dilde 18 taze, tam resimli ve sesli hikaye üretiyoruz. Her gün kapınıza yeni bir hikaye kitabı teslim edilmesi gibi — ama dijital ve anında."
+        "a": "Fablecast bir çocuk hikaye kütüphanesidir. 6 karakter serisi ve 3 dilde tam resimli, sesli hikayeler oluşturuyoruz ve her hafta yeni hikayeler ekliyoruz. Her zaman büyüyen dijital bir hikaye kitaplığı gibi."
       },
       "1": {
         "q": "Fablecast kimin için?",
@@ -355,8 +362,8 @@
         "a": "Ana sayfada \"Başla\" butonuna tıklayın ve Google hesabınızla giriş yapın. Bir plan ve tercih ettiğiniz dili seçin, hazırsınız. Hatırlamanız gereken ayrı bir şifre yok."
       },
       "3": {
-        "q": "Ücretsiz deneme var mı?",
-        "a": "Evet! Ücretsiz plan, tam okuma deneyimiyle — illüstrasyonlar, metin ve ses — 2 örnek kitaba erişim sağlar. Böylece abone olmadan önce Fablecast'in aileniz için uygun olup olmadığını görebilirsiniz."
+        "q": "Ücretsiz deneyebilir miyim?",
+        "a": "Evet! Ücretsiz okuyucular, her karakter serisinden birer tane olmak üzere 6 örnek kitaba erişir — illüstrasyonlar ve sesli anlatım dahil tam okuma deneyimiyle. Fablecast'in ailenize uygun olup olmadığını görmenin harika bir yolu."
       }
     },
     "storiesAndContent": {
@@ -366,12 +373,12 @@
         "a": "Her hikaye, karakterleri, sanat tarzlarını, dünya kurallarını ve tonu tanımlayan özenle hazırlanmış karakter kitapçıkları kullanılarak yapay zeka tarafından üretilir. Yapay zeka metni yazar, benzersiz illüstrasyonlar oluşturur ve sesli anlatım üretir. Güvenlik önlemleri tüm içeriğin yaşa uygun olmasını sağlar."
       },
       "1": {
-        "q": "Kaç hikaye alıyorum?",
-        "a": "Erişiminiz olan her seri için günde yeni bir hikaye üretilir. Knight ve Emperor planlarında bu, her gün 6 yeni hikaye demektir. Squire planında ise seçtiğiniz seriden günde 1 yeni hikaye alırsınız."
+        "q": "Ne sıklıkla yeni hikayeler ekleniyor?",
+        "a": "Kütüphaneye her hafta altı seri ve üç dilde yeni hikayeler eklenir. Üye olarak, her yeni hikayeye eklenir eklenmez erişirsiniz."
       },
       "2": {
         "q": "Eski hikayeleri tekrar okuyabilir miyim?",
-        "a": "Evet! Hikayeler üretildikten sonra kütüphanenizde kalır. Abonelik döneminize ait herhangi bir hikayeyi istediğiniz zaman tekrar ziyaret edebilirsiniz."
+        "a": "Evet! Kütüphanedeki tüm hikayeler erişilebilir kalır. İstediğiniz hikayeyi istediğiniz zaman tekrar okuyabilirsiniz."
       },
       "3": {
         "q": "Hangi diller mevcut?",
@@ -385,20 +392,20 @@
     "subscriptionAndBilling": {
       "category": "Abonelik ve Ödeme",
       "0": {
-        "q": "İstediğim zaman iptal edebilir miyim?",
-        "a": "Evet. Aboneliğinizi istediğiniz zaman hesap ayarlarınızdan iptal edebilirsiniz. Mevcut fatura döneminizin sonuna kadar tam erişiminiz devam eder, ardından hesabınız Ücretsiz plana döner."
+        "q": "Üyelik ne kadar?",
+        "a": "Üyelik aylık 4,99 dolardır. Tüm 6 seri, 3 dil, sesli anlatım ve gelecek tüm hikayeler dahil kütüphanedeki her hikayeye tam erişim sağlar."
       },
       "1": {
-        "q": "İade yapılıyor mu?",
-        "a": "Abonelik ödemeleri iade edilmez ve kısmi aylar için orantılı iade yapılmaz. Fablecast'in sizin için uygun olduğundan emin olmak için önce Ücretsiz planı denemenizi öneririz."
+        "q": "İstediğim zaman iptal edebilir miyim?",
+        "a": "Evet. Üyeliğinizi istediğiniz zaman hesap ayarlarınızdan iptal edebilirsiniz. Mevcut fatura döneminizin sonuna kadar tam erişiminiz devam eder, ardından hesabınız ücretsiz erişime döner."
       },
       "2": {
-        "q": "Plan değiştirebilir miyim?",
-        "a": "Evet. İstediğiniz zaman yükseltme veya düşürme yapabilirsiniz. Plan değişiklikleri bir sonraki fatura döngünüzün başında geçerli olur."
+        "q": "İade yapılıyor mu?",
+        "a": "Üyelik ödemeleri iade edilmez ve kısmi aylar için orantılı iade yapılmaz. Fablecast'in sizin için uygun olduğundan emin olmak için önce ücretsiz örnek kitapları denemenizi öneririz."
       },
       "3": {
-        "q": "Tercih ettiğim seriyi veya dili değiştirebilir miyim?",
-        "a": "Tercih ettiğiniz karakter serisini (Squire planı) veya dili ayda bir kez değiştirebilirsiniz. Değişiklikler bir sonraki günün hikaye üretimine uygulanır."
+        "q": "Tercih ettiğim dili değiştirebilir miyim?",
+        "a": "Evet! Tercih ettiğiniz dili istediğiniz zaman hesap ayarlarından değiştirebilirsiniz."
       }
     },
     "technical": {
@@ -413,7 +420,7 @@
       },
       "2": {
         "q": "Sesli anlatım var mı?",
-        "a": "Evet! Tüm hikayeler kademeli metin gösterimiyle yapay zeka tarafından üretilmiş seslendirme içerir. Ses tüm ücretli planlarda mevcuttur ve Emperor planı en yüksek kaliteli çok dilli seslendirmeyi içerir."
+        "a": "Evet! Tüm hikayeler kademeli metin gösterimiyle yapay zeka tarafından üretilmiş seslendirme içerir. Ses tüm üyelere dahildir."
       }
     },
     "privacyAndSafety": {
@@ -444,13 +451,13 @@
         "date": "9 Şubat 2026",
         "tag": "Lansman",
         "title": "Fablecast'e Hoş Geldiniz!",
-        "body": "Bugün Fablecast'i başlatıyoruz — her sabah 18 taze, resimli ve sesli hikaye sunan günlük bir çocuk hikayesi hizmeti. Altı sevilen karakter serisi, üç dil ve 3–8 yaş arası çocuklu aileler için büyülü bir okuma rutini.",
+        "body": "Bugün Fablecast'i başlatıyoruz — her hafta yeni resimli ve sesli hikayeler eklenen bir çocuk hikaye kütüphanesi. Altı sevilen karakter serisi, üç dil ve 3–8 yaş arası çocuklu aileler için büyülü bir okuma rutini.",
         "highlights": [
           "6 karakter serisi: Rusty, Captain Barnacles, Astro-Bun, Pippa, Professor Hoot ve Grug",
           "3 dil: İngilizce, Türkçe ve Japonca",
           "Her sayfada tam illüstrasyonlar ve yapay zeka sesli anlatım",
           "Kademeli metin gösterimli mobil öncelikli web okuyucu",
-          "Free'den Emperor'a kadar 4 abonelik kademesi"
+          "Basit üyelik: ücretsiz örnek kitaplar veya aylık 4,99 dolara tam erişim"
         ]
       },
       "1": {
@@ -490,7 +497,7 @@
     "lastUpdated": "Son güncelleme: 9 Şubat 2026",
     "s1": {
       "heading": "1. Biz Kimiz",
-      "body": "Fablecast (\"biz\", \"bize\", \"bizim\") bir çocuk hikayesi abonelik hizmeti olan fablecast.kids'i işletmektedir. Bu politika, hizmetimizi kullandığınızda bilgilerinizi nasıl ele aldığımızı açıklar. Kullanıcılarımızın ve ailelerinin gizliliğini korumaya kararlıyız."
+      "body": "Fablecast (\"biz\", \"bize\", \"bizim\") bir çocuk hikaye kütüphanesi hizmeti olan fablecast.kids'i işletmektedir. Bu politika, hizmetimizi kullandığınızda bilgilerinizi nasıl ele aldığımızı açıklar. Kullanıcılarımızın ve ailelerinin gizliliğini korumaya kararlıyız."
     },
     "s2": {
       "heading": "2. Hangi Verileri Topluyoruz",
@@ -498,10 +505,10 @@
       "items": [
         "E-posta adresi — Google ile Giriş aracılığıyla sağlanır, yalnızca hesap tanımlama ve temel hizmet iletişimleri için kullanılır.",
         "Görünen ad — Google ile Giriş aracılığıyla sağlanır, deneyiminizi kişiselleştirmek için kullanılır.",
-        "Hesap tercihleri — tercih edilen dil ve tercih edilen seri. Bunları kayıt sırasında siz sağlarsınız.",
-        "Abonelik durumu — seçtiğiniz plan ve abonelik tarihleri."
+        "Hesap tercihleri — tercih edilen dil. Bunu kayıt sırasında siz sağlarsınız.",
+        "Üyelik durumu — ücretsiz okuyucu veya üye olup olmadığınız."
       ],
-      "noOtherData": "Başka hiçbir kişisel veri toplamıyoruz, saklamıyoruz veya işlemiyoruz. Tarama davranışı, cihaz parmak izi, konum verisi, izleme amaçlı çerezler veya çocuklardan doğrudan herhangi bir bilgi toplamıyoruz."
+      "noOtherData": "Başka hiçbir kişisel veri toplamıyoruz, saklamıyoruz veya işlemiyoruz. Tarama davranışı, cihaz parmak izi veya konum verisi toplamıyoruz. Yalnızca kimlik doğrulama için gerekli olan fonksiyonel oturum çerezlerini kullanıyoruz \u2014 izleme çerezleri, reklam çerezleri veya analiz çerezleri kullanmıyoruz. Çocuklardan veya çocuklar hakkında doğrudan herhangi bir bilgi toplamıyoruz."
     },
     "s3": {
       "heading": "3. Verilerinizi Nasıl Kullanıyoruz",
@@ -509,7 +516,7 @@
       "items": [
         "Google ile Giriş aracılığıyla hesabınızın kimlik doğrulaması.",
         "Tercih ettiğiniz dilde hikayelerin sunulması.",
-        "Abonelik planınızın yönetimi.",
+        "Üyeliğinizin yönetimi.",
         "Temel hizmet iletişimlerinin gönderilmesi (ör. abonelik onayları veya kritik hizmet güncellemeleri)."
       ],
       "neverUsedFor": "Verilerinizi asla reklam, profilleme veya Fablecast hizmetini işletmenin ötesinde herhangi bir amaçla kullanmayacağız."
@@ -522,9 +529,10 @@
       "heading": "5. Veri Paylaşımı",
       "intro": "Kişisel verilerinizi satmıyoruz, kiralamıyoruz veya takas etmiyoruz. Verileri yalnızca şunlarla paylaşıyoruz:",
       "items": [
-        "Google (Firebase) — kimlik doğrulama ve güvenli veri depolama için. Google'ın gizlilik politikası, giriş verilerinin işlenmesi için geçerlidir."
+        "Google (Firebase) — kimlik doğrulama ve güvenli veri depolama için. Google'ın gizlilik politikası, giriş verilerinin işlenmesi için geçerlidir.",
+        "Stripe — ödeme işlemleri için. Stripe, yalnızca üyelik aboneliğinizi işlemek için gerekli ödeme bilgilerini alır. Fablecast kredi kartı numaranızı veya tam ödeme bilgilerinizi asla saklamaz. Stripe'ın gizlilik politikası, ödeme verilerinin işlenmesi için geçerlidir."
       ],
-      "noOtherThirdParties": "Kişisel verilerinizi alan başka herhangi bir üçüncü taraf hizmeti kullanmıyoruz."
+      "noOtherThirdParties": "Yukarıda listelenen iki hizmet dışında kişisel verilerinizi alan başka herhangi bir üçüncü taraf hizmeti kullanmıyoruz."
     },
     "s6": {
       "heading": "6. Veri Depolama ve Güvenlik",
@@ -598,7 +606,7 @@
     },
     "s2": {
       "heading": "2. Hizmetin Tanımı",
-      "body": "Fablecast, abonelik tabanlı bir dijital çocuk hikayesi hizmetidir. Birden fazla dilde ve karakter serisinde günlük olarak resimli, sesli hikayeler üretip sunarız. Hikayeler yapay zeka kullanılarak üretilir ve ebeveyn rehberliğinde keyif alınmak üzere 3–8 yaş arası çocuklara yöneliktir."
+      "body": "Fablecast bir çocuk hikaye kütüphanesi hizmetidir. Birden fazla dilde ve karakter serisinde resimli, sesli hikayeler üretir ve her hafta yeni hikayeler ekleriz. Hikayeler yapay zeka kullanılarak üretilir ve ebeveyn rehberliğinde keyif alınmak üzere 3–8 yaş arası çocuklara yöneliktir."
     },
     "s3": {
       "heading": "3. Hesaplar",
@@ -612,12 +620,10 @@
     "s4": {
       "heading": "4. Abonelik Planları ve Faturalandırma",
       "plans": {
-        "subheading": "Planlar",
+        "subheading": "Erişim Düzeyleri",
         "items": [
-          "Free — 2 örnek kitaba sınırlı erişim. Ödeme gerekmez.",
-          "Squire ($4.99/ay) — 1 hikaye serisi, 1 dil, ayda 30 taze kitap.",
-          "Knight ($9.99/ay) — Tüm 6 seri, 1 dil, günlük hikaye erişimi.",
-          "Emperor ($14.99/ay) — Tüm 6 seri, tüm diller, yapay zeka sesli anlatım."
+          "Ücretsiz — 6 örnek kitaba erişim (her seriden bir tane). Ödeme gerekmez.",
+          "Üye (aylık 4,99 dolar) — Tüm kütüphaneye, tüm serilere, tüm dillere ve yapay zeka sesli anlatıma tam erişim."
         ]
       },
       "billing": {
@@ -630,31 +636,29 @@
       },
       "refunds": {
         "subheading": "İadeler",
-        "body": "Tüm abonelik ödemeleri iade edilmez. Kısmi aylar için orantılı iade yapılmaz. Hizmetin ihtiyaçlarınızı karşıladığından emin olmak için abone olmadan önce Ücretsiz planı denemenizi teşvik ederiz."
+        "body": "Tüm üyelik ödemeleri iade edilmez. Kısmi aylar için orantılı iade yapılmaz. Hizmetin ihtiyaçlarınızı karşıladığından emin olmak için üye olmadan önce ücretsiz örnek kitapları denemenizi teşvik ederiz."
       }
     },
     "s5": {
       "heading": "5. İptal",
       "items": [
-        "Aboneliğinizi istediğiniz zaman hesap ayarlarınızdan iptal edebilirsiniz.",
+        "Üyeliğinizi istediğiniz zaman hesap ayarlarınızdan iptal edebilirsiniz.",
         "İptal üzerine, mevcut fatura döneminizin sonuna kadar Hizmete ve tüm hikayelere tam erişiminiz devam edecektir.",
-        "Fatura dönemi sona erdikten sonra, hesabınız Ücretsiz plana dönecektir.",
-        "Abonelik döneminizden daha önce oluşturulmuş hikayeler, iptalden sonra 30 gün boyunca Ücretsiz planda erişilebilir kalacaktır."
+        "Fatura dönemi sona erdikten sonra, hesabınız örnek kitaplarla ücretsiz erişime dönecektir."
       ]
     },
     "s6": {
       "heading": "6. Tercih Değişiklikleri",
       "items": [
-        "Squire plan aboneleri, tercih ettikleri karakter serisini ayda bir kez değiştirebilir.",
-        "Dil tercihi, herhangi bir ücretli planda ayda bir kez değiştirilebilir.",
-        "Değişiklikler, bir sonraki günlük hikaye üretim döngüsünün başlangıcında geçerli olur."
+        "Dil tercihi hesap ayarlarından istediğiniz zaman değiştirilebilir.",
+        "Değişiklikler anında geçerli olur."
       ]
     },
     "s7": {
       "heading": "7. İçerik ve Fikri Mülkiyet",
       "items": [
-        "Tüm hikayeler, illüstrasyonlar, seslendirmeler, karakterler ve ilgili içerikler Fablecast'e aittir.",
-        "İçerik yapay zeka kullanılarak üretilir ve yaşa uygunluk ile güvenlik açısından incelenir.",
+        "Tüm hikayeler, illüstrasyonlar, seslendirmeler, karakterler ve ilgili içerikler Fablecast tarafından yayımlanır ve kontrol edilir. Yapay zeka üretimli içerik sahipliği konusundaki yasal çerçeve gelişmeye devam etmektedir; buna bakılmaksızın, Fablecast Hizmette yayımlanan tüm içerik üzerindeki hakları elinde tutar.",
+        "İçerik yapay zeka kullanılarak üretilmektedir. Otomatik güvenlik önlemleri uygulanmaktadır, ancak içerik sayfa sayfa bireysel olarak incelenmemektedir.",
         "Size, Hizmet aracılığıyla hikayelere erişmeniz ve keyfini çıkarmanız için kişisel, ticari olmayan, devredilemez bir lisans verilmiştir.",
         "Hizmetten herhangi bir içeriği yeniden dağıtamaz, yeniden yayınlayamaz, satamaz veya ticari olarak kullanamazsınız.",
         "İçeriği kazımak, indirmek veya toplu olarak çıkarmak için otomatik araçlar kullanamazsınız."
@@ -673,12 +677,12 @@
     },
     "s9": {
       "heading": "9. Yapay Zeka Üretimli İçerik Uyarısı",
-      "body": "Hikayeler yapay zeka kullanılarak üretilmektedir. Güvenlik önlemleri ve inceleme süreçleri uygulamamıza rağmen, yapay zeka üretimli içerik zaman zaman beklenmedik unsurlar içerebilir. Ebeveynleri çocuklarıyla birlikte hikayeleri okumaya teşvik ediyoruz. Uygunsuz görünen herhangi bir içerikle karşılaşırsanız, lütfen bize derhal bildirin."
+      "body": "Fablecast'teki tüm hikayeler, illüstrasyonlar ve seslendirmeler yapay zeka kullanılarak üretilmektedir. İçerik sayfa sayfa manuel olarak incelenmemektedir. Yaşa uygunluğu sağlamak için otomatik güvenlik önlemleri uygulamamıza rağmen, yapay zeka üretimli içerik zaman zaman beklenmedik veya kusurlu unsurlar içerebilir. Ebeveynleri ve velileri çocuklarıyla birlikte hikayeleri okumaya özellikle teşvik ediyoruz. Uygunsuz görünen herhangi bir içerikle karşılaşırsanız, lütfen legal@fablecast.kids adresinden bize derhal bildirin."
     },
     "s10": {
       "heading": "10. Hizmet Erişilebilirliği",
       "items": [
-        "Her gün yeni hikayeler sunmayı hedefliyoruz ancak kesintisiz hizmet garantisi vermiyoruz.",
+        "Her hafta yeni hikayeler eklemeyi hedefliyoruz ancak kesintisiz hizmet garantisi vermiyoruz.",
         "Bakım, API sorunları veya öngörülemeyen durumlar zaman zaman hikaye üretimini etkileyebilir.",
         "Planlı kesintiler hakkında kullanıcıları bilgilendirmek için makul çaba göstereceğiz."
       ]
@@ -703,6 +707,59 @@
       "heading": "15. İletişim",
       "body": "Bu Şartlar hakkında sorularınız için lütfen bize şu adresten ulaşın:",
       "email": "legal@fablecast.kids"
+    }
+  },
+  "legal": {
+    "sticker": "Yasal",
+    "title": "Belirli Ticari \u0130\u015Flemler Yasas\u0131",
+    "lastUpdated": "Son g\u00FCncelleme: 10 \u015Eubat 2026",
+    "s1": {
+      "heading": "\u0130\u015Fletme Bilgileri",
+      "nameLabel": "\u0130\u015Fletme Ad\u0131:",
+      "name": "Fablecast",
+      "representativeLabel": "Temsilci:",
+      "representative": "Arda Karaduman",
+      "addressLabel": "Adres:",
+      "address": "[GMO Sanal Ofis \u2014 adres g\u00FCncellenecektir]",
+      "phoneLabel": "Telefon:",
+      "phone": "[050-XXXX-XXXX \u2014 g\u00FCncellenecektir]",
+      "emailLabel": "E-posta:",
+      "email": "legal@fablecast.kids"
+    },
+    "s2": {
+      "heading": "Hizmet Tan\u0131m\u0131",
+      "body": "Fablecast, \u00E7ocuklara y\u00F6nelik bir hikaye k\u00FCt\u00FCphanesi hizmetidir. 3\u20138 ya\u015F aras\u0131 \u00E7ocuklar i\u00E7in yapay zeka ile \u00FCretilmi\u015F resimli ve sesli hikayeler sunuyoruz. Hikayeler \u0130ngilizce, T\u00FCrk\u00E7e ve Japonca olarak, alt\u0131 karakter serisi \u00FCzerinden yay\u0131mlanmakta olup her hafta yeni hikayeler eklenmektedir. Hizmete fablecast.kids web sitesi \u00FCzerinden eri\u015Filir."
+    },
+    "s3": {
+      "heading": "Fiyatland\u0131rma",
+      "items": [
+        "\u00DCcretsiz \u2014 0$. 6 \u00F6rnek kitaba eri\u015Fim (her seriden bir tane), sesli anlat\u0131m dahil tam okuma deneyimi. \u00D6deme gerekmez.",
+        "\u00DCye \u2014 Ayl\u0131k 4,99$ (USD). T\u00FCm k\u00FCt\u00FCphaneye tam eri\u015Fim: t\u00FCm seriler, t\u00FCm diller, haftal\u0131k yeni hikayeler ve yapay zeka sesli anlat\u0131m."
+      ]
+    },
+    "s4": {
+      "heading": "\u00D6deme Y\u00F6ntemi",
+      "body": "Kredi kart\u0131 \u00F6demeleri Stripe arac\u0131l\u0131\u011F\u0131yla g\u00FCvenli bir \u015Fekilde i\u015Flenir. Fablecast kredi kart\u0131 numaralar\u0131n\u0131 veya tam \u00F6deme bilgilerini saklamaz."
+    },
+    "s5": {
+      "heading": "\u00D6deme Zaman\u0131",
+      "body": "\u00DCyelik, kay\u0131t tarihinin y\u0131l d\u00F6n\u00FCm\u00FCnde ayl\u0131k olarak faturaland\u0131r\u0131l\u0131r. \u00D6deme her fatura d\u00F6neminin ba\u015F\u0131nda tahsil edilir."
+    },
+    "s6": {
+      "heading": "Teslimat",
+      "body": "Hizmet, fablecast.kids web sitesi \u00FCzerinden dijital olarak sunulur. Hikayeler, hesap olu\u015Fturulmas\u0131n\u0131n (\u00FCcretsiz) veya \u00F6deme onay\u0131n\u0131n (\u00FCye) ard\u0131ndan hemen kullan\u0131labilir. Fiziksel \u00FCr\u00FCn g\u00F6nderimi yap\u0131lmaz."
+    },
+    "s7": {
+      "heading": "\u0130ptal ve \u0130adeler",
+      "items": [
+        "\u00DCyeli\u011Finizi istedi\u011Finiz zaman hesap ayarlar\u0131n\u0131zdan iptal edebilirsiniz.",
+        "\u0130ptal \u00FCzerine, mevcut fatura d\u00F6neminizin sonuna kadar tam eri\u015Fiminiz devam eder. Fatura d\u00F6nemi sona erdikten sonra hesab\u0131n\u0131z \u00F6rnek kitaplarla \u00FCcretsiz eri\u015Fime d\u00F6ner.",
+        "T\u00FCm \u00FCyelik \u00F6demeleri iade edilmez. K\u0131smi aylar i\u00E7in orant\u0131l\u0131 iade yap\u0131lmaz. \u00DCye olmadan \u00F6nce \u00FCcretsiz \u00F6rnek kitaplar\u0131 denemenizi te\u015Fvik ederiz."
+      ]
+    },
+    "s8": {
+      "heading": "\u00C7al\u0131\u015Fma Ortam\u0131",
+      "body": "Fablecast, masaüstü ve mobil cihazlarda modern web tarayıcılarında (Chrome, Safari, Firefox, Edge) çalışır. Okuma ve sesli oynatma için kararlı bir internet bağlantısı gereklidir."
     }
   }
 }
