@@ -146,7 +146,8 @@
       "firebaseNotConfigured": "Google ile giriş henüz yapılandırılmadı. Etkinleştirmek için Firebase web ortam değişkenlerini ekleyin.",
       "signInFailed": "Google ile giriş iptal edildi veya başarısız oldu. Lütfen tekrar deneyin.",
       "signInRequired": "Tercihlerinizi kaydetmeden önce lütfen tekrar giriş yapın.",
-      "saveFailed": "Tercihleriniz kaydedilemedi. Lütfen bir kez daha deneyin."
+      "saveFailed": "Tercihleriniz kaydedilemedi. Lütfen bir kez daha deneyin.",
+      "registrationDisabled": "Kayıt Geçici Olarak Durduruldu"
     }
   },
   "setupModal": {

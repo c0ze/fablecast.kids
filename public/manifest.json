@@ -1,0 +1,56 @@
+{
+  "name": "Fablecast — Stories That Sparkle",
+  "short_name": "Fablecast",
+  "description": "A growing library of illustrated, narrated bedtime stories for ages 3–8 in English, Turkish & Japanese.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFDF7",
+  "theme_color": "#2C194A",
+  "orientation": "any",
+  "categories": ["kids", "books", "education", "entertainment"],
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Characters",
+      "url": "/#characters",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "FAQ",
+      "url": "/#faq",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

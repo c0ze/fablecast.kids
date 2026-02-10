@@ -146,7 +146,8 @@
       "firebaseNotConfigured": "Googleサインインはまだ設定されていません。有効にするにはFirebase Web環境変数を追加してください。",
       "signInFailed": "Googleサインインがキャンセルされたか、失敗しました。もう一度お試しください。",
       "signInRequired": "設定を保存する前に、再度サインインしてください。",
-      "saveFailed": "設定を保存できませんでした。もう一度お試しください。"
+      "saveFailed": "設定を保存できませんでした。もう一度お試しください。",
+      "registrationDisabled": "新規登録は一時停止中です"
     }
   },
   "setupModal": {

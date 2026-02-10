@@ -235,14 +235,14 @@ function App() {
   // Dynamic document title + meta description per page
   useEffect(() => {
     const pageSeo = {
-      home:       { title: t('seo.home.title'),       desc: t('seo.home.description') },
-      about:      { title: t('seo.about.title'),      desc: t('seo.about.description') },
+      home: { title: t('seo.home.title'), desc: t('seo.home.description') },
+      about: { title: t('seo.about.title'), desc: t('seo.about.description') },
       characters: { title: t('seo.characters.title'), desc: t('seo.characters.description') },
-      faq:        { title: t('seo.faq.title'),        desc: t('seo.faq.description') },
-      blog:       { title: t('seo.blog.title'),       desc: t('seo.blog.description') },
-      privacy:    { title: t('seo.privacy.title'),    desc: t('seo.privacy.description') },
-      terms:      { title: t('seo.terms.title'),      desc: t('seo.terms.description') },
-      legal:      { title: t('seo.legal.title'),      desc: t('seo.legal.description') }
+      faq: { title: t('seo.faq.title'), desc: t('seo.faq.description') },
+      blog: { title: t('seo.blog.title'), desc: t('seo.blog.description') },
+      privacy: { title: t('seo.privacy.title'), desc: t('seo.privacy.description') },
+      terms: { title: t('seo.terms.title'), desc: t('seo.terms.description') },
+      legal: { title: t('seo.legal.title'), desc: t('seo.legal.description') }
     };
     const seo = pageSeo[currentPage] || pageSeo.home;
     document.title = seo.title;
@@ -356,19 +356,21 @@ function App() {
   };
 
   const handleGoogleSignIn = async () => {
-    if (!auth || !hasFirebaseConfig) {
-      setAuthError(t('auth.errors.firebaseNotConfigured'));
-      return;
-    }
+    // Registration temporarily disabled
+    // if (!auth || !hasFirebaseConfig) {
+    //   setAuthError(t('auth.errors.firebaseNotConfigured'));
+    //   return;
+    // }
 
-    try {
-      setAuthBusy(true);
-      setAuthError('');
-      await signInWithPopup(auth, googleProvider);
-    } catch (error) {
-      setAuthError(t('auth.errors.signInFailed'));
-      setAuthBusy(false);
-    }
+    // try {
+    //   setAuthBusy(true);
+    //   setAuthError('');
+    //   await signInWithPopup(auth, googleProvider);
+    // } catch (error) {
+    //   setAuthError(t('auth.errors.signInFailed'));
+    //   setAuthBusy(false);
+    // }
+    return;
   };
 
   const handleSetupSave = async (event) => {
@@ -454,8 +456,8 @@ function App() {
               key={link.page}
               onClick={() => navigateTo(link.page)}
               className={`rounded-full px-4 py-2 text-sm font-bold transition ${currentPage === link.page
-                  ? 'bg-twilight/10 text-twilight'
-                  : 'text-cosmos/70 hover:bg-twilight/5 hover:text-cosmos'
+                ? 'bg-twilight/10 text-twilight'
+                : 'text-cosmos/70 hover:bg-twilight/5 hover:text-cosmos'
                 }`}
             >
               {link.emoji} {link.label}
@@ -495,8 +497,8 @@ function App() {
                 key={link.page}
                 onClick={() => navigateTo(link.page)}
                 className={`rounded-xl px-4 py-3 text-left text-sm font-bold transition ${currentPage === link.page
-                    ? 'bg-twilight/10 text-twilight'
-                    : 'text-cosmos/70 hover:bg-twilight/5'
+                  ? 'bg-twilight/10 text-twilight'
+                  : 'text-cosmos/70 hover:bg-twilight/5'
                   }`}
               >
                 {link.emoji} {link.label}
@@ -715,8 +717,8 @@ function App() {
                       key={snippetLang}
                       onClick={() => setActiveLang(snippetLang)}
                       className={`rounded-full px-5 py-2.5 text-sm font-bold transition ${activeLang === snippetLang
-                          ? 'bg-twilight text-white shadow-candy'
-                          : 'border-2 border-dashed border-twilight/30 bg-white text-twilight hover:border-twilight'
+                        ? 'bg-twilight text-white shadow-candy'
+                        : 'border-2 border-dashed border-twilight/30 bg-white text-twilight hover:border-twilight'
                         }`}
                     >
                       {langFlags[snippetLang]} {snippetLang}
@@ -832,8 +834,8 @@ function App() {
                       onClick={() => setCarouselIndex(index)}
                       aria-label={t('carousel.viewAriaLabel', { series: story.series })}
                       className={`flex h-8 w-8 items-center justify-center rounded-full border-2 text-sm transition ${index === carouselIndex
-                          ? `${e.color}/40 border-${e.border.replace('border-', '')} scale-110`
-                          : 'border-transparent bg-white/60 opacity-60 hover:opacity-100'
+                        ? `${e.color}/40 border-${e.border.replace('border-', '')} scale-110`
+                        : 'border-transparent bg-white/60 opacity-60 hover:opacity-100'
                         }`}
                     >
                       {e.icon}
@@ -858,8 +860,8 @@ function App() {
                 <article
                   key={plan.key}
                   className={`card-cute rounded-[2rem] border-2 border-dashed p-6 ${plan.featured
-                      ? 'relative border-starlight bg-gradient-to-br from-cosmos to-plumMist text-white shadow-glow'
-                      : `${plan.accent} bg-white/80`
+                    ? 'relative border-starlight bg-gradient-to-br from-cosmos to-plumMist text-white shadow-glow'
+                    : `${plan.accent} bg-white/80`
                     }`}
                 >
                   <span className="text-3xl">{plan.emoji}</span>
@@ -887,8 +889,8 @@ function App() {
                   <button
                     onClick={() => handlePlanSelect(plan.key)}
                     className={`mt-6 w-full rounded-full px-4 py-3 text-sm font-bold transition ${plan.featured
-                        ? 'bg-starlight text-cosmos shadow-md hover:bg-lemon'
-                        : 'bg-twilight text-white shadow-candy hover:bg-plumMist'
+                      ? 'bg-starlight text-cosmos shadow-md hover:bg-lemon'
+                      : 'bg-twilight text-white shadow-candy hover:bg-plumMist'
                       }`}
                   >
                     {plan.cta}
@@ -919,10 +921,10 @@ function App() {
                   <button
                     type="button"
                     onClick={handleGoogleSignIn}
-                    disabled={authBusy}
-                    className="rounded-full bg-twilight px-8 py-3.5 text-base font-bold text-white shadow-glow transition hover:bg-plumMist hover:shadow-candy disabled:cursor-not-allowed disabled:opacity-70"
+                    disabled={true}
+                    className="cursor-not-allowed rounded-full bg-twilight/50 px-8 py-3.5 text-base font-bold text-white shadow-none transition"
                   >
-                    {authBusy ? t('auth.signingIn') : `${t('auth.signInWithGoogle')} \uD83D\uDE80`}
+                    {t('auth.registrationDisabled')}
                   </button>
                 ) : (
                   <>

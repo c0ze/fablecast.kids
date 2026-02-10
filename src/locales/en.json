@@ -145,7 +145,8 @@
       "firebaseNotConfigured": "Google sign-in is not configured yet. Add Firebase web env vars to enable it.",
       "signInFailed": "Google sign-in was canceled or failed. Please try again.",
       "signInRequired": "Please sign in again before saving your preferences.",
-      "saveFailed": "Could not save your preferences. Please try once more."
+      "saveFailed": "Could not save your preferences. Please try once more.",
+      "registrationDisabled": "Registration Temporarily Paused"
     }
   },
   "setupModal": {
