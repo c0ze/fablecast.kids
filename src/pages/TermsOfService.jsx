@@ -62,6 +62,7 @@ export default function TermsOfService() {
             <li>{t('terms.s5.items.0')}</li>
             <li>{t('terms.s5.items.1')}</li>
             <li>{t('terms.s5.items.2')}</li>
+            <li>{t('terms.s5.items.3')}</li>
           </ul>
         </section>
 

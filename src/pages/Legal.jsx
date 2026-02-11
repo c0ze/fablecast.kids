@@ -49,6 +49,7 @@ export default function Legal() {
             <ul className="mt-2 ml-6 list-disc space-y-1.5">
               <li>{t('legal.s3.items.0')}</li>
               <li>{t('legal.s3.items.1')}</li>
+              <li>{t('legal.s3.items.2')}</li>
             </ul>
           )}
         </section>
@@ -84,6 +85,7 @@ export default function Legal() {
               <li>{t('legal.s7.items.0')}</li>
               <li>{t('legal.s7.items.1')}</li>
               <li>{t('legal.s7.items.2')}</li>
+              <li>{t('legal.s7.items.3')}</li>
             </ul>
           )}
         </section>

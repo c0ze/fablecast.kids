@@ -8,6 +8,7 @@
     "characters": "Karakterler",
     "faq": "SSS",
     "blog": "Blog",
+    "pricing": "Fiyatlar",
     "getStarted": "Başla",
     "home": "Ana Sayfa",
     "privacy": "Gizlilik",
@@ -17,8 +18,8 @@
   },
   "seo": {
     "home": {
-      "title": "Fablecast | \u0130ngilizce, T\u00FCrk\u00E7e ve Japonca Yapay Zeka \u00C7ocuk Hikaye K\u00FCt\u00FCphanesi",
-      "description": "3\u20138 ya\u015F aras\u0131 \u00E7ocuklar i\u00E7in resimli, sesli uyku \u00F6ncesi hikayeleri. Alt\u0131 sevilen karakter serisi, \u0130ngilizce, T\u00FCrk\u00E7e ve Japonca \u2014 her hafta yeni hikayeler."
+      "title": "Fablecast | 7 Dilde Yapay Zeka \u00C7ocuk Hikaye K\u00FCt\u00FCphanesi",
+      "description": "3\u20138 ya\u015F aras\u0131 \u00E7ocuklar i\u00E7in resimli, sesli uyku \u00F6ncesi hikayeleri. Alt\u0131 sevilen karakter serisi, \u0130ngilizce, T\u00FCrk\u00E7e, Japonca, \u0130spanyolca, Portekizce, Almanca ve Frans\u0131zca \u2014 her hafta yeni hikayeler."
     },
     "about": {
       "title": "Nas\u0131l \u00C7al\u0131\u015F\u0131r | Fablecast",
@@ -128,8 +129,55 @@
         "Her hafta yeni hikayeler eklenir",
         "Yapay zeka sesli anlatım"
       ],
-      "cta": "Üye Ol"
+      "cta": "Üye Ol",
+      "decreasingPrice": "Fiyat zamanla düşer!",
+      "viewDetails": "Detaylı planı gör"
     }
+  },
+  "pricing": {
+    "title": "Sizinle Büyüyen Bir Plan",
+    "subtitle": "Çocuğunuz büyüdükçe, ödediğiniz fiyat düşer. Bu kadar basit.",
+    "lifetimeTitle": "Ya da, Tek Seferlik Ödeme",
+    "lifetimeSubtitle": "Tek bir ödeme ile ömür boyu erişim elde edin.",
+    "savings": "Aylık plana kıyasla {amount} tasarruf edersiniz!",
+    "phase": "Evre {number}",
+    "months": "Aylar {start}-{end}",
+    "forever": "Sonsuza Kadar",
+    "free": "Ücretsiz",
+    "month": "/ay",
+    "oneTime": "tek seferlik",
+    "phases": {
+      "1": {
+        "price": "$4.99",
+        "desc": "Yolculuğa başla"
+      },
+      "2": {
+        "price": "$3.99",
+        "desc": "Alışma süreci"
+      },
+      "3": {
+        "price": "$2.99",
+        "desc": "Düzenli okuyucu"
+      },
+      "4": {
+        "price": "$1.99",
+        "desc": "Ailenin bir parçası"
+      },
+      "5": {
+        "price": "$0.99",
+        "desc": "Sadakat ödülü"
+      },
+      "6": {
+        "price": "$0.00",
+        "desc": "5 yıl sonra sonsuza kadar ücretsiz"
+      }
+    },
+    "lifetime": {
+      "price": "$99",
+      "label": "Ömür Boyu Üyelik",
+      "cta": "Ömür Boyu Erişim Al"
+    },
+    "back": "Ana Sayfaya Dön"
   },
   "auth": {
     "title": "Hikaye Zamanına Hazır mısınız?",
@@ -161,7 +209,11 @@
     "languageOptions": {
       "english": "İngilizce",
       "turkish": "Türkçe",
-      "japanese": "Japonca"
+      "japanese": "Japonca",
+      "spanish": "İspanyolca",
+      "portuguese": "Portekizce",
+      "german": "Almanca",
+      "french": "Fransızca"
     }
   },
   "footer": {
@@ -383,7 +435,7 @@
       },
       "3": {
         "q": "Hangi diller mevcut?",
-        "a": "Şu anda: İngilizce, Türkçe ve Japonca. İspanyolca, Portekizce, Almanca ve Fransızca eklemeye aktif olarak çalışıyoruz — güncellemeler için blogumuzu takip edin."
+        "a": "Tüm hikayeler yedi dilde mevcuttur: İngilizce, Türkçe, Japonca, İspanyolca, Portekizce, Almanca ve Fransızca."
       },
       "4": {
         "q": "Hikayeler çocuklar için güvenli mi?",
@@ -452,13 +504,26 @@
         "date": "9 Şubat 2026",
         "tag": "Lansman",
         "title": "Fablecast'e Hoş Geldiniz!",
-        "body": "Bugün Fablecast'i başlatıyoruz — her hafta yeni resimli ve sesli hikayeler eklenen bir çocuk hikaye kütüphanesi. Altı sevilen karakter serisi, üç dil ve 3–8 yaş arası çocuklu aileler için büyülü bir okuma rutini.",
+        "body": "Bugün Fablecast'i başlatıyoruz — her hafta yeni resimli ve sesli hikayeler eklenen bir çocuk hikaye kütüphanesi. Altı sevilen karakter serisi, yedi dil ve 3–8 yaş arası çocuklu aileler için büyülü bir okuma rutini.",
         "highlights": [
           "6 karakter serisi: Rusty, Captain Barnacles, Astro-Bun, Pippa, Professor Hoot ve Grug",
-          "3 dil: İngilizce, Türkçe ve Japonca",
+          "7 dil: İngilizce, Türkçe, Japonca, İspanyolca, Portekizce, Almanca ve Fransızca",
           "Her sayfada tam illüstrasyonlar ve yapay zeka sesli anlatım",
           "Kademeli metin gösterimli mobil öncelikli web okuyucu",
           "Basit üyelik: ücretsiz örnek kitaplar veya aylık 4,99 dolara tam erişim"
+        ]
+      },
+      "3": {
+        "date": "11 Şubat 2026",
+        "tag": "Güncelleme",
+        "title": "4 Yeni Dil ve Ömür Boyu Üyelik",
+        "body": "Fablecast artık yedi dilde konuşuyor! İspanyolca, Portekizce, Almanca ve Fransızca ekledik — kütüphanedeki her hikaye artık tüm yedi dilde sesli anlatımla mevcut. Ayrıca kalıcı erişim isteyen aileler için yeni bir Ömür Boyu Üyelik seçeneği sunduk.",
+        "highlights": [
+          "4 yeni dil: İspanyolca, Portekizce, Almanca ve Fransızca",
+          "Mevcut ve gelecekteki tüm hikayeler 7 dilde mevcut",
+          "Ömür Boyu Üyelik — kalıcı tam erişim için 99,99$ tek seferlik ödeme",
+          "Ömür boyu üyeler mevcut ve gelecekteki tüm içeriğe sonsuza kadar erişir",
+          "Ücretsiz katman veya aylık üyelik fiyatlandırmasında değişiklik yok"
         ]
       },
       "1": {
@@ -506,7 +571,6 @@
       "items": [
         "E-posta adresi — Google ile Giriş aracılığıyla sağlanır, yalnızca hesap tanımlama ve temel hizmet iletişimleri için kullanılır.",
         "Görünen ad — Google ile Giriş aracılığıyla sağlanır, deneyiminizi kişiselleştirmek için kullanılır.",
-        "Hesap tercihleri — tercih edilen dil. Bunu kayıt sırasında siz sağlarsınız.",
         "Üyelik durumu — ücretsiz okuyucu veya üye olup olmadığınız."
       ],
       "noOtherData": "Başka hiçbir kişisel veri toplamıyoruz, saklamıyoruz veya işlemiyoruz. Tarama davranışı, cihaz parmak izi veya konum verisi toplamıyoruz. Yalnızca kimlik doğrulama için gerekli olan fonksiyonel oturum çerezlerini kullanıyoruz \u2014 izleme çerezleri, reklam çerezleri veya analiz çerezleri kullanmıyoruz. Çocuklardan veya çocuklar hakkında doğrudan herhangi bir bilgi toplamıyoruz."
@@ -516,7 +580,6 @@
       "intro": "Verileriniz yalnızca şu amaçlarla kullanılır:",
       "items": [
         "Google ile Giriş aracılığıyla hesabınızın kimlik doğrulaması.",
-        "Tercih ettiğiniz dilde hikayelerin sunulması.",
         "Üyeliğinizin yönetimi.",
         "Temel hizmet iletişimlerinin gönderilmesi (ör. abonelik onayları veya kritik hizmet güncellemeleri)."
       ],
@@ -643,9 +706,10 @@
     "s5": {
       "heading": "5. İptal",
       "items": [
-        "Üyeliğinizi istediğiniz zaman hesap ayarlarınızdan iptal edebilirsiniz.",
+        "Aylık üyeliğinizi istediğiniz zaman hesap ayarlarınızdan iptal edebilirsiniz.",
         "İptal üzerine, mevcut fatura döneminizin sonuna kadar Hizmete ve tüm hikayelere tam erişiminiz devam edecektir.",
-        "Fatura dönemi sona erdikten sonra, hesabınız örnek kitaplarla ücretsiz erişime dönecektir."
+        "Fatura dönemi sona erdikten sonra, hesabınız örnek kitaplarla ücretsiz erişime dönecektir.",
+        "Ömür boyu üyelikler iptal edilemez ve iade edilemez. Ömür boyu üyeler hesaplarını istedikleri zaman silebilir, ancak bu durumda Hizmete erişim kalıcı olarak sona erer ve iade yapılmaz."
       ]
     },
     "s6": {
@@ -729,13 +793,14 @@
     },
     "s2": {
       "heading": "Hizmet Tan\u0131m\u0131",
-      "body": "Fablecast, \u00E7ocuklara y\u00F6nelik bir hikaye k\u00FCt\u00FCphanesi hizmetidir. 3\u20138 ya\u015F aras\u0131 \u00E7ocuklar i\u00E7in yapay zeka ile \u00FCretilmi\u015F resimli ve sesli hikayeler sunuyoruz. Hikayeler \u0130ngilizce, T\u00FCrk\u00E7e ve Japonca olarak, alt\u0131 karakter serisi \u00FCzerinden yay\u0131mlanmakta olup her hafta yeni hikayeler eklenmektedir. Hizmete fablecast.kids web sitesi \u00FCzerinden eri\u015Filir."
+      "body": "Fablecast, \u00E7ocuklara y\u00F6nelik bir hikaye k\u00FCt\u00FCphanesi hizmetidir. 3\u20138 ya\u015F aras\u0131 \u00E7ocuklar i\u00E7in yapay zeka ile \u00FCretilmi\u015F resimli ve sesli hikayeler sunuyoruz. Hikayeler \u0130ngilizce, T\u00FCrk\u00E7e, Japonca, \u0130spanyolca, Portekizce, Almanca ve Frans\u0131zca olarak, alt\u0131 karakter serisi \u00FCzerinden yay\u0131mlanmakta olup her hafta yeni hikayeler eklenmektedir. Hizmete fablecast.kids web sitesi \u00FCzerinden eri\u015Filir."
     },
     "s3": {
       "heading": "Fiyatland\u0131rma",
       "items": [
         "\u00DCcretsiz \u2014 0$. 6 \u00F6rnek kitaba eri\u015Fim (her seriden bir tane), sesli anlat\u0131m dahil tam okuma deneyimi. \u00D6deme gerekmez.",
-        "\u00DCye \u2014 Ayl\u0131k 4,99$ (USD). T\u00FCm k\u00FCt\u00FCphaneye tam eri\u015Fim: t\u00FCm seriler, t\u00FCm diller, haftal\u0131k yeni hikayeler ve yapay zeka sesli anlat\u0131m."
+        "\u00DCye \u2014 Ayl\u0131k 4,99$ (USD). T\u00FCm k\u00FCt\u00FCphaneye tam eri\u015Fim: t\u00FCm seriler, t\u00FCm diller, haftal\u0131k yeni hikayeler ve yapay zeka sesli anlat\u0131m.",
+        "\u00D6m\u00FCr Boyu \u00DCye \u2014 99,99$ tek seferlik \u00F6deme (USD). T\u00FCm mevcut ve gelecekteki i\u00E7eriklerle birlikte t\u00FCm k\u00FCt\u00FCphaneye kal\u0131c\u0131 tam eri\u015Fim."
       ]
     },
     "s4": {
@@ -753,9 +818,10 @@
     "s7": {
       "heading": "\u0130ptal ve \u0130adeler",
       "items": [
-        "\u00DCyeli\u011Finizi istedi\u011Finiz zaman hesap ayarlar\u0131n\u0131zdan iptal edebilirsiniz.",
+        "Ayl\u0131k \u00FCyeli\u011Finizi istedi\u011Finiz zaman hesap ayarlar\u0131n\u0131zdan iptal edebilirsiniz.",
         "\u0130ptal \u00FCzerine, mevcut fatura d\u00F6neminizin sonuna kadar tam eri\u015Fiminiz devam eder. Fatura d\u00F6nemi sona erdikten sonra hesab\u0131n\u0131z \u00F6rnek kitaplarla \u00FCcretsiz eri\u015Fime d\u00F6ner.",
-        "T\u00FCm \u00FCyelik \u00F6demeleri iade edilmez. K\u0131smi aylar i\u00E7in orant\u0131l\u0131 iade yap\u0131lmaz. \u00DCye olmadan \u00F6nce \u00FCcretsiz \u00F6rnek kitaplar\u0131 denemenizi te\u015Fvik ederiz."
+        "T\u00FCm ayl\u0131k \u00FCyelik \u00F6demeleri iade edilmez. K\u0131smi aylar i\u00E7in orant\u0131l\u0131 iade yap\u0131lmaz. \u00DCye olmadan \u00F6nce \u00FCcretsiz \u00F6rnek kitaplar\u0131 denemenizi te\u015Fvik ederiz.",
+        "\u00D6m\u00FCr boyu \u00FCyelikler iptal edilemez ve iade edilemez. \u00D6m\u00FCr boyu \u00FCyeler hesaplar\u0131n\u0131 istedikleri zaman silebilir, ancak bu durumda eri\u015Fim kal\u0131c\u0131 olarak sona erer ve iade yap\u0131lmaz."
       ]
     },
     "s8": {

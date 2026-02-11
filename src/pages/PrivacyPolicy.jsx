@@ -26,7 +26,6 @@ export default function PrivacyPolicy() {
             <li>{t('privacy.s2.items.0')}</li>
             <li>{t('privacy.s2.items.1')}</li>
             <li>{t('privacy.s2.items.2')}</li>
-            <li>{t('privacy.s2.items.3')}</li>
           </ul>
           <p className="mt-3">
             {t('privacy.s2.noOtherData')}
@@ -40,7 +39,6 @@ export default function PrivacyPolicy() {
             <li>{t('privacy.s3.items.0')}</li>
             <li>{t('privacy.s3.items.1')}</li>
             <li>{t('privacy.s3.items.2')}</li>
-            <li>{t('privacy.s3.items.3')}</li>
           </ul>
           <p className="mt-3">
             {t('privacy.s3.neverUsedFor')}

@@ -8,6 +8,7 @@
     "characters": "Characters",
     "faq": "FAQ",
     "blog": "Blog",
+    "pricing": "Pricing",
     "getStarted": "Get Started",
     "home": "Home",
     "privacy": "Privacy",
@@ -17,8 +18,8 @@
   },
   "seo": {
     "home": {
-      "title": "Fablecast | AI Children's Story Library in English, Turkish & Japanese",
-      "description": "A growing library of illustrated, narrated bedtime stories for ages 3\u20138. Six beloved character series in English, Turkish, and Japanese \u2014 new stories every week."
+      "title": "Fablecast | AI Children's Story Library in 7 Languages",
+      "description": "A growing library of illustrated, narrated bedtime stories for ages 3\u20138. Six beloved character series in English, Turkish, Japanese, Spanish, Portuguese, German, and French \u2014 new stories every week."
     },
     "about": {
       "title": "How It Works | Fablecast",
@@ -128,8 +129,55 @@
         "New stories added weekly",
         "AI-generated audio narration"
       ],
-      "cta": "Become a Member"
+      "cta": "Become a Member",
+      "decreasingPrice": "Price decreases over time!",
+      "viewDetails": "View Plan Details"
     }
+  },
+  "pricing": {
+    "title": "A Plan That Grows With You",
+    "subtitle": "The price goes down as your child grows up. Simple.",
+    "lifetimeTitle": "Or, Pay Once Forever",
+    "lifetimeSubtitle": "Get lifetime access for a single one-time payment.",
+    "savings": "You save {amount} compared to monthly!",
+    "phase": "Phase {number}",
+    "months": "Months {start}-{end}",
+    "forever": "Forever",
+    "free": "Free",
+    "month": "/mo",
+    "oneTime": "one-time",
+    "phases": {
+      "1": {
+        "price": "$4.99",
+        "desc": "Start of the journey"
+      },
+      "2": {
+        "price": "$3.99",
+        "desc": "Settling in"
+      },
+      "3": {
+        "price": "$2.99",
+        "desc": "Regular reader"
+      },
+      "4": {
+        "price": "$1.99",
+        "desc": "Part of the family"
+      },
+      "5": {
+        "price": "$0.99",
+        "desc": "Length of Service Reward"
+      },
+      "6": {
+        "price": "$0.00",
+        "desc": "Free forever after 5 years"
+      }
+    },
+    "lifetime": {
+      "price": "$99",
+      "label": "Lifetime Membership",
+      "cta": "Get Lifetime Access"
+    },
+    "back": "Back to Home"
   },
   "auth": {
     "title": "Ready for Storytime?",
@@ -159,7 +207,11 @@
     "languageOptions": {
       "english": "English",
       "turkish": "Turkish",
-      "japanese": "Japanese"
+      "japanese": "Japanese",
+      "spanish": "Spanish",
+      "portuguese": "Portuguese",
+      "german": "German",
+      "french": "French"
     }
   },
   "footer": {
@@ -381,7 +433,7 @@
       },
       "3": {
         "q": "What languages are available?",
-        "a": "Currently: English, Turkish, and Japanese. We\u2019re actively working on adding Spanish, Portuguese, German, and French \u2014 stay tuned to our blog for updates."
+        "a": "All stories are available in seven languages: English, Turkish, Japanese, Spanish, Portuguese, German, and French."
       },
       "4": {
         "q": "Are the stories safe for kids?",
@@ -450,13 +502,26 @@
         "date": "February 9, 2026",
         "tag": "Launch",
         "title": "Welcome to Fablecast!",
-        "body": "Today we\u2019re launching Fablecast \u2014 a children\u2019s story library that grows every week with fresh, illustrated, and narrated adventures. Six beloved character series, three languages, and one magical reading routine for families with kids aged 3\u20138.",
+        "body": "Today we\u2019re launching Fablecast \u2014 a children\u2019s story library that grows every week with fresh, illustrated, and narrated adventures. Six beloved character series, seven languages, and one magical reading routine for families with kids aged 3\u20138.",
         "highlights": [
           "6 character series: Rusty, Captain Barnacles, Astro-Bun, Pippa, Professor Hoot, and Grug",
-          "3 languages: English, Turkish, and Japanese",
+          "7 languages: English, Turkish, Japanese, Spanish, Portuguese, German, and French",
           "Full illustrations and AI-generated audio narration on every page",
           "Mobile-first web reader with progressive text reveal",
           "Simple membership: free samples or full access for $4.99/mo"
+        ]
+      },
+      "3": {
+        "date": "February 11, 2026",
+        "tag": "Update",
+        "title": "4 New Languages & Lifetime Membership",
+        "body": "Fablecast now speaks seven languages! We\u2019ve added Spanish, Portuguese, German, and French \u2014 every story in the library is now available in all seven languages with full audio narration. We\u2019ve also introduced a new Lifetime Membership option for families who want permanent access.",
+        "highlights": [
+          "4 new languages: Spanish, Portuguese, German, and French",
+          "All existing and future stories available in all 7 languages",
+          "Lifetime Membership \u2014 $99.99 one-time payment for permanent full access",
+          "Lifetime members get all current and future content forever",
+          "No changes to the free tier or monthly membership pricing"
         ]
       },
       "1": {
@@ -504,7 +569,6 @@
       "items": [
         "Email address \u2014 provided through Google Sign-In, used solely for account identification and essential service communications.",
         "Display name \u2014 provided through Google Sign-In, used to personalize your experience.",
-        "Account preferences \u2014 preferred language. You provide this during onboarding.",
         "Membership status \u2014 whether you are a free reader or a member."
       ],
       "noOtherData": "We do not collect, store, or process any other personal data. We do not collect browsing behavior, device fingerprints, or location data. We use only functional session cookies required for authentication \u2014 we do not use tracking cookies, advertising cookies, or analytics cookies. We do not collect any information from or about children directly."
@@ -514,7 +578,6 @@
       "intro": "Your data is used exclusively to:",
       "items": [
         "Authenticate your account via Google Sign-In.",
-        "Deliver stories in your preferred language.",
         "Manage your membership.",
         "Send essential service communications (e.g., membership confirmations or critical service updates)."
       ],
@@ -641,9 +704,10 @@
     "s5": {
       "heading": "5. Cancellation",
       "items": [
-        "You may cancel your membership at any time through your account settings.",
+        "You may cancel your monthly membership at any time through your account settings.",
         "Upon cancellation, you will retain full access to the Service and all stories until the end of your current billing period.",
-        "After the billing period ends, your account will revert to free access with sample books only."
+        "After the billing period ends, your account will revert to free access with sample books only.",
+        "Lifetime memberships are non-cancellable and non-refundable. Lifetime members may delete their account at any time, but doing so will permanently revoke access to the Service and no refund will be issued."
       ]
     },
     "s6": {
@@ -727,13 +791,14 @@
     },
     "s2": {
       "heading": "Service Description",
-      "body": "Fablecast is a children\u2019s story library service. We provide AI-generated illustrated and narrated stories for children aged 3\u20138, available in English, Turkish, and Japanese. Stories are published across six character series, with new stories added weekly. The service is accessed through the website at fablecast.kids."
+      "body": "Fablecast is a children\u2019s story library service. We provide AI-generated illustrated and narrated stories for children aged 3\u20138, available in English, Turkish, Japanese, Spanish, Portuguese, German, and French. Stories are published across six character series, with new stories added weekly. The service is accessed through the website at fablecast.kids."
     },
     "s3": {
       "heading": "Pricing",
       "items": [
         "Free \u2014 $0. Access to 6 sample books (one per series), with full reading experience including audio narration. No payment required.",
-        "Member \u2014 $4.99 per month (USD). Full access to the entire library: all series, all languages, new weekly stories, and AI-generated audio narration."
+        "Member \u2014 $4.99 per month (USD). Full access to the entire library: all series, all languages, new weekly stories, and AI-generated audio narration.",
+        "Lifetime Member \u2014 $99.99 one-time payment (USD). Permanent full access to the entire library with all current and future content."
       ]
     },
     "s4": {
@@ -751,9 +816,10 @@
     "s7": {
       "heading": "Cancellation & Refunds",
       "items": [
-        "You may cancel your membership at any time through your account settings.",
+        "You may cancel your monthly membership at any time through your account settings.",
         "Upon cancellation, you retain full access until the end of the current billing period. After that, your account reverts to free access with sample books only.",
-        "All membership payments are non-refundable. There are no prorated refunds for partial months. We encourage you to try the free sample books before subscribing."
+        "All monthly membership payments are non-refundable. There are no prorated refunds for partial months. We encourage you to try the free sample books before subscribing.",
+        "Lifetime memberships are non-cancellable and non-refundable. Lifetime members may delete their account at any time, but doing so will permanently revoke access and no refund will be issued."
       ]
     },
     "s8": {

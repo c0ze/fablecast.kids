@@ -5,6 +5,21 @@ export default function Blog() {
 
   const posts = [
     {
+      date: t('blog.posts.3.date'),
+      tag: t('blog.posts.3.tag'),
+      tagColor: 'bg-sky/20 text-cosmos border-sky/40',
+      emoji: '\uD83C\uDF0D',
+      title: t('blog.posts.3.title'),
+      body: t('blog.posts.3.body'),
+      highlights: [
+        t('blog.posts.3.highlights.0'),
+        t('blog.posts.3.highlights.1'),
+        t('blog.posts.3.highlights.2'),
+        t('blog.posts.3.highlights.3'),
+        t('blog.posts.3.highlights.4')
+      ]
+    },
+    {
       date: t('blog.posts.0.date'),
       tag: t('blog.posts.0.tag'),
       tagColor: 'bg-mint/20 text-cosmos border-mint/40',

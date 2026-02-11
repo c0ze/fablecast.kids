@@ -2,16 +2,23 @@ import { createContext, useCallback, useEffect, useMemo, useState } from 'react'
 import en from '../locales/en.json';
 import tr from '../locales/tr.json';
 import ja from '../locales/ja.json';
+import es from '../locales/es.json';
+import pt from '../locales/pt.json';
+import de from '../locales/de.json';
+import fr from '../locales/fr.json';
 
-const LOCALES = { en, tr, ja };
-const SUPPORTED = ['en', 'tr', 'ja'];
+const LOCALES = { en, tr, ja, es, pt, de, fr };
+const SUPPORTED = ['en', 'tr', 'ja', 'es', 'pt', 'de', 'fr'];
 const STORAGE_KEY = 'fablecast_lang';
 
 function getInitialLang() {
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored && SUPPORTED.includes(stored)) return stored;
-  } catch {}
+
+    const browserLang = navigator.language.split('-')[0];
+    if (SUPPORTED.includes(browserLang)) return browserLang;
+  } catch { }
   return 'en';
 }
 
@@ -27,7 +34,7 @@ export function I18nProvider({ children }) {
   const setLang = useCallback((code) => {
     if (!SUPPORTED.includes(code)) return;
     setLangState(code);
-    try { localStorage.setItem(STORAGE_KEY, code); } catch {}
+    try { localStorage.setItem(STORAGE_KEY, code); } catch { }
   }, []);
 
   useEffect(() => {

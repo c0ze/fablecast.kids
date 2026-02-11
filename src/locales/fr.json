@@ -1,0 +1,739 @@
+{
+    "logo": {
+        "tagline": "STORIES THAT SPARKLE",
+        "ariaLabel": "Logo Fablecast"
+    },
+    "nav": {
+        "about": "Comment ça marche",
+        "characters": "Personnages",
+        "faq": "FAQ",
+        "blog": "Blog",
+        "pricing": "Tarifs",
+        "getStarted": "Commencer",
+        "home": "Accueil",
+        "privacy": "Confidentialité",
+        "terms": "Conditions",
+        "legal": "Mentions Légales",
+        "menuAriaLabel": "Menu"
+    },
+    "seo": {
+        "home": {
+            "title": "Fablecast | Bibliothèque d'histoires pour enfants avec IA en 7 langues",
+            "description": "Une bibliothèque croissante d'histoires illustrées et racontées pour le coucher, pour les enfants de 3 à 8 ans."
+        },
+        "about": {
+            "title": "Comment ça marche | Fablecast",
+            "description": "Découvrez comment Fablecast crée des histoires pour enfants illustrées et racontées à l'aide de l'IA."
+        },
+        "characters": {
+            "title": "Rencontrez les personnages | Fablecast",
+            "description": "Explorez six séries de personnages bien-aimés. Aventures pour les enfants de 3 à 8 ans."
+        },
+        "faq": {
+            "title": "FAQ | Fablecast",
+            "description": "Questions fréquemment posées sur Fablecast."
+        },
+        "blog": {
+            "title": "Blog | Fablecast",
+            "description": "Mises à jour et histoires des coulisses."
+        },
+        "privacy": {
+            "title": "Politique de confidentialité | Fablecast",
+            "description": "Politique de confidentialité de Fablecast."
+        },
+        "terms": {
+            "title": "Conditions d'utilisation | Fablecast",
+            "description": "Conditions d'utilisation de Fablecast."
+        },
+        "legal": {
+            "title": "Mentions Légales | Fablecast",
+            "description": "Divulgations des transactions commerciales de Fablecast."
+        }
+    },
+    "hero": {
+        "stickerGrowingLibrary": "Bibliothèque grandissante",
+        "sticker3Languages": "3 langues",
+        "titlePart1": "Un nouvel univers de",
+        "titleHighlight": "Histoires",
+        "titlePart2": ", grandissant chaque semaine",
+        "subtitle": "Une bibliothèque croissante d'aventures illustrées et racontées avec le cœur des histoires du coucher.",
+        "ctaStartReading": "Commencer à lire gratuitement",
+        "ctaLatestStories": "Voir les dernières histoires"
+    },
+    "latestStories": {
+        "sticker": "Dernières Histoires",
+        "subtitle": "Histoires fraîches de la bibliothèque !",
+        "leadLabel": "Protagoniste :"
+    },
+    "languageDemo": {
+        "sticker": "Multilingue",
+        "title": "Même histoire, trois langues",
+        "description": "Une vraie page d'une histoire de Rusty, localisée avec amour.",
+        "snippets": {
+            "English": "Little Rusty peeked out. Soft snowflakes danced, turning everything snowy white and bright!",
+            "Turkish": "Küçük Rusty başını uzattı. Yumuşacık kar taneleri dans ediyordu, her yeri bembeyaz ve ışıl ışıl yapıyordu!",
+            "Japanese": "小さなラスティがちょこんと顔を出しました。ふわふわの雪がひらひらと舞い、あたり一面を真っ白でキラキラにしていました！"
+        },
+        "storyLabel": "L'ami d'hiver chaleureux de Rusty"
+    },
+    "features": {
+        "sticker": "Comment ça marche",
+        "title": "Fait avec amour (et IA)",
+        "characterBibles": {
+            "title": "Bibles de personnages",
+            "description": "Chaque histoire naît d'une bible de personnages soigneusement élaborée."
+        },
+        "threeLanguages": {
+            "title": "Trois langues",
+            "description": "Les histoires en anglais sont créées d'abord, puis magnifiquement traduites."
+        },
+        "safeAndCozy": {
+            "title": "Sûr et Confortable",
+            "description": "Chaque série a des garde-fous pour garder les environnements sûrs et adaptés à l'âge."
+        }
+    },
+    "carousel": {
+        "sticker": "Carrousel d'Histoires",
+        "title": "Rencontrez les Personnages",
+        "subtitle": "Vrais titres et cartes de distribution de chaque série en direct.",
+        "prevAriaLabel": "Histoire précédente",
+        "nextAriaLabel": "Histoire suivante",
+        "seriesLabel": "Série {current} sur {total}",
+        "leadLabel": "Protagoniste :",
+        "worldLabel": "Monde :",
+        "viewAriaLabel": "Voir {series}"
+    },
+    "membership": {
+        "sticker": "Adhésion",
+        "title": "Un plan simple",
+        "subtitle": "Tout ce que Fablecast a à offrir, pour un prix familial.",
+        "free": {
+            "name": "Gratuit",
+            "subtitle": "Explorez la magie",
+            "price": "$0",
+            "period": "",
+            "features": [
+                "6 livres d'échantillons",
+                "Expérience de lecture complète avec audio",
+                "Aucune carte requise"
+            ],
+            "cta": "Commencer à lire"
+        },
+        "member": {
+            "name": "Membre",
+            "subtitle": "Le coffre au trésor complet",
+            "price": "$4.99",
+            "period": "/mois",
+            "features": [
+                "Bibliothèque complète",
+                "Nouvelles histoires ajoutées chaque semaine",
+                "Narration audio générée par IA"
+            ],
+            "cta": "Devenir membre",
+            "decreasingPrice": "Le prix diminue avec le temps !",
+            "viewDetails": "Voir les détails complets du plan"
+        }
+    },
+    "pricing": {
+        "title": "Un Plan Qui Grandit Avec Vous",
+        "subtitle": "À mesure que votre enfant grandit, votre prix baisse. C'est aussi simple que ça.",
+        "lifetimeTitle": "Ou, Une Seule Fois",
+        "lifetimeSubtitle": "Obtenez un accès à vie pour un paiement unique.",
+        "savings": "Vous économisez {amount} par rapport au plan mensuel !",
+        "phase": "Phase {number}",
+        "months": "Mois {start}-{end}",
+        "forever": "Pour Toujours",
+        "free": "Gratuit",
+        "month": "/mois",
+        "oneTime": "une fois",
+        "phases": {
+            "1": {
+                "price": "$4.99",
+                "desc": "Commencez votre voyage"
+            },
+            "2": {
+                "price": "$3.99",
+                "desc": "S'installer"
+            },
+            "3": {
+                "price": "$2.99",
+                "desc": "Devenir un habitué"
+            },
+            "4": {
+                "price": "$1.99",
+                "desc": "Partie de la famille"
+            },
+            "5": {
+                "price": "$0.99",
+                "desc": "Récompense de fidélité"
+            },
+            "6": {
+                "price": "$0.00",
+                "desc": "Gratuit pour toujours après 5 ans"
+            }
+        },
+        "lifetime": {
+            "price": "$99",
+            "label": "Adhésion à Vie",
+            "cta": "Obtenir l'Accès à Vie"
+        },
+        "back": "Retour à l'Accueil"
+    },
+    "auth": {
+        "title": "Prêt pour l'heure du conte ?",
+        "subtitle": "Connectez-vous avec Google pour un accès rapide et sans mot de passe.",
+        "signingIn": "Connexion en cours...",
+        "signInWithGoogle": "Se connecter avec Google",
+        "continueSetup": "Continuer la configuration",
+        "signOut": "Se déconnecter",
+        "signedInAs": "Connecté en tant que {email}",
+        "errors": {
+            "unverifiedGoogle": "Seuls les comptes Google vérifiés peuvent continuer.",
+            "loadFailed": "Impossible de charger les paramètres de votre compte pour le moment.",
+            "firebaseNotConfigured": "La connexion Google n'est pas configurée.",
+            "signInFailed": "La connexion Google a été annulée ou a échoué.",
+            "signInRequired": "Veuillez vous reconnecter avant d'enregistrer vos préférences.",
+            "saveFailed": "Impossible d'enregistrer vos préférences.",
+            "registrationDisabled": "Inscription temporairement suspendue"
+        }
+    },
+    "setupModal": {
+        "title": "Terminez votre configuration",
+        "subtitle": "Une dernière étape pour personnaliser l'heure du conte !",
+        "preferredLanguageLabel": "Langue préférée",
+        "saving": "Enregistrement...",
+        "savePreferences": "Enregistrer les préférences",
+        "close": "Fermer",
+        "languageOptions": {
+            "english": "Anglais",
+            "turkish": "Turc",
+            "japanese": "Japonais",
+            "spanish": "Espagnol",
+            "portuguese": "Portugais",
+            "german": "Allemand",
+            "french": "Français"
+        }
+    },
+    "footer": {
+        "madeWithLove": "Fait avec amour pour les petits lecteurs du monde entier."
+    },
+    "about": {
+        "sticker": "À propos",
+        "title": "Comment fonctionne Fablecast",
+        "subtitle": "Un pipeline magique transforme les bibles de personnages en livres pour enfants illustrés et racontés.",
+        "stepLabel": "Étape {number}",
+        "steps": {
+            "0": {
+                "title": "Bibles de Personnages",
+                "description": "Chacune de nos six séries commence par une bible de personnages écrite avec amour."
+            },
+            "1": {
+                "title": "Génération d'Histoires",
+                "description": "Notre moteur d'histoires IA écrit de nouvelles aventures pour chaque série."
+            },
+            "2": {
+                "title": "Illustration",
+                "description": "Chaque page reçoit une illustration unique en couleur."
+            },
+            "3": {
+                "title": "Traduction",
+                "description": "L'édition maîtresse en anglais est traduite en turc et en japonais."
+            },
+            "4": {
+                "title": "Narration",
+                "description": "La synthèse vocale alimentée par l'IA génère une narration chaleureuse et expressive."
+            },
+            "5": {
+                "title": "Mises à jour Hebdomadaires",
+                "description": "De nouvelles histoires sont ajoutées à la bibliothèque chaque semaine."
+            }
+        },
+        "safetyTitle": "La sécurité d'abord, toujours",
+        "safetyDescription": "Chaque série a des règles mondiales intégrées qui empêchent les paramètres ou thèmes inappropriés.",
+        "adFreeTitle": "Toujours sans publicité",
+        "adFreeDescription": "Fablecast n'affichera jamais de publicité."
+    },
+    "characters": {
+        "sticker": "Personnages",
+        "title": "Rencontrez la distribution",
+        "subtitle": "Six mondes d'histoires bien-aimés, chacun avec un personnage principal unique.",
+        "supportingCastLabel": "Distribution de soutien",
+        "worldLabel": "Monde :",
+        "series": {
+            "adventures-of-rusty": {
+                "series": "Les Aventures de Rusty",
+                "lead": "Rusty",
+                "leadDescription": "Un petit chien robot joyeux au cœur d'or.",
+                "tone": "Chaleureux, curieux",
+                "artStyle": "Aquarelle douce",
+                "world": "Ateliers, parcs",
+                "cast": {
+                    "0": {
+                        "name": "Bolt",
+                        "role": "Meilleur ami"
+                    },
+                    "1": {
+                        "name": "Sparky",
+                        "role": "Ampoule enjouée"
+                    },
+                    "2": {
+                        "name": "Daisy",
+                        "role": "Gentil canard à remonter"
+                    }
+                }
+            },
+            "captain-barnacles-voyages": {
+                "series": "Les Voyages du Capitaine Barnacles",
+                "lead": "Capitaine Barnacles",
+                "leadDescription": "Un joyeux capitaine créature marine.",
+                "tone": "Aventureux",
+                "artStyle": "Bleus océaniques lumineux",
+                "world": "Océans, ports",
+                "cast": {
+                    "0": {
+                        "name": "Coral",
+                        "role": "Premier maître"
+                    },
+                    "1": {
+                        "name": "Gully",
+                        "role": "Mouette vigie"
+                    },
+                    "2": {
+                        "name": "Shelly",
+                        "role": "Vieux coquillage sage"
+                    }
+                }
+            },
+            "astro-bun-to-the-moon": {
+                "series": "Astro-Bun vers la Lune",
+                "lead": "Astro-Bun",
+                "leadDescription": "Un lapin rose duveteux dans une combinaison spatiale minuscule.",
+                "tone": "Rêveur",
+                "artStyle": "Pastels doux",
+                "world": "Fusées, lunes",
+                "cast": {
+                    "0": {
+                        "name": "Cosmo",
+                        "role": "Copilote robot"
+                    },
+                    "1": {
+                        "name": "Nova",
+                        "role": "Gelée spatiale brillante"
+                    },
+                    "2": {
+                        "name": "Crater",
+                        "role": "Roche lunaire"
+                    }
+                }
+            },
+            "pippa-the-little-plane": {
+                "series": "Pippa le Petit Avion",
+                "lead": "Pippa",
+                "leadDescription": "Un joyeux petit avion à hélice.",
+                "tone": "Joyeux",
+                "artStyle": "Ciel lumineux",
+                "world": "Aéroports, nuages",
+                "cast": {
+                    "0": {
+                        "name": "Breezy",
+                        "role": "Esprit du vent"
+                    },
+                    "1": {
+                        "name": "Hangar",
+                        "role": "Vieux bâtiment d'aéroport"
+                    },
+                    "2": {
+                        "name": "Zip",
+                        "role": "Petit drone"
+                    }
+                }
+            },
+            "professor-hoot-mysteries": {
+                "series": "Les Mystères du Professeur Hoot",
+                "lead": "Professeur Hoot",
+                "leadDescription": "Un vieux hibou sage.",
+                "tone": "Pensif",
+                "artStyle": "Tons chauds d'automne",
+                "world": "Bibliothèques, jardins",
+                "cast": {
+                    "0": {
+                        "name": "Clue",
+                        "role": "Souris assistante"
+                    },
+                    "1": {
+                        "name": "Maple",
+                        "role": "Écureuil bibliothécaire"
+                    },
+                    "2": {
+                        "name": "Bramble",
+                        "role": "Hérisson jardinier"
+                    }
+                }
+            },
+            "grug-garden": {
+                "series": "Le Jardin de Grug",
+                "lead": "Grug",
+                "leadDescription": "Une douce créature de jardin moussue.",
+                "tone": "Doux",
+                "artStyle": "Verts terreux",
+                "world": "Prés",
+                "cast": {
+                    "0": {
+                        "name": "Pebble",
+                        "role": "Ami caillou de rivière"
+                    },
+                    "1": {
+                        "name": "Fern",
+                        "role": "Petite grenouille"
+                    },
+                    "2": {
+                        "name": "Twig",
+                        "role": "Insecte bâton"
+                    }
+                }
+            }
+        }
+    },
+    "faq": {
+        "sticker": "Aide",
+        "title": "Questions Fréquemment Posées",
+        "subtitle": "Tout ce que vous devez savoir.",
+        "gettingStarted": {
+            "category": "Commencer",
+            "0": {
+                "q": "Qu'est-ce que Fablecast ?",
+                "a": "Une bibliothèque d'histoires."
+            },
+            "1": {
+                "q": "Pour qui est-ce ?",
+                "a": "Parents d'enfants de 3 à 8 ans."
+            },
+            "2": {
+                "q": "Comment s'inscrire ?",
+                "a": "Connectez-vous avec Google."
+            },
+            "3": {
+                "q": "Essai gratuit ?",
+                "a": "Oui, 6 livres."
+            }
+        },
+        "storiesAndContent": {
+            "category": "Histoires",
+            "0": {
+                "q": "Comment sont-elles faites ?",
+                "a": "Par IA."
+            },
+            "1": {
+                "q": "Fréquence ?",
+                "a": "Chaque semaine."
+            },
+            "2": {
+                "q": "Relire ?",
+                "a": "Oui."
+            },
+            "3": {
+                "q": "Langues ?",
+                "a": "EN, TR, JA, ES, PT, DE, FR."
+            },
+            "4": {
+                "q": "Sûr ?",
+                "a": "Absolument."
+            }
+        },
+        "subscriptionAndBilling": {
+            "category": "Abonnement",
+            "0": {
+                "q": "Coût ?",
+                "a": "$4.99/mois."
+            },
+            "1": {
+                "q": "Annuler ?",
+                "a": "À tout moment."
+            },
+            "2": {
+                "q": "Remboursement ?",
+                "a": "Non."
+            },
+            "3": {
+                "q": "Changer de langue ?",
+                "a": "Oui."
+            }
+        },
+        "technical": {
+            "category": "Technique",
+            "0": {
+                "q": "Appareils ?",
+                "a": "Tout navigateur."
+            },
+            "1": {
+                "q": "Hors ligne ?",
+                "a": "Oui."
+            },
+            "2": {
+                "q": "Audio ?",
+                "a": "Oui."
+            }
+        },
+        "privacyAndSafety": {
+            "category": "Confidentialité",
+            "0": {
+                "q": "Données ?",
+                "a": "Minimum."
+            },
+            "1": {
+                "q": "Pub ?",
+                "a": "Non."
+            },
+            "2": {
+                "q": "Vente ?",
+                "a": "Jamais."
+            }
+        },
+        "contactTitle": "Questions ?",
+        "contactSubtitle": "Nous aimerions aider.",
+        "contactEmail": "support@fablecast.kids"
+    },
+    "blog": {
+        "sticker": "Blog",
+        "title": "Nouvelles",
+        "subtitle": "Les dernières nouvelles de Fablecast.",
+        "posts": {
+            "0": {
+                "date": "9 février 2026",
+                "tag": "Lancement",
+                "title": "Bienvenue chez Fablecast !",
+                "body": "Aujourd'hui nous lançons.",
+                "highlights": [
+                    "6 séries",
+                    "3 langues",
+                    "Audio",
+                    "Lecteur Web",
+                    "Abonnement simple"
+                ]
+            },
+            "3": {
+                "date": "11 février 2026",
+                "tag": "Mise à jour",
+                "title": "4 nouvelles langues et Abonnement à vie",
+                "body": "Fablecast parle désormais sept langues. Nous avons également lancé l'Abonnement à vie.",
+                "highlights": [
+                    "4 nouvelles langues : espagnol, portugais, allemand et français",
+                    "Abonnement à vie — $99.99 paiement unique",
+                    "Aucun changement au plan gratuit ou à l'abonnement mensuel"
+                ]
+            },
+            "1": {
+                "date": "9 février 2026",
+                "tag": "Feuille de route",
+                "title": "À venir",
+                "body": "Grands projets.",
+                "highlights": [
+                    "Plus de langues",
+                    "Recherche",
+                    "Mode hors ligne",
+                    "Plus de séries"
+                ]
+            },
+            "2": {
+                "date": "9 février 2026",
+                "tag": "Promesse",
+                "title": "Sans publicité",
+                "body": "Fait pour les familles.",
+                "highlights": [
+                    "Jamais de pub",
+                    "Jamais de vente de données",
+                    "Votre abonnement nous soutient",
+                    "Temps de lecture sacré"
+                ]
+            }
+        },
+        "stayInLoopTitle": "Restez informé",
+        "stayInLoopSubtitle": "Suivez-nous."
+    },
+    "privacy": {
+        "sticker": "Confidentialité",
+        "title": "Politique de Confidentialité",
+        "lastUpdated": "9 février 2026",
+        "s1": {
+            "heading": "1. Qui sommes-nous",
+            "body": "Fablecast."
+        },
+        "s2": {
+            "heading": "2. Données",
+            "intro": "Minimum."
+        },
+        "s3": {
+            "heading": "3. Utilisation",
+            "intro": "Pour le service."
+        },
+        "s4": {
+            "heading": "4. Publicité",
+            "body": "Pas de pub."
+        },
+        "s5": {
+            "heading": "5. Partage",
+            "intro": "Google & Stripe."
+        },
+        "s6": {
+            "heading": "6. Sécurité",
+            "body": "Firebase."
+        },
+        "s7": {
+            "heading": "7. Enfants",
+            "body1": "Pas de données d'enfants."
+        },
+        "s8": {
+            "heading": "8. Droits",
+            "intro": "Accès, suppression."
+        },
+        "s9": {
+            "heading": "9. International",
+            "body": "USA."
+        },
+        "s10": {
+            "heading": "10. Changements",
+            "body": "Mises à jour possibles."
+        },
+        "s11": {
+            "heading": "11. Contact",
+            "body": "privacy@fablecast.kids"
+        }
+    },
+    "terms": {
+        "sticker": "Conditions",
+        "title": "Conditions d'Utilisation",
+        "lastUpdated": "9 février 2026",
+        "s1": {
+            "heading": "1. Acceptation",
+            "body": "Accord."
+        },
+        "s2": {
+            "heading": "2. Service",
+            "body": "Bibliothèque."
+        },
+        "s3": {
+            "heading": "3. Comptes",
+            "items": [
+                "18+",
+                "Google"
+            ]
+        },
+        "s4": {
+            "heading": "4. Abonnement",
+            "plans": {
+                "subheading": "Niveaux",
+                "items": [
+                    "Gratuit",
+                    "Membre"
+                ]
+            }
+        },
+        "s5": {
+            "heading": "5. Annulation",
+            "items": [
+                "Vous pouvez annuler votre abonnement mensuel à tout moment.",
+                "Les abonnements à vie ne sont ni annulables ni remboursables. Les membres à vie peuvent supprimer leur compte à tout moment, mais cela révoquera définitivement l'accès au service et aucun remboursement ne sera effectué."
+            ]
+        },
+        "s6": {
+            "heading": "6. Préférences",
+            "items": [
+                "Changer de langue"
+            ]
+        },
+        "s7": {
+            "heading": "7. Contenu",
+            "items": [
+                "Propriété de Fablecast"
+            ]
+        },
+        "s8": {
+            "heading": "8. Utilisation",
+            "intro": "Usage loyal."
+        },
+        "s9": {
+            "heading": "9. IA",
+            "body": "Généré par IA."
+        },
+        "s10": {
+            "heading": "10. Disponibilité",
+            "items": [
+                "Non garanti"
+            ]
+        },
+        "s11": {
+            "heading": "11. Responsabilité",
+            "body": "Limitée."
+        },
+        "s12": {
+            "heading": "12. Loi",
+            "body": "Delaware."
+        },
+        "s13": {
+            "heading": "13. Résiliation",
+            "body": "Possible."
+        },
+        "s14": {
+            "heading": "14. Changements",
+            "body": "Possible."
+        },
+        "s15": {
+            "heading": "15. Contact",
+            "body": "legal@fablecast.kids"
+        }
+    },
+    "legal": {
+        "sticker": "Mentions Légales",
+        "title": "Loi sur les Transactions Commerciales Spécifiées",
+        "lastUpdated": "10 février 2026",
+        "s1": {
+            "heading": "Informations de l'Opérateur",
+            "nameLabel": "Nom Commercial :",
+            "name": "Arda Karaduman (Nom Commercial : Fablecast)",
+            "representativeLabel": "Représentant :",
+            "representative": "Arda Karaduman",
+            "addressLabel": "Adresse :",
+            "address": "Magazan Sangenjaya 2 3F-3, 4-18-15 Taishido, Setagaya-ku, Tokyo 154-0004, Japon",
+            "phoneLabel": "Téléphone :",
+            "phone": "[050-XXXX-XXXX — to be updated]",
+            "emailLabel": "E-mail :",
+            "email": "legal@fablecast.kids"
+        },
+        "s2": {
+            "heading": "Description",
+            "body": "Bibliothèque d'histoires."
+        },
+        "s3": {
+            "heading": "Prix",
+            "items": [
+                "Gratuit — $0.",
+                "Membre — $4.99/mois.",
+                "Membre à vie — $99.99 paiement unique (USD)."
+            ]
+        },
+        "s4": {
+            "heading": "Paiement",
+            "body": "Carte de crédit (Stripe)."
+        },
+        "s5": {
+            "heading": "Facturation",
+            "body": "Mensuelle."
+        },
+        "s6": {
+            "heading": "Livraison",
+            "body": "Numérique."
+        },
+        "s7": {
+            "heading": "Annulation",
+            "items": [
+                "Abonnement mensuel annulable à tout moment.",
+                "Non remboursable.",
+                "Les abonnements à vie ne sont ni annulables ni remboursables. La suppression du compte entraîne la perte définitive de l'accès."
+            ]
+        },
+        "s8": {
+            "heading": "Environnement",
+            "body": "Navigateurs modernes."
+        }
+    }
+}
