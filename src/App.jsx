@@ -859,13 +859,12 @@ function App() {
                     {t('hero.subtitle')}
                   </p>
                   <div className="mt-8 flex flex-wrap gap-4">
-                    <a
-                      href="#auth-section"
-                      onClick={() => setSelectedPlan('free')}
+                    <button
+                      onClick={() => navigateTo('free-books')}
                       className="group rounded-full bg-twilight px-8 py-3.5 text-base font-bold text-white shadow-glow transition hover:bg-plumMist hover:shadow-candy"
                     >
                       {t('hero.ctaStartReading')} {'\uD83D\uDE80'}
-                    </a>
+                    </button>
                     <a
                       href="#daily-drop"
                       className="rounded-full border-2 border-dashed border-twilight/40 bg-white/70 px-7 py-3.5 text-base font-bold text-twilight transition hover:border-twilight hover:bg-white"

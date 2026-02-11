@@ -767,5 +767,13 @@
             "heading": "Ambiente Operacional",
             "body": "Fablecast funciona em navegadores web modernos (Chrome, Safari, Firefox, Edge) em dispositivos desktop e móveis. É necessária uma conexão estável à Internet para leitura e reprodução de áudio."
         }
+    },
+    "freeBooks": {
+        "sticker": "Biblioteca Gratuita",
+        "title": "Livros Grátis para Ler",
+        "subtitle": "Nenhuma assinatura necessária — aproveite essas histórias completas por nossa conta!",
+        "readButton": "Ler Agora",
+        "loading": "Carregando livros gratuitos...",
+        "noBooks": "Nenhum livro gratuito encontrado no momento."
     }
 }
