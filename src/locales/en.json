@@ -14,6 +14,7 @@
     "privacy": "Privacy",
     "terms": "Terms",
     "legal": "Legal",
+    "freeBooks": "Free Books",
     "menuAriaLabel": "Menu"
   },
   "seo": {
@@ -826,5 +827,13 @@
       "heading": "Operating Environment",
       "body": "Fablecast works on modern web browsers (Chrome, Safari, Firefox, Edge) on desktop and mobile devices. A stable internet connection is required for reading and audio playback."
     }
+  },
+  "freeBooks": {
+    "sticker": "Free Library",
+    "title": "Free Books to Read",
+    "subtitle": "No subscription needed \u2014 enjoy these full stories on us!",
+    "readButton": "Read Now",
+    "loading": "Loading free books...",
+    "noBooks": "No free books found at the moment."
   }
 }

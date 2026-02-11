@@ -12,6 +12,7 @@ import About from './pages/About';
 import Characters from './pages/Characters';
 import FAQ from './pages/FAQ';
 import Blog from './pages/Blog';
+import FreeBooks from './pages/FreeBooks';
 import Legal from './pages/Legal';
 import Pricing from './pages/Pricing';
 
@@ -24,7 +25,8 @@ const PAGES = {
   characters: Characters,
   faq: FAQ,
   blog: Blog,
-  pricing: Pricing
+  pricing: Pricing,
+  'free-books': FreeBooks
 };
 
 const seriesEmoji = {
@@ -189,6 +191,7 @@ function App() {
   const NAV_LINKS = useMemo(() => [
     { page: 'about', label: t('nav.about'), emoji: '\u2728' },
     { page: 'characters', label: t('nav.characters'), emoji: '\uD83C\uDFA0' },
+    { page: 'free-books', label: t('nav.freeBooks'), emoji: '\uD83D\uDCD6' },
     { page: 'pricing', label: t('nav.pricing'), emoji: '\uD83D\uDC8E' },
     { page: 'faq', label: t('nav.faq'), emoji: '\u2753' },
     { page: 'blog', label: t('nav.blog'), emoji: '\uD83D\uDCDD' }
@@ -764,7 +767,7 @@ function App() {
         <>
           {(() => {
             const PageComponent = PAGES[currentPage];
-            return <PageComponent />;
+            return <PageComponent stories={manifestStories} />;
           })()}
 
           {/* Sub-page footer */}
