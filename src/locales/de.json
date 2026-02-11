@@ -604,82 +604,113 @@
         "title": "Nutzungsbedingungen",
         "lastUpdated": "9. Februar 2026",
         "s1": {
-            "heading": "1. Akzeptanz",
-            "body": "Zustimmung."
+            "heading": "1. Annahme der Bedingungen",
+            "body": "Durch den Zugriff auf oder die Nutzung von Fablecast (\"der Dienst\"), betrieben unter fablecast.kids, erklären Sie sich mit diesen Nutzungsbedingungen einverstanden. Wenn Sie nicht einverstanden sind, dürfen Sie den Dienst nicht nutzen. Der Dienst ist für die Nutzung durch Eltern und Erziehungsberechtigte im Namen ihrer Kinder bestimmt."
         },
         "s2": {
-            "heading": "2. Service",
-            "body": "Bibliothek."
+            "heading": "2. Beschreibung des Dienstes",
+            "body": "Fablecast ist ein Kinderbuch-Bibliotheksdienst. Wir erstellen illustrierte, erzählte Geschichten in mehreren Sprachen und Charakterserien, mit wöchentlich neuen Geschichten. Die Geschichten werden mithilfe künstlicher Intelligenz generiert und sind für Kinder im Alter von 3-8 Jahren gedacht, um sie unter elterlicher Aufsicht zu genießen."
         },
         "s3": {
             "heading": "3. Konten",
             "items": [
-                "18+",
-                "Google"
+                "Sie müssen mindestens 18 Jahre alt sein (oder volljährig in Ihrer Rechtsordnung), um ein Konto zu erstellen.",
+                "Konten werden über Google Sign-In erstellt. Sie sind verantwortlich für die Sicherheit Ihres Google-Kontos.",
+                "Ein Konto pro Haushalt. Konten sind nicht übertragbar.",
+                "Sie sind für alle Aktivitäten unter Ihrem Konto verantwortlich."
             ]
         },
         "s4": {
-            "heading": "4. Abo",
+            "heading": "4. Mitgliedschaft & Abrechnung",
             "plans": {
-                "subheading": "Level",
+                "subheading": "Zugangsebenen",
                 "items": [
-                    "Gratis",
-                    "Mitglied"
+                    "Kostenlos — Zugang zu 6 Beispielbüchern (eines pro Serie). Keine Zahlung erforderlich.",
+                    "Mitglied ($4.99/Monat) — Voller Zugang zur gesamten Bibliothek, allen Serien, allen Sprachen und KI-generierter Audio-Erzählung."
                 ]
+            },
+            "billing": {
+                "subheading": "Abrechnung",
+                "items": [
+                    "Mitgliedschaften werden monatlich am Jahrestag Ihres Anmeldedatums abgerechnet.",
+                    "Preise sind in USD und können anfallenden Steuern unterliegen.",
+                    "Wir behalten uns das Recht vor, Preise mit 30-tägiger Vorlaufzeit zu ändern."
+                ]
+            },
+            "refunds": {
+                "subheading": "Rückerstattungen",
+                "body": "Alle Mitgliedschaftszahlungen sind nicht erstattungsfähig. Es gibt keine anteiligen Rückerstattungen für Teilmonate. Wir empfehlen Ihnen, die kostenlosen Beispielbücher auszuprobieren, bevor Sie ein Abonnement abschließen, um sicherzustellen, dass der Dienst Ihren Bedürfnissen entspricht."
             }
         },
         "s5": {
             "heading": "5. Kündigung",
             "items": [
-                "Sie können Ihre monatliche Mitgliedschaft jederzeit kündigen.",
-                "Lebenslange Mitgliedschaften sind nicht kündbar und nicht erstattungsfähig. Lebenslange Mitglieder können ihr Konto jederzeit löschen, verlieren dabei jedoch dauerhaft den Zugang zum Dienst, und es erfolgt keine Rückerstattung."
+                "Sie können Ihre monatliche Mitgliedschaft jederzeit über Ihre Kontoeinstellungen kündigen.",
+                "Nach der Kündigung behalten Sie vollen Zugang zum Dienst und allen Geschichten bis zum Ende Ihres aktuellen Abrechnungszeitraums.",
+                "Nach Ablauf des Abrechnungszeitraums wird Ihr Konto auf kostenlosen Zugang nur mit Beispielbüchern zurückgesetzt.",
+                "Lebenslange Mitgliedschaften sind nicht kündbar und nicht erstattungsfähig. Lebenslange Mitglieder können ihr Konto jederzeit löschen, verlieren dadurch jedoch dauerhaft den Zugang zum Dienst, und es wird keine Rückerstattung gewährt."
             ]
         },
         "s6": {
-            "heading": "6. Einstellungen",
+            "heading": "6. Änderung der Einstellungen",
             "items": [
-                "Sprache ändern"
+                "Die Spracheinstellung kann jederzeit in Ihren Kontoeinstellungen geändert werden.",
+                "Änderungen werden sofort wirksam."
             ]
         },
         "s7": {
-            "heading": "7. Inhalt",
+            "heading": "7. Inhalte & geistiges Eigentum",
             "items": [
-                "Gehört Fablecast"
+                "Alle Geschichten, Illustrationen, Erzählungen, Charaktere und zugehörigen Inhalte werden von Fablecast veröffentlicht und kontrolliert. Die rechtliche Landschaft rund um Eigentum an KI-generierten Inhalten entwickelt sich weiter; unabhängig davon behält Fablecast alle Rechte an den Inhalten, wie sie im Dienst veröffentlicht werden.",
+                "Inhalte werden mithilfe künstlicher Intelligenz generiert. Automatisierte Sicherheitsvorkehrungen sind vorhanden, obwohl Inhalte nicht einzeln Seite für Seite überprüft werden.",
+                "Ihnen wird eine persönliche, nicht-kommerzielle, nicht übertragbare Lizenz gewährt, um über den Dienst auf Geschichten zuzugreifen und diese zu genießen.",
+                "Sie dürfen keine Inhalte des Dienstes neu verteilen, neu veröffentlichen, verkaufen oder kommerziell verwerten.",
+                "Sie dürfen keine automatisierten Tools verwenden, um Inhalte zu scrapen, herunterzuladen oder massenhaft zu extrahieren."
             ]
         },
         "s8": {
-            "heading": "8. Nutzung",
-            "intro": "Fair use."
+            "heading": "8. Akzeptable Nutzung",
+            "intro": "Sie stimmen zu, nicht:",
+            "items": [
+                "Ihre Konto-Anmeldeinformationen mit anderen zu teilen.",
+                "Den Dienst für rechtswidrige Zwecke zu nutzen.",
+                "Zu versuchen, den Dienst zu stören oder zu unterbrechen.",
+                "Den Dienst zu dekonstruieren, zu dekompilieren oder zu versuchen, den Quellcode zu extrahieren.",
+                "Den Dienst zu nutzen, um mit Fablecast zu konkurrieren oder es zu replizieren."
+            ]
         },
         "s9": {
-            "heading": "9. KI",
-            "body": "KI-generiert."
+            "heading": "9. Haftungsausschluss für KI-generierte Inhalte",
+            "body": "Alle Geschichten, Illustrationen und Erzählungen auf Fablecast werden mithilfe künstlicher Intelligenz generiert. Inhalte werden nicht manuell Seite für Seite überprüft. Während wir automatisierte Sicherheitsvorkehrungen implementieren, um die Altersangemessenheit zu gewährleisten, können KI-generierte Inhalte gelegentlich unerwartete oder unvollkommene Elemente enthalten. Wir empfehlen Eltern und Erziehungsberechtigten dringend, Geschichten zusammen mit ihren Kindern zu lesen. Wenn Sie auf unangemessene Inhalte stoßen, melden Sie diese bitte sofort an legal@fablecast.kids."
         },
         "s10": {
-            "heading": "10. Verfügbarkeit",
+            "heading": "10. Verfügbarkeit des Dienstes",
             "items": [
-                "Nicht garantiert"
+                "Wir streben danach, wöchentlich neue Geschichten hinzuzufügen, garantieren jedoch keinen ununterbrochenen Dienst.",
+                "Wartung, API-Probleme oder unvorhergesehene Umstände können gelegentlich die Generierung von Geschichten beeinträchtigen.",
+                "Wir werden angemessene Anstrengungen unternehmen, um Benutzer über geplante Ausfallzeiten zu informieren."
             ]
         },
         "s11": {
-            "heading": "11. Haftung",
-            "body": "Begrenzt."
+            "heading": "11. Haftungsbeschränkung",
+            "body": "Der Dienst wird \"wie besehen\" und \"wie verfügbar\" bereitgestellt. Im vollen gesetzlich zulässigen Umfang lehnt Fablecast alle Garantien ab, ausdrücklich oder stillschweigend. Wir sind nicht haftbar für indirekte, zufällige, besondere, Folge- oder Strafschäden, die sich aus Ihrer Nutzung des Dienstes ergeben. Unsere Gesamthaftung übersteigt nicht den Betrag, den Sie uns in den 12 Monaten vor der Forderung gezahlt haben."
         },
         "s12": {
-            "heading": "12. Recht",
-            "body": "Delaware."
+            "heading": "12. Anwendbares Recht",
+            "body": "Diese Bedingungen unterliegen den Gesetzen des Staates Delaware, Vereinigte Staaten, und werden nach diesen ausgelegt, ohne Rücksicht auf Kollisionsnormen. Für Benutzer in der EU/EWR berührt nichts in diesen Bedingungen Ihre Rechte unter den zwingenden Verbraucherschutzgesetzen Ihres Wohnsitzlandes. Für Benutzer in Japan gelten zwingende Bestimmungen des japanischen Verbrauchervertragsgesetzes."
         },
         "s13": {
             "heading": "13. Beendigung",
-            "body": "Möglich."
+            "body": "Wir behalten uns das Recht vor, Ihr Konto auszusetzen oder zu beenden, wenn Sie gegen diese Bedingungen verstoßen. Bei Beendigung aus wichtigem Grund verlieren Sie sofort den Zugang zum Dienst ohne Rückerstattung für den verbleibenden Abrechnungszeitraum."
         },
         "s14": {
-            "heading": "14. Änderungen",
-            "body": "Möglich."
+            "heading": "14. Änderungen dieser Bedingungen",
+            "body": "Wir können diese Bedingungen von Zeit zu Zeit aktualisieren. Wesentliche Änderungen werden mindestens 30 Tage vor Inkrafttreten per E-Mail mitgeteilt. Die fortgesetzte Nutzung des Dienstes nach dem Stichtag gilt als Akzeptanz."
         },
         "s15": {
             "heading": "15. Kontakt",
-            "body": "legal@fablecast.kids"
+            "body": "Für Fragen zu diesen Bedingungen kontaktieren Sie uns bitte unter:",
+            "email": "legal@fablecast.kids"
         }
     },
     "legal": {
@@ -700,40 +731,41 @@
             "email": "legal@fablecast.kids"
         },
         "s2": {
-            "heading": "Beschreibung",
-            "body": "Kinderbuch-Bibliothek."
+            "heading": "Beschreibung des Dienstes",
+            "body": "Fablecast ist ein Kinderbuch-Bibliotheksdienst. Wir bieten KI-generierte illustrierte und erzählte Geschichten für Kinder im Alter von 3-8 Jahren an, verfügbar in Englisch, Türkisch, Japanisch, Spanisch, Portugiesisch, Deutsch und Französisch. Die Geschichten werden über sechs Charakterserien veröffentlicht, mit wöchentlich neuen Geschichten. Der Zugriff auf den Dienst erfolgt über die Website fablecast.kids."
         },
         "s3": {
             "heading": "Preise",
             "items": [
-                "Kostenlos — $0.",
-                "Mitglied — $4.99/Monat.",
-                "Lebenslanges Mitglied — $99.99 Einmalzahlung (USD)."
+                "Kostenlos — $0. Zugang zu 6 Beispielbüchern (eines pro Serie), mit vollständigem Leseerlebnis einschließlich Audio-Erzählung. Keine Zahlung erforderlich.",
+                "Mitglied — $4.99 pro Monat (USD). Voller Zugang zur gesamten Bibliothek: alle Serien, alle Sprachen, wöchentlich neue Geschichten und KI-generierte Audio-Erzählung.",
+                "Lebenslanges Mitglied — $99.99 Einmalzahlung (USD). Dauerhafter voller Zugang zur gesamten Bibliothek mit allen aktuellen und zukünftigen Inhalten."
             ]
         },
         "s4": {
-            "heading": "Zahlung",
-            "body": "Kreditkarte (Stripe)."
+            "heading": "Zahlungsmethode",
+            "body": "Kreditkartenzahlungen werden sicher über Stripe abgewickelt. Fablecast speichert keine Kreditkartennummern oder vollständigen Zahlungsdetails."
         },
         "s5": {
-            "heading": "Abrechnung",
-            "body": "Monatlich."
+            "heading": "Zahlungszeitpunkt",
+            "body": "Die Mitgliedschaft wird monatlich am Jahrestag des Anmeldedatums abgerechnet. Die Zahlung wird zu Beginn jedes Abrechnungszyklus eingezogen."
         },
         "s6": {
             "heading": "Lieferung",
-            "body": "Digital."
+            "body": "Der Dienst wird digital über die Website fablecast.kids bereitgestellt. Geschichten sind sofort nach Kontoerstellung (kostenlos) oder Zahlungsbestätigung (Mitglied) verfügbar. Es werden keine physischen Produkte versandt."
         },
         "s7": {
-            "heading": "Kündigung",
+            "heading": "Kündigung & Rückerstattungen",
             "items": [
-                "Monatliche Mitgliedschaft jederzeit kündbar.",
-                "Keine Rückerstattung.",
-                "Lebenslange Mitgliedschaften sind nicht kündbar und nicht erstattungsfähig. Bei Kontolöschung geht der Zugang dauerhaft verloren."
+                "Sie können Ihre monatliche Mitgliedschaft jederzeit über Ihre Kontoeinstellungen kündigen.",
+                "Bei Kündigung behalten Sie vollen Zugang bis zum Ende des aktuellen Abrechnungszeitraums. Danach wird Ihr Konto auf kostenlosen Zugang nur mit Beispielbüchern zurückgesetzt.",
+                "Alle monatlichen Mitgliedschaftszahlungen sind nicht erstattungsfähig. Es gibt keine anteiligen Rückerstattungen für Teilmonate. Wir empfehlen Ihnen, die kostenlosen Beispielbücher vor dem Abonnement auszuprobieren.",
+                "Lebenslange Mitgliedschaften sind nicht kündbar und nicht erstattungsfähig. Lebenslange Mitglieder können ihr Konto jederzeit löschen, verlieren dadurch jedoch dauerhaft den Zugang, und es wird keine Rückerstattung gewährt."
             ]
         },
         "s8": {
-            "heading": "Umgebung",
-            "body": "Moderne Browser."
+            "heading": "Betriebsumgebung",
+            "body": "Fablecast funktioniert auf modernen Webbrowsern (Chrome, Safari, Firefox, Edge) auf Desktop- und Mobilgeräten. Eine stabile Internetverbindung ist für das Lesen und die Audio-Wiedergabe erforderlich."
         }
     }
 }

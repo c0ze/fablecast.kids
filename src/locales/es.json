@@ -604,82 +604,113 @@
         "title": "Términos de Servicio",
         "lastUpdated": "Última actualización: 9 de febrero de 2026",
         "s1": {
-            "heading": "1. Aceptación",
-            "body": "Aceptas estos términos."
+            "heading": "1. Aceptación de Términos",
+            "body": "Al acceder o usar Fablecast (\"el Servicio\"), operado en fablecast.kids, usted acepta estar sujeto a estos Términos de Servicio. Si no está de acuerdo, no puede usar el Servicio. El Servicio está destinado para uso por parte de padres y tutores legales en nombre de sus hijos."
         },
         "s2": {
-            "heading": "2. Servicio",
-            "body": "Biblioteca de cuentos."
+            "heading": "2. Descripción del Servicio",
+            "body": "Fablecast es un servicio de biblioteca de cuentos para niños. Generamos historias ilustradas y narradas en múltiples idiomas y series de personajes, con nuevas historias añadidas semanalmente. Las historias se generan usando inteligencia artificial y están destinadas a niños de 3 a 8 años, para disfrutar con orientación parental."
         },
         "s3": {
             "heading": "3. Cuentas",
             "items": [
-                "Mayores de 18",
-                "Cuenta de Google"
+                "Debe tener al menos 18 años (o la mayoría de edad en su jurisdicción) para crear una cuenta.",
+                "Las cuentas se crean a través de Google Sign-In. Usted es responsable de mantener la seguridad de su cuenta de Google.",
+                "Una cuenta por hogar. Las cuentas no son transferibles.",
+                "Usted es responsable de toda la actividad bajo su cuenta."
             ]
         },
         "s4": {
-            "heading": "4. Membresía",
+            "heading": "4. Membresía y Facturación",
             "plans": {
-                "subheading": "Niveles",
+                "subheading": "Niveles de Acceso",
                 "items": [
-                    "Gratis",
-                    "Miembro"
+                    "Gratis — Acceso a 6 libros de muestra (uno por serie). No se requiere pago.",
+                    "Miembro ($4.99/mes) — Acceso completo a toda la biblioteca, todas las series, todos los idiomas y narración de audio generada por IA."
                 ]
+            },
+            "billing": {
+                "subheading": "Facturación",
+                "items": [
+                    "Las membresías se facturan mensualmente en el aniversario de su fecha de registro.",
+                    "Los precios están en USD y pueden estar sujetos a impuestos aplicables.",
+                    "Nos reservamos el derecho de cambiar los precios con 30 días de aviso previo."
+                ]
+            },
+            "refunds": {
+                "subheading": "Reembolsos",
+                "body": "Todos los pagos de membresía no son reembolsables. No hay reembolsos prorrateados por meses parciales. Le recomendamos que pruebe los libros de muestra gratuitos antes de suscribirse para asegurarse de que el Servicio satisface sus necesidades."
             }
         },
         "s5": {
             "heading": "5. Cancelación",
             "items": [
-                "Puedes cancelar tu membresía mensual en cualquier momento.",
-                "Las membresías de por vida no son cancelables ni reembolsables. Los miembros de por vida pueden eliminar su cuenta en cualquier momento, pero al hacerlo perderán permanentemente el acceso al servicio y no se emitirá ningún reembolso."
+                "Puede cancelar su membresía mensual en cualquier momento a través de la configuración de su cuenta.",
+                "Al cancelar, conservará acceso completo al Servicio y todas las historias hasta el final de su período de facturación actual.",
+                "Después de que finalice el período de facturación, su cuenta volverá al acceso gratuito solo con libros de muestra.",
+                "Las membresías de por vida no son cancelables ni reembolsables. Los miembros de por vida pueden eliminar su cuenta en cualquier momento, pero al hacerlo se revocará permanentemente el acceso al Servicio y no se emitirá ningún reembolso."
             ]
         },
         "s6": {
-            "heading": "6. Preferencias",
+            "heading": "6. Cambios de Preferencias",
             "items": [
-                "Cambiar idioma"
+                "La preferencia de idioma se puede cambiar en cualquier momento en la configuración de su cuenta.",
+                "Los cambios entran en vigor inmediatamente."
             ]
         },
         "s7": {
-            "heading": "7. Contenido",
+            "heading": "7. Contenido y Propiedad Intelectual",
             "items": [
-                "Propiedad de Fablecast"
+                "Todas las historias, ilustraciones, narraciones, personajes y contenido relacionado son publicados y controlados por Fablecast. El panorama legal en torno a la propiedad del contenido generado por IA continúa evolucionando; independientemente, Fablecast conserva todos los derechos sobre el contenido tal como se publica en el Servicio.",
+                "El contenido se genera usando inteligencia artificial. Se implementan barreras de seguridad automatizadas, aunque el contenido no se revisa individualmente página por página.",
+                "Se le otorga una licencia personal, no comercial e intransferible para acceder y disfrutar de las historias a través del Servicio.",
+                "No puede redistribuir, republicar, vender o explotar comercialmente ningún contenido del Servicio.",
+                "No puede usar herramientas automatizadas para extraer, descargar o extraer contenido en masa."
             ]
         },
         "s8": {
-            "heading": "8. Uso aceptable",
-            "intro": "No compartir credenciales."
+            "heading": "8. Uso Aceptable",
+            "intro": "Usted acepta no:",
+            "items": [
+                "Compartir las credenciales de su cuenta con otros.",
+                "Usar el Servicio para cualquier propósito ilegal.",
+                "Intentar interferir o interrumpir el Servicio.",
+                "Realizar ingeniería inversa, descompilar o intentar extraer el código fuente del Servicio.",
+                "Usar el Servicio para competir o replicar Fablecast."
+            ]
         },
         "s9": {
-            "heading": "9. Descargo de responsabilidad de IA",
-            "body": "Contenido generado por IA."
+            "heading": "9. Descargo de Responsabilidad de Contenido Generado por IA",
+            "body": "Todas las historias, ilustraciones y narraciones en Fablecast se generan usando inteligencia artificial. El contenido no se revisa manualmente página por página. Si bien implementamos barreras de seguridad automatizadas para garantizar la idoneidad para la edad, el contenido generado por IA puede contener ocasionalmente elementos inesperados o imperfectos. Recomendamos encarecidamente a los padres y tutores que lean las historias junto con sus hijos. Si encuentra algún contenido que parezca inapropiado, repórtelo inmediatamente a legal@fablecast.kids."
         },
         "s10": {
-            "heading": "10. Disponibilidad",
+            "heading": "10. Disponibilidad del Servicio",
             "items": [
-                "Esforzarse por tiempo de actividad"
+                "Nuestro objetivo es agregar nuevas historias semanalmente, pero no garantizamos un servicio ininterrumpido.",
+                "El mantenimiento, problemas de API o circunstancias imprevistas pueden afectar ocasionalmente la generación de historias.",
+                "Haremos esfuerzos razonables para notificar a los usuarios sobre tiempos de inactividad planificados."
             ]
         },
         "s11": {
-            "heading": "11. Responsabilidad",
-            "body": "Tal cual."
+            "heading": "11. Limitación de Responsabilidad",
+            "body": "El Servicio se proporciona \"tal cual\" y \"según disponibilidad\". En la mayor medida permitida por la ley aplicable, Fablecast rechaza todas las garantías, expresas o implícitas. No seremos responsables de ningún daño indirecto, incidental, especial, consecuente o punitivo que surja de su uso del Servicio. Nuestra responsabilidad total no excederá la cantidad que nos pagó en los 12 meses anteriores a la reclamación."
         },
         "s12": {
-            "heading": "12. Ley aplicable",
-            "body": "Delaware, EE. UU."
+            "heading": "12. Ley Aplicable",
+            "body": "Estos Términos se regirán e interpretarán de acuerdo con las leyes del Estado de Delaware, Estados Unidos, sin tener en cuenta los principios de conflicto de leyes. Para usuarios en la UE/EEE, nada en estos Términos afecta sus derechos bajo las leyes obligatorias de protección del consumidor de su país de residencia. Para usuarios en Japón, se aplican las disposiciones obligatorias de la Ley de Contrato del Consumidor japonesa."
         },
         "s13": {
             "heading": "13. Terminación",
-            "body": "Podemos terminar cuentas."
+            "body": "Nos reservamos el derecho de suspender o terminar su cuenta si viola estos Términos. Al terminar por causa justificada, usted pierde el acceso al Servicio inmediatamente sin reembolso por el período de facturación restante."
         },
         "s14": {
-            "heading": "14. Cambios",
-            "body": "Podemos actualizar términos."
+            "heading": "14. Cambios a Estos Términos",
+            "body": "Podemos actualizar estos Términos de vez en cuando. Los cambios importantes se comunicarán por correo electrónico al menos 30 días antes de que entren en vigor. El uso continuo del Servicio después de la fecha de entrada en vigor constituye aceptación."
         },
         "s15": {
             "heading": "15. Contacto",
-            "body": "legal@fablecast.kids"
+            "body": "Para preguntas sobre estos Términos, contáctenos en:",
+            "email": "legal@fablecast.kids"
         }
     },
     "legal": {
@@ -687,53 +718,54 @@
         "title": "Ley de Transacciones Comerciales Especificadas",
         "lastUpdated": "Última actualización: 10 de febrero de 2026",
         "s1": {
-            "heading": "Información del operador",
-            "nameLabel": "Nombre comercial:",
-            "name": "Arda Karaduman (Nombre comercial: Fablecast)",
+            "heading": "Información del Operador",
+            "nameLabel": "Nombre Comercial:",
+            "name": "Arda Karaduman (Nombre Comercial: Fablecast)",
             "representativeLabel": "Representante:",
             "representative": "Arda Karaduman",
             "addressLabel": "Dirección:",
             "address": "Magazan Sangenjaya 2 3F-3, 4-18-15 Taishido, Setagaya-ku, Tokyo 154-0004, Japón",
             "phoneLabel": "Teléfono:",
             "phone": "[050-XXXX-XXXX — to be updated]",
-            "emailLabel": "Correo electrónico:",
+            "emailLabel": "Correo Electrónico:",
             "email": "legal@fablecast.kids"
         },
         "s2": {
-            "heading": "Descripción del servicio",
-            "body": "Fablecast es una biblioteca de cuentos infantiles."
+            "heading": "Descripción del Servicio",
+            "body": "Fablecast es un servicio de biblioteca de cuentos para niños. Proporcionamos historias ilustradas y narradas generadas por IA para niños de 3 a 8 años, disponibles en inglés, turco, japonés, español, portugués, alemán y francés. Las historias se publican en seis series de personajes, con nuevas historias añadidas semanalmente. Se accede al servicio a través del sitio web en fablecast.kids."
         },
         "s3": {
             "heading": "Precios",
             "items": [
-                "Gratis — $0.",
-                "Miembro — $4.99 por mes (USD).",
-                "Miembro de por vida — $99.99 pago único (USD)."
+                "Gratis — $0. Acceso a 6 libros de muestra (uno por serie), con experiencia de lectura completa incluyendo narración de audio. No se requiere pago.",
+                "Miembro — $4.99 por mes (USD). Acceso completo a toda la biblioteca: todas las series, todos los idiomas, nuevas historias semanales y narración de audio generada por IA.",
+                "Miembro de por Vida — $99.99 pago único (USD). Acceso permanente completo a toda la biblioteca con todo el contenido actual y futuro."
             ]
         },
         "s4": {
-            "heading": "Método de pago",
-            "body": "Tarjeta de crédito (Stripe)."
+            "heading": "Método de Pago",
+            "body": "Pagos con tarjeta de crédito procesados de forma segura a través de Stripe. Fablecast no almacena números de tarjeta de crédito ni detalles de pago completos."
         },
         "s5": {
-            "heading": "Momento del pago",
-            "body": "Facturación mensual."
+            "heading": "Momento del Pago",
+            "body": "La membresía se factura mensualmente en el aniversario de la fecha de registro. El pago se cobra al comienzo de cada ciclo de facturación."
         },
         "s6": {
             "heading": "Entrega",
-            "body": "Digital."
+            "body": "El servicio se entrega digitalmente a través del sitio web en fablecast.kids. Las historias están disponibles inmediatamente después de la creación de la cuenta (gratis) o la confirmación del pago (miembro). No se envían productos físicos."
         },
         "s7": {
             "heading": "Cancelación y Reembolsos",
             "items": [
-                "Puedes cancelar tu membresía mensual en cualquier momento.",
-                "No reembolsable.",
-                "Las membresías de por vida no son cancelables ni reembolsables. Al eliminar la cuenta se pierde el acceso permanentemente."
+                "Puede cancelar su membresía mensual en cualquier momento a través de la configuración de su cuenta.",
+                "Al cancelar, conserva acceso completo hasta el final del período de facturación actual. Después de eso, su cuenta vuelve al acceso gratuito solo con libros de muestra.",
+                "Todos los pagos de membresía mensual no son reembolsables. No hay reembolsos prorrateados por meses parciales. Le recomendamos que pruebe los libros de muestra gratuitos antes de suscribirse.",
+                "Las membresías de por vida no son cancelables ni reembolsables. Los miembros de por vida pueden eliminar su cuenta en cualquier momento, pero al hacerlo se revocará permanentemente el acceso y no se emitirá ningún reembolso."
             ]
         },
         "s8": {
-            "heading": "Entorno operativo",
-            "body": "Navegadores modernos."
+            "heading": "Entorno Operativo",
+            "body": "Fablecast funciona en navegadores web modernos (Chrome, Safari, Firefox, Edge) en dispositivos de escritorio y móviles. Se requiere una conexión a Internet estable para la lectura y reproducción de audio."
         }
     }
 }
