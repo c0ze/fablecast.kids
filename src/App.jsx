@@ -53,8 +53,12 @@ const dailyDrops = [
     generatedAt: '20260209_051315',
     titles: {
       English: "Rusty's Warm Winter Friend",
-      Turkish: "Rusty'nin S\u0131cak K\u0131\u015F Arkada\u015F\u0131",
-      Japanese: '\u30E9\u30B9\u30C6\u30A3\u306E\u6E29\u304B\u3044\u51AC\u306E\u53CB\u3060\u3061'
+      Turkish: "Rusty'nin Sıcak Kış Arkadaşı",
+      Japanese: 'ラスティの温かい冬の友達',
+      Spanish: 'El cálido amigo de invierno de Rusty',
+      Portuguese: 'O Amigo de Inverno Quentinho de Rusty',
+      German: 'Rustys warmer Winterfreund',
+      French: "L'ami d'hiver chaleureux de Rusty"
     }
   },
   {
@@ -66,8 +70,12 @@ const dailyDrops = [
     generatedAt: '20260209_051940',
     titles: {
       English: 'Captain Barnacles and the Winter Sparkle',
-      Turkish: 'Kaptan Barnacles ve K\u0131\u015F I\u015F\u0131lt\u0131s\u0131',
-      Japanese: '\u30AD\u30E3\u30D7\u30C6\u30F3\u30FB\u30D0\u30FC\u30CA\u30AF\u30EB\u30BA\u3068\u51AC\u306E\u304D\u3089\u3081\u304D'
+      Turkish: 'Kaptan Barnacles ve Kış Işıltısı',
+      Japanese: 'キャプテン・バーナクルズと冬のきらめき',
+      Spanish: 'Capitán Barnacles y el Brillo de Invierno',
+      Portuguese: 'Capitão Barnacles e o Brilho de Inverno',
+      German: 'Kapitän Barnacles und das Winterfunkeln',
+      French: "Capitaine Barnacles et l'Éclat d'Hiver"
     }
   },
   {
@@ -79,8 +87,12 @@ const dailyDrops = [
     generatedAt: '20260209_052639',
     titles: {
       English: 'Astro-Bun and the Lunar Cocoa Friend',
-      Turkish: 'Astro-Tav\u015Fan ve Ay Kakao Dostu',
-      Japanese: '\u30A2\u30B9\u30C8\u30ED\u3074\u3087\u3093\u3068\u6708\u306E\u30B3\u30B3\u30A2\u306E\u304A\u53CB\u3060\u3061'
+      Turkish: 'Astro-Tavşan ve Ay Kakao Dostu',
+      Japanese: 'アストロぴょんと月のココアのお友達',
+      Spanish: 'Astro-Bun y el Amigo de Cacao Lunar',
+      Portuguese: 'Astro-Bun e o Amigo de Cacau Lunar',
+      German: 'Astro-Bun und der Mond-Kakao-Freund',
+      French: "Astro-Bun et l'Ami Cacao Lunaire"
     }
   },
   {
@@ -92,8 +104,12 @@ const dailyDrops = [
     generatedAt: '20260209_053309',
     titles: {
       English: "Pippa's Cozy Cocoa Flight",
-      Turkish: "Pippa'n\u0131n S\u0131cac\u0131k Kakao U\u00E7u\u015Fu",
-      Japanese: '\u30D4\u30C3\u30D1\u306E\u307D\u304B\u307D\u304B\u30B3\u30B3\u30A2\u3072\u3068\u3063\u98DB\u3073'
+      Turkish: "Pippa'nın Sıcacık Kakao Uçuşu",
+      Japanese: 'ピッパのぽかぽかココアひとっ飛び',
+      Spanish: 'El Vuelo de Cacao Acogedor de Pippa',
+      Portuguese: 'O Voo Aconchegante de Cacau de Pippa',
+      German: 'Pippas gemütlicher Kakao-Flug',
+      French: 'Le Vol Cacao Confortable de Pippa'
     }
   },
   {
@@ -105,8 +121,12 @@ const dailyDrops = [
     generatedAt: '20260209_053940',
     titles: {
       English: 'Professor Hoot and the Sparkling Patience',
-      Turkish: 'Bayku\u015F Profes\u00F6r Hoot ve I\u015F\u0131lt\u0131l\u0131 Sab\u0131r',
-      Japanese: '\u30D5\u30AF\u30ED\u30A6\u535A\u58EB\u3068\u304D\u3089\u3081\u304F\u5FCD\u8010'
+      Turkish: 'Baykuş Profesör Hoot ve Işıltılı Sabır',
+      Japanese: 'フクロウ博士ときらめく忍耐',
+      Spanish: 'El Profesor Hoot y la Paciencia Brillante',
+      Portuguese: 'Professor Hoot e a Paciência Brilhante',
+      German: 'Professor Hoot und die funkelnde Geduld',
+      French: 'Professeur Hoot et la Patience Étincelante'
     }
   },
   {
@@ -118,8 +138,12 @@ const dailyDrops = [
     generatedAt: '20260209_054646',
     titles: {
       English: "Grug's Winter Warm-Up",
-      Turkish: "Grug'un K\u0131\u015Fa Is\u0131nma Zaman\u0131",
-      Japanese: '\u30B0\u30E9\u30B0\u306E\u51AC\u652F\u5EA6'
+      Turkish: "Grug'un Kışa Isınma Zamanı",
+      Japanese: 'グラグの冬支度',
+      Spanish: 'El Calentamiento de Invierno de Grug',
+      Portuguese: 'O Aquecimento de Inverno de Grug',
+      German: 'Grugs Winteraufwärmen',
+      French: 'Le Réchauffement Hivernal de Grug'
     }
   }
 ];
@@ -128,12 +152,28 @@ const languageSnippets = {
   English:
     'Little Rusty peeked out. Soft snowflakes danced, turning everything snowy white and bright!',
   Turkish:
-    'K\u00FC\u00E7\u00FCk Rusty ba\u015F\u0131n\u0131 uzatt\u0131. Yumu\u015Fac\u0131k kar taneleri dans ediyordu, her yeri bembeyaz ve \u0131\u015F\u0131l \u0131\u015F\u0131l yap\u0131yordu!',
+    'Küçük Rusty başını uzattı. Yumuşacık kar taneleri dans ediyordu, her yeri bembeyaz ve ışıl ışıl yapıyordu!',
   Japanese:
-    '\u5C0F\u3055\u306A\u30E9\u30B9\u30C6\u30A3\u304C\u3061\u3087\u3053\u3093\u3068\u9854\u3092\u51FA\u3057\u307E\u3057\u305F\u3002\u3075\u308F\u3075\u308F\u306E\u96EA\u304C\u3072\u3089\u3072\u3089\u3068\u821E\u3044\u3001\u3042\u305F\u308A\u4E00\u9762\u3092\u771F\u3063\u767D\u3067\u30AD\u30E9\u30AD\u30E9\u306B\u3057\u3066\u3044\u307E\u3057\u305F\uFF01'
+    '小さなラスティがちょこんと顔を出しました。ふわふわの雪がひらひらと舞い、あたり一面を真っ白でキラキラにしていました！',
+  Spanish:
+    'El pequeño Rusty se asomó. ¡Suaves copos de nieve bailaban, volviéndolo todo blanco y brillante!',
+  Portuguese:
+    'O pequeno Rusty espiou para fora. Flocos de neve macios dançavam, deixando tudo branco e brilhante!',
+  German:
+    'Der kleine Rusty schaute heraus. Sanfte Schneeflocken tanzten und machten alles schneeweiß und hell!',
+  French:
+    "Le petit Rusty jeta un coup d'œil dehors. De doux flocons de neige dansaient, rendant tout blanc et lumineux !"
 };
 
-const langFlags = { English: '\uD83C\uDDFA\uD83C\uDDF8', Turkish: '\uD83C\uDDF9\uD83C\uDDF7', Japanese: '\uD83C\uDDEF\uD83C\uDDF5' };
+const langFlags = {
+  English: '🇺🇸',
+  Turkish: '🇹🇷',
+  Japanese: '🇯🇵',
+  Spanish: '🇪🇸',
+  Portuguese: '🇧🇷',
+  German: '🇩🇪',
+  French: '🇫🇷'
+};
 
 function formatDropDate(stamp, lang) {
   const datePart = stamp.slice(0, 8);
@@ -1442,6 +1482,10 @@ function App() {
                   <option value="English">{t('setupModal.languageOptions.english')}</option>
                   <option value="Turkish">{t('setupModal.languageOptions.turkish')}</option>
                   <option value="Japanese">{t('setupModal.languageOptions.japanese')}</option>
+                  <option value="Spanish">{t('setupModal.languageOptions.spanish')}</option>
+                  <option value="Portuguese">{t('setupModal.languageOptions.portuguese')}</option>
+                  <option value="German">{t('setupModal.languageOptions.german')}</option>
+                  <option value="French">{t('setupModal.languageOptions.french')}</option>
                 </select>
               </label>
 

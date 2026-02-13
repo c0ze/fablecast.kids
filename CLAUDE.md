@@ -82,17 +82,24 @@ Custom animations: `drift` (vertical float), `marquee` (horizontal scroll).
 3. **Language demo** — Interactive EN/TR/JA switcher
 4. **Feature cards** — Pipeline capabilities
 5. **Story carousel** — 6 series with touch swipe + auto-rotate (4.5s)
-6. **Pricing tiers** — Free / Squire $4.99 / Knight $9.99 / Emperor $14.99
-7. **Auth + onboarding modal** — Google Sign-In → child age, language, series selection
+6. **Pricing** — Free tier + diminishing monthly plan + lifetime option
+7. **Auth + onboarding modal** — Google Sign-In → language, series selection
 
-## Pricing Plans
+## Pricing Model
 
-| Plan      | Price  | Series Access |
-|-----------|--------|---------------|
-| Free      | $0     | 1 random/day  |
-| Squire    | $4.99  | Pick 2 series |
-| Knight    | $9.99  | All 6 series  |
-| Emperor   | $14.99 | All + extras  |
+Diminishing price model: the monthly price decreases the longer a user stays subscribed, eventually becoming free after 5 years.
+
+| Phase | Price    | When          |
+|-------|----------|---------------|
+| Free  | $0       | 6 sample books, no card required |
+| 1     | $4.99/mo | Months 1–6    |
+| 2     | $3.99/mo | Months 7–12   |
+| 3     | $2.99/mo | Months 13–24  |
+| 4     | $1.99/mo | Months 25–36  |
+| 5     | $0.99/mo | Months 37–60  |
+| 6     | Free     | After 5 years |
+
+**Lifetime Membership:** $99 one-time payment for permanent full access to all current and future content.
 
 ## Conventions
 
