@@ -1,5 +1,10 @@
+# Fablecast — fablecast.kids
+# Children's story library in English, Turkish, Japanese,
+# Spanish, Portuguese, German, and French
+
 User-agent: *
 Allow: /
-Disallow: /dist/
+Disallow: /api/
 
+# Sitemaps
 Sitemap: https://fablecast.kids/sitemap.xml

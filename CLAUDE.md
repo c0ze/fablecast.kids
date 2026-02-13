@@ -101,6 +101,50 @@ Diminishing price model: the monthly price decreases the longer a user stays sub
 
 **Lifetime Membership:** $99 one-time payment for permanent full access to all current and future content.
 
+## SEO
+
+The site targets a niche bilingual/multilingual audience rather than the generic "AI stories" market. All SEO is configured for the specific edge: multilingual children's stories in 7 languages.
+
+### Keyword Strategy
+
+Target long-tail niche terms: "bilingual children's books", "Turkish English bedtime stories", "Japanese English children's books", native-language keywords (cocuklara hikaye, 子供向け絵本, etc.). Avoid generic terms like "AI stories" or "kids books" where the domain has no authority.
+
+### Crawlability (SPA)
+
+Since this is a client-rendered React SPA, search engine crawlability is handled via:
+
+- **Static `<head>` meta tags** — Title, description, keywords, canonical, OG, Twitter Card are all in `index.html` and visible without JS execution.
+- **Structured data (JSON-LD)** — Organization, WebSite, Product/Subscription, and FAQPage schemas in `index.html`.
+- **`<noscript>` fallback** — Full static HTML content block in `<body>` for crawlers that don't execute JavaScript. Contains all series descriptions, language info, pricing, and CTAs.
+- **No SSR/pre-rendering** — Not needed for a single-URL SPA. Googlebot renders JS fine, and the noscript block covers everything else.
+
+### SEO Files
+
+| File | Purpose |
+|------|---------|
+| `public/robots.txt` | Allows all crawlers, disallows `/api/`, points to sitemap |
+| `public/sitemap.xml` | Single canonical URL with hreflang alternates for all 7 languages |
+| `index.html` | All meta tags, structured data, and noscript fallback |
+
+### hreflang & Alternate Languages
+
+All 7 language variants are declared via `<link rel="alternate" hreflang="...">` in `index.html` and `sitemap.xml`:
+- `en` (default), `tr`, `ja`, `es`, `pt`, `de`, `fr`
+
+### Structured Data Schemas
+
+1. **Organization** — Name, URL, logo, contact email
+2. **WebSite** — Name, URL, description, 7 languages
+3. **Product** — Free and Member tier offers with pricing
+4. **FAQPage** — Key questions for rich snippet eligibility
+
+### Important SEO Notes
+
+- Hash-based URLs (`#about`, `#faq`) are **not** indexed as separate pages by Google. The sitemap only lists the canonical root URL.
+- The `og-image.png` is referenced in meta tags but **must exist** in `public/` — generate and add a 1200x630 OG image.
+- Dynamic `document.title` and meta description are updated per page via i18n keys under `seo.*` in each locale file.
+- After deploying, **register on Google Search Console**, verify DNS, and submit the sitemap.
+
 ## Conventions
 
 - **Do not commit:** `.env`, `dist/`, `node_modules/`

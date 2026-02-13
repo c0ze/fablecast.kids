@@ -19,8 +19,8 @@
   },
   "seo": {
     "home": {
-      "title": "Fablecast | AI Children's Story Library in 7 Languages",
-      "description": "A growing library of illustrated, narrated bedtime stories for ages 3\u20138. Six beloved character series in English, Turkish, Japanese, Spanish, Portuguese, German, and French \u2014 new stories every week."
+      "title": "Fablecast | Bilingual Children's Stories in 7 Languages — Ages 3-8",
+      "description": "Bilingual illustrated bedtime stories for kids aged 3-8. Six character series narrated in English, Turkish, Japanese, Spanish, Portuguese, German & French. Free books available — new stories weekly."
     },
     "about": {
       "title": "How It Works | Fablecast",
@@ -53,7 +53,7 @@
   },
   "hero": {
     "stickerGrowingLibrary": "Growing library",
-    "sticker3Languages": "3 languages",
+    "sticker3Languages": "7 languages",
     "titlePart1": "A New Universe of",
     "titleHighlight": "Stories",
     "titlePart2": ", Growing Every Week",

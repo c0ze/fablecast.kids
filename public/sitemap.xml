@@ -1,62 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <!-- Home -->
+  <!-- Home (single-page app — all hash routes resolve to this URL) -->
   <url>
     <loc>https://fablecast.kids/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://fablecast.kids/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://fablecast.kids/?lang=tr"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://fablecast.kids/?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fablecast.kids/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fablecast.kids/?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://fablecast.kids/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fablecast.kids/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fablecast.kids/"/>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
-
-  <!-- About / How It Works -->
-  <url>
-    <loc>https://fablecast.kids/#about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Characters -->
-  <url>
-    <loc>https://fablecast.kids/#characters</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- FAQ -->
-  <url>
-    <loc>https://fablecast.kids/#faq</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Blog -->
-  <url>
-    <loc>https://fablecast.kids/#blog</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Privacy Policy -->
-  <url>
-    <loc>https://fablecast.kids/#privacy</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <!-- Terms of Service -->
-  <url>
-    <loc>https://fablecast.kids/#terms</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <!-- Legal / Tokusho -->
-  <url>
-    <loc>https://fablecast.kids/#legal</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
   </url>
 </urlset>
