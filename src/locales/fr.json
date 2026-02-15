@@ -67,7 +67,7 @@
     },
     "languageDemo": {
         "sticker": "Multilingue",
-        "title": "Même histoire, trois langues",
+        "title": "Même histoire, sept langues",
         "description": "Une vraie page d'une histoire de Rusty, localisée avec amour.",
         "snippets": {
             "English": "Little Rusty peeked out. Soft snowflakes danced, turning everything snowy white and bright!",
@@ -83,9 +83,9 @@
             "title": "Bibles de personnages",
             "description": "Chaque histoire naît d'une bible de personnages soigneusement élaborée."
         },
-        "threeLanguages": {
-            "title": "Trois langues",
-            "description": "Les histoires en anglais sont créées d'abord, puis magnifiquement traduites."
+        "sevenLanguages": {
+            "title": "Sept langues",
+            "description": "Les histoires en anglais sont créées d'abord, puis magnifiquement traduites en six langues supplémentaires."
         },
         "safeAndCozy": {
             "title": "Sûr et Confortable",
@@ -237,7 +237,7 @@
             },
             "3": {
                 "title": "Traduction",
-                "description": "L'édition maîtresse en anglais est traduite en turc et en japonais."
+                "description": "L'édition maîtresse en anglais est traduite en six langues supplémentaires : turc, japonais, espagnol, portugais, allemand et français."
             },
             "4": {
                 "title": "Narration",
@@ -505,7 +505,7 @@
                 "body": "Aujourd'hui nous lançons.",
                 "highlights": [
                     "6 séries",
-                    "3 langues",
+                    "7 langues",
                     "Audio",
                     "Lecteur Web",
                     "Abonnement simple"
@@ -774,6 +774,10 @@
         "subtitle": "Aucun abonnement nécessaire — profitez de ces histoires complètes gratuitement !",
         "readButton": "Lire Maintenant",
         "loading": "Chargement des livres gratuits...",
-        "noBooks": "Aucun livre gratuit trouvé pour le moment."
+        "noBooks": "Aucun livre gratuit trouvé pour le moment.",
+        "filterLanguage": "Langue",
+        "filterSeries": "Série",
+        "allLanguages": "Toutes les langues",
+        "allSeries": "Toutes les séries"
     }
 }

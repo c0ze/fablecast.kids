@@ -67,7 +67,7 @@
     },
     "languageDemo": {
         "sticker": "Mehrsprachig",
-        "title": "Gleiche Geschichte, drei Sprachen",
+        "title": "Gleiche Geschichte, sieben Sprachen",
         "description": "Eine echte Seite aus einer Rusty-Geschichte, liebevoll lokalisiert.",
         "snippets": {
             "English": "Little Rusty peeked out. Soft snowflakes danced, turning everything snowy white and bright!",
@@ -83,9 +83,9 @@
             "title": "Charakter-Bibeln",
             "description": "Jede Geschichte entsteht aus einer liebevoll gestalteten Charakter-Bibel."
         },
-        "threeLanguages": {
-            "title": "Drei Sprachen",
-            "description": "Englische Geschichten werden zuerst erstellt und dann wunderschön übersetzt."
+        "sevenLanguages": {
+            "title": "Sieben Sprachen",
+            "description": "Englische Geschichten werden zuerst erstellt und dann wunderschön in sechs weitere Sprachen übersetzt."
         },
         "safeAndCozy": {
             "title": "Sicher & Gemütlich",
@@ -237,7 +237,7 @@
             },
             "3": {
                 "title": "Übersetzung",
-                "description": "Die englische Master-Edition wird ins Türkische und Japanische übersetzt."
+                "description": "Die englische Master-Edition wird in sechs weitere Sprachen übersetzt: Türkisch, Japanisch, Spanisch, Portugiesisch, Deutsch und Französisch."
             },
             "4": {
                 "title": "Erzählung",
@@ -505,7 +505,7 @@
                 "body": "Heute starten wir.",
                 "highlights": [
                     "6 Serien",
-                    "3 Sprachen",
+                    "7 Sprachen",
                     "Audio",
                     "Web Reader",
                     "Einfaches Abo"
@@ -774,6 +774,10 @@
         "subtitle": "Kein Abonnement erforderlich — genießen Sie diese vollständigen Geschichten auf uns!",
         "readButton": "Jetzt Lesen",
         "loading": "Kostenlose Bücher werden geladen...",
-        "noBooks": "Derzeit keine kostenlosen Bücher gefunden."
+        "noBooks": "Derzeit keine kostenlosen Bücher gefunden.",
+        "filterLanguage": "Sprache",
+        "filterSeries": "Serie",
+        "allLanguages": "Alle Sprachen",
+        "allSeries": "Alle Serien"
     }
 }

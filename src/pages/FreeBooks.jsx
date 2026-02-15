@@ -1,7 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useTranslation } from '../i18n';
 
-// Helper to format date if needed, though mostly using English titles/metadata from manifest
 function formatSeedDate(seed) {
     if (!seed || String(seed).length < 8) return '';
     const raw = String(seed);
@@ -16,10 +15,6 @@ function formatSeedDate(seed) {
     });
 }
 
-// Reusing the seriesEmoji from App.jsx or defining locally if not exported
-// Ideally should be a shared constant, but for now duplicating for self-containment 
-// or I can accept it as a prop if passed from App.jsx. 
-// Given the implementation plan, I'll define it locally to ensure it works independently.
 const seriesEmoji = {
     'adventures-of-rusty': { icon: '\uD83D\uDC36', color: 'bg-peach', border: 'border-peach' },
     'captain-barnacles-voyages': { icon: '\u2693', color: 'bg-sky', border: 'border-sky' },
@@ -29,12 +24,21 @@ const seriesEmoji = {
     'grug-garden': { icon: '\uD83C\uDF31', color: 'bg-candy', border: 'border-candy' }
 };
 
+const LANG_META = {
+    en: { flag: '🇺🇸', key: 'english' },
+    tr: { flag: '🇹🇷', key: 'turkish' },
+    ja: { flag: '🇯🇵', key: 'japanese' },
+    es: { flag: '🇪🇸', key: 'spanish' },
+    pt: { flag: '🇧🇷', key: 'portuguese' },
+    de: { flag: '🇩🇪', key: 'german' },
+    fr: { flag: '🇫🇷', key: 'french' }
+};
+
 export default function FreeBooks({ stories = [] }) {
     const { t } = useTranslation();
     const [filterLang, setFilterLang] = useState('');
     const [filterSeries, setFilterSeries] = useState('');
 
-    // Extract unique languages and series for filters
     const langOptions = useMemo(() =>
         [...new Set(stories.map(s => s.lang).filter(Boolean))].sort(),
         [stories]
@@ -47,7 +51,6 @@ export default function FreeBooks({ stories = [] }) {
 
     const filteredStories = useMemo(() => {
         return stories.filter(story => {
-            // Only show free tier
             if (story.access_tier !== 'free') return false;
             if (filterLang && story.lang !== filterLang) return false;
             if (filterSeries && story.series_slug !== filterSeries) return false;
@@ -62,8 +65,8 @@ export default function FreeBooks({ stories = [] }) {
     };
 
     return (
-        <article className="mx-auto max-w-6xl px-6 py-14 lg:px-8 min-h-[60vh]">
-            <div className="text-center mb-10">
+        <article className="mx-auto max-w-6xl px-6 py-14 lg:px-8">
+            <div className="text-center">
                 <span className="sticker border-mint bg-mint/10 text-cosmos">
                     {'\uD83D\uDCDA'} {t('freeBooks.sticker')}
                 </span>
@@ -74,43 +77,54 @@ export default function FreeBooks({ stories = [] }) {
             </div>
 
             {/* Filters */}
-            <div className="mb-8 flex flex-wrap justify-center gap-4">
-                <div className="flex items-center gap-2">
-                    <label htmlFor="lang-filter" className="text-sm font-bold text-cosmos/70">Language:</label>
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
+                <div className="rounded-xl border border-white/70 bg-white/80 p-3">
+                    <label htmlFor="lang-filter" className="mb-1 block text-xs font-bold uppercase tracking-wide text-cosmos/60">
+                        {t('freeBooks.filterLanguage')}
+                    </label>
                     <select
                         id="lang-filter"
                         value={filterLang}
                         onChange={(e) => setFilterLang(e.target.value)}
-                        className="rounded-lg border-2 border-dashed border-twilight/20 bg-white px-3 py-2 text-sm font-semibold text-cosmos focus:border-twilight focus:outline-none"
+                        className="w-full rounded-lg border border-twilight/20 bg-white px-2 py-2 text-sm text-cosmos"
                     >
-                        <option value="">All Languages</option>
-                        {langOptions.map(l => (
-                            <option key={l} value={l}>{l.toUpperCase()}</option>
-                        ))}
+                        <option value="">{t('freeBooks.allLanguages')}</option>
+                        {langOptions.map(l => {
+                            const meta = LANG_META[l];
+                            const label = meta
+                                ? `${meta.flag} ${t(`auth.languageOptions.${meta.key}`)}`
+                                : l.toUpperCase();
+                            return <option key={l} value={l}>{label}</option>;
+                        })}
                     </select>
                 </div>
-                <div className="flex items-center gap-2">
-                    <label htmlFor="series-filter" className="text-sm font-bold text-cosmos/70">Series:</label>
+                <div className="rounded-xl border border-white/70 bg-white/80 p-3">
+                    <label htmlFor="series-filter" className="mb-1 block text-xs font-bold uppercase tracking-wide text-cosmos/60">
+                        {t('freeBooks.filterSeries')}
+                    </label>
                     <select
                         id="series-filter"
                         value={filterSeries}
                         onChange={(e) => setFilterSeries(e.target.value)}
-                        className="rounded-lg border-2 border-dashed border-twilight/20 bg-white px-3 py-2 text-sm font-semibold text-cosmos focus:border-twilight focus:outline-none"
+                        className="w-full rounded-lg border border-twilight/20 bg-white px-2 py-2 text-sm text-cosmos"
                     >
-                        <option value="">All Series</option>
-                        {seriesOptions.map(s => (
-                            <option key={s} value={s}>{s}</option>
-                        ))}
+                        <option value="">{t('freeBooks.allSeries')}</option>
+                        {seriesOptions.map(s => {
+                            const emoji = seriesEmoji[s];
+                            const name = t(`characters.series.${s}.series`);
+                            const icon = emoji ? `${emoji.icon} ` : '';
+                            return <option key={s} value={s}>{icon}{name}</option>;
+                        })}
                     </select>
                 </div>
             </div>
 
             {filteredStories.length === 0 ? (
-                <div className="text-center py-20 rounded-[2rem] border-2 border-dashed border-cosmos/10 bg-cosmos/5">
+                <div className="mt-10 rounded-[2rem] border-2 border-dashed border-cosmos/10 bg-cosmos/5 py-20 text-center">
                     <p className="text-lg text-cosmos/60">{t('freeBooks.noBooks')}</p>
                 </div>
             ) : (
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {filteredStories.map((story) => {
                         const emoji = seriesEmoji[story.series_slug] || { icon: '\uD83D\uDCD6', color: 'bg-white', border: 'border-white' };
 
@@ -133,14 +147,17 @@ export default function FreeBooks({ stories = [] }) {
                                         </div>
                                     )}
                                     <div className="absolute top-2 right-2 rounded-full bg-white/90 px-2 py-1 text-xs font-bold text-cosmos shadow-sm backdrop-blur-sm">
-                                        {story.lang.toUpperCase()}
+                                        {LANG_META[story.lang]
+                                            ? `${LANG_META[story.lang].flag} ${t(`auth.languageOptions.${LANG_META[story.lang].key}`)}`
+                                            : story.lang.toUpperCase()}
                                     </div>
                                 </div>
 
                                 <div className="flex-1">
                                     <div className="flex items-center gap-2 mb-2">
+                                        <span className="text-sm">{emoji.icon}</span>
                                         <span className="text-xs font-bold uppercase tracking-wider text-twilight/80">
-                                            {story.series_slug.replace(/-/g, ' ')}
+                                            {t(`characters.series.${story.series_slug}.series`)}
                                         </span>
                                     </div>
                                     <h3 className="font-display text-xl leading-tight text-cosmos mb-2">

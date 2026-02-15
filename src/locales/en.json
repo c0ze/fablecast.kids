@@ -57,7 +57,7 @@
     "titlePart1": "A New Universe of",
     "titleHighlight": "Stories",
     "titlePart2": ", Growing Every Week",
-    "subtitle": "A growing library of illustrated, narrated adventures with the heart of bedtime storytelling. Six beloved characters, three languages, one magical reading routine.",
+    "subtitle": "A growing library of illustrated, narrated adventures with the heart of bedtime storytelling. Six beloved characters, seven languages, one magical reading routine.",
     "ctaStartReading": "Start Reading Free",
     "ctaLatestStories": "See Latest Stories"
   },
@@ -68,7 +68,7 @@
   },
   "languageDemo": {
     "sticker": "Multilingual",
-    "title": "Same Story, Three Languages",
+    "title": "Same Story, Seven Languages",
     "description": "One real page from a Rusty story, lovingly localized across all three editions.",
     "snippets": {
       "English": "Little Rusty peeked out. Soft snowflakes danced, turning everything snowy white and bright!",
@@ -84,9 +84,9 @@
       "title": "Character Bibles",
       "description": "Every story grows from a lovingly crafted character bible with unique art styles, personalities, and world rules."
     },
-    "threeLanguages": {
-      "title": "Three Languages",
-      "description": "English stories are created first, then beautifully translated to Turkish and Japanese while keeping the same lovely illustrations."
+    "sevenLanguages": {
+      "title": "Seven Languages",
+      "description": "English stories are created first, then beautifully translated into six additional languages while keeping the same lovely illustrations."
     },
     "safeAndCozy": {
       "title": "Safe & Cozy",
@@ -136,8 +136,10 @@
     }
   },
   "pricing": {
+    "sticker": "Pricing",
     "title": "A Plan That Grows With You",
     "subtitle": "The price goes down as your child grows up. Simple.",
+    "monthlyTitle": "Monthly Subscription",
     "lifetimeTitle": "Or, Pay Once Forever",
     "lifetimeSubtitle": "Get lifetime access for a single one-time payment.",
     "savings": "You save {amount} compared to monthly!",
@@ -221,7 +223,7 @@
   "about": {
     "sticker": "About",
     "title": "How Fablecast Works",
-    "subtitle": "A magical pipeline turns character bibles into fully illustrated, narrated children's books across three languages. Here's how the magic happens.",
+    "subtitle": "A magical pipeline turns character bibles into fully illustrated, narrated children's books across seven languages. Here's how the magic happens.",
     "stepLabel": "Step {number}",
     "steps": {
       "0": {
@@ -238,7 +240,7 @@
       },
       "3": {
         "title": "Translation",
-        "description": "The English master edition is translated into Turkish and Japanese (with more languages coming soon). Translated editions reuse the original illustrations, so visual storytelling stays consistent across all languages."
+        "description": "The English master edition is translated into six additional languages: Turkish, Japanese, Spanish, Portuguese, German, and French. Translated editions reuse the original illustrations, so visual storytelling stays consistent across all languages."
       },
       "4": {
         "title": "Narration",
@@ -246,7 +248,7 @@
       },
       "5": {
         "title": "Weekly Updates",
-        "description": "New stories are added to the library every week across all 6 series and 3 languages. The library keeps growing, so there\u2019s always a fresh adventure waiting."
+        "description": "New stories are added to the library every week across all 6 series and 7 languages. The library keeps growing, so there\u2019s always a fresh adventure waiting."
       }
     },
     "safetyTitle": "Safety First, Always",
@@ -403,7 +405,7 @@
       "category": "Getting Started",
       "0": {
         "q": "What is Fablecast?",
-        "a": "Fablecast is a children\u2019s story library. We create fully illustrated and narrated stories across 6 character series and 3 languages, with new stories added every week. It\u2019s like a storybook shelf that keeps growing \u2014 digital and always available."
+        "a": "Fablecast is a children\u2019s story library. We create fully illustrated and narrated stories across 6 character series and 7 languages, with new stories added every week. It\u2019s like a storybook shelf that keeps growing \u2014 digital and always available."
       },
       "1": {
         "q": "Who is Fablecast for?",
@@ -426,7 +428,7 @@
       },
       "1": {
         "q": "How often are new stories added?",
-        "a": "New stories are added to the library every week across all six series and three languages. As a member, you get immediate access to every new story as it arrives."
+        "a": "New stories are added to the library every week across all six series and seven languages. As a member, you get immediate access to every new story as it arrives."
       },
       "2": {
         "q": "Can I re-read past stories?",
@@ -445,7 +447,7 @@
       "category": "Subscription & Billing",
       "0": {
         "q": "How much does a membership cost?",
-        "a": "Membership is $4.99 per month. It gives you full access to every story in the library across all 6 series, all 3 languages, including audio narration and all future stories."
+        "a": "Membership is $4.99 per month. It gives you full access to every story in the library across all 6 series, all 7 languages, including audio narration and all future stories."
       },
       "1": {
         "q": "Can I cancel anytime?",
@@ -834,6 +836,10 @@
     "subtitle": "No subscription needed \u2014 enjoy these full stories on us!",
     "readButton": "Read Now",
     "loading": "Loading free books...",
-    "noBooks": "No free books found at the moment."
+    "noBooks": "No free books found at the moment.",
+    "filterLanguage": "Language",
+    "filterSeries": "Series",
+    "allLanguages": "All Languages",
+    "allSeries": "All Series"
   }
 }

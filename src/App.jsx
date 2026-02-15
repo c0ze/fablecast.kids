@@ -188,20 +188,6 @@ function formatDropDate(stamp, lang) {
   });
 }
 
-function formatSeedDate(seed) {
-  if (!seed || String(seed).length < 8) return '';
-  const raw = String(seed);
-  const year = Number(raw.slice(0, 4));
-  const month = Number(raw.slice(4, 6)) - 1;
-  const day = Number(raw.slice(6, 8));
-  if (!Number.isFinite(year) || !Number.isFinite(month) || !Number.isFinite(day)) return raw;
-  return new Date(year, month, day).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric'
-  });
-}
-
 function App() {
   const { t, lang } = useTranslation();
   const [activeLang, setActiveLang] = useState('English');
@@ -219,12 +205,6 @@ function App() {
   const [manifestStories, setManifestStories] = useState([]);
   const [manifestLoading, setManifestLoading] = useState(true);
   const [manifestError, setManifestError] = useState('');
-  const [libraryActionError, setLibraryActionError] = useState('');
-  const [openingStoryKey, setOpeningStoryKey] = useState('');
-  const [libraryTier, setLibraryTier] = useState('registered');
-  const [libraryLang, setLibraryLang] = useState('');
-  const [librarySeries, setLibrarySeries] = useState('');
-  const [libraryBatch, setLibraryBatch] = useState('');
   const revealRef = useRef(null);
   const touchStartX = useRef(null);
 
@@ -246,8 +226,8 @@ function App() {
     },
     {
       icon: '\uD83C\uDF0D',
-      title: t('features.threeLanguages.title'),
-      description: t('features.threeLanguages.description'),
+      title: t('features.sevenLanguages.title'),
+      description: t('features.sevenLanguages.description'),
       accent: 'from-sky/30 to-mint/20'
     },
     {
@@ -292,14 +272,6 @@ function App() {
     window.location.hash = page === 'home' ? '' : page;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
-
-  useEffect(() => {
-    if (selectedPlan === 'free') {
-      setLibraryTier('free');
-      return;
-    }
-    setLibraryTier('registered');
-  }, [selectedPlan]);
 
   useEffect(() => {
     const handleHash = () => {
@@ -458,89 +430,6 @@ function App() {
     };
   }, [authUser]);
 
-  const libraryLangOptions = useMemo(
-    () =>
-      [...new Set(manifestStories.map((s) => s.lang).filter(Boolean))]
-        .sort((a, b) => a.localeCompare(b)),
-    [manifestStories]
-  );
-
-  const librarySeriesOptions = useMemo(
-    () =>
-      [...new Set(manifestStories.map((s) => s.series_slug).filter(Boolean))]
-        .sort((a, b) => a.localeCompare(b)),
-    [manifestStories]
-  );
-
-  const libraryBatchOptions = useMemo(
-    () =>
-      [...new Set(manifestStories.map((s) => s.timestamp).filter(Boolean))]
-        .sort((a, b) => b.localeCompare(a)),
-    [manifestStories]
-  );
-
-  const filteredLibraryStories = useMemo(
-    () =>
-      manifestStories.filter((s) => {
-        if (libraryTier && s.access_tier !== libraryTier) return false;
-        if (libraryLang && s.lang !== libraryLang) return false;
-        if (librarySeries && s.series_slug !== librarySeries) return false;
-        if (libraryBatch && String(s.timestamp) !== String(libraryBatch)) return false;
-        return true;
-      }),
-    [libraryBatch, libraryLang, librarySeries, libraryTier, manifestStories]
-  );
-
-  const handleOpenLibraryStory = useCallback(async (story) => {
-    setLibraryActionError('');
-    const storyKey = `${story.access_tier}-${story.lang}-${story.series_slug}-${story.timestamp}`;
-    if (story.access_tier === 'free') {
-      if (story.index_url) {
-        window.open(story.index_url, '_blank', 'noopener,noreferrer');
-      }
-      return;
-    }
-    if (!PAID_GATEWAY_URL) {
-      setLibraryActionError('Paid gateway is not configured (VITE_PAID_GATEWAY_URL).');
-      return;
-    }
-    if (!authUser) {
-      setLibraryActionError('Please sign in with a paid account to open member stories.');
-      return;
-    }
-    if (!story.open_path) {
-      setLibraryActionError('Member story is missing open path.');
-      return;
-    }
-
-    try {
-      setOpeningStoryKey(storyKey);
-      const idToken = await authUser.getIdToken();
-      const openEndpoint = story.open_path;
-      const response = await fetch(openEndpoint, {
-        method: 'POST',
-        credentials: 'include',
-        headers: {
-          Authorization: `Bearer ${idToken}`
-        }
-      });
-      if (!response.ok) {
-        throw new Error(`Open failed (${response.status})`);
-      }
-      const payload = await response.json();
-      const readerUrl = payload?.reader_url;
-      if (!readerUrl) {
-        throw new Error('No reader URL returned by gateway');
-      }
-      const resolved = readerUrl.startsWith('http') ? readerUrl : `${PAID_GATEWAY_URL}${readerUrl}`;
-      window.open(resolved, '_blank', 'noopener,noreferrer');
-    } catch (error) {
-      setLibraryActionError(error?.message || 'Failed to open member story.');
-    } finally {
-      setOpeningStoryKey('');
-    }
-  }, [authUser]);
-
   useEffect(() => {
     const nodes = revealRef.current?.querySelectorAll('[data-reveal]');
     if (!nodes?.length) {
@@ -562,7 +451,7 @@ function App() {
     nodes.forEach((node) => observer.observe(node));
     setRevealReady(true);
     return () => observer.disconnect();
-  }, []);
+  }, [currentPage]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -1045,153 +934,6 @@ function App() {
                   </p>
                 </article>
               ))}
-            </div>
-          </section>
-
-          {/* ===== LIVE LIBRARY ===== */}
-          <section data-reveal className="reveal mx-auto max-w-6xl px-6 pb-14 lg:px-8">
-            <div className="rounded-[2rem] border-2 border-dashed border-sky/30 bg-gradient-to-br from-sky/10 to-lavender/10 p-8">
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div>
-                  <span className="sticker border-sky bg-sky/10 text-cosmos">
-                    {'\uD83D\uDCDA'} Live Library
-                  </span>
-                  <h3 className="mt-3 font-display text-3xl text-cosmos">Browse Deployed Books</h3>
-                  <p className="mt-2 text-sm text-cosmos/70">
-                    Source: manifests in Cloud Storage. Click any tile to open the reader.
-                  </p>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setLibraryLang('');
-                    setLibrarySeries('');
-                    setLibraryBatch('');
-                  }}
-                  className="rounded-full border-2 border-dashed border-twilight/40 bg-white/70 px-4 py-2 text-sm font-bold text-twilight transition hover:border-twilight hover:bg-white"
-                >
-                  Reset Filters
-                </button>
-              </div>
-
-              <div className="mt-5 grid gap-3 md:grid-cols-2 lg:grid-cols-5">
-                <div className="rounded-xl border border-white/70 bg-white/80 p-3">
-                  <label className="mb-1 block text-xs font-bold uppercase tracking-wide text-cosmos/60">Access</label>
-                  <select
-                    value={libraryTier}
-                    onChange={(e) => setLibraryTier(e.target.value)}
-                    className="w-full rounded-lg border border-twilight/20 bg-white px-2 py-2 text-sm text-cosmos"
-                  >
-                    <option value="registered">Member</option>
-                    <option value="free">Free</option>
-                  </select>
-                </div>
-
-                <div className="rounded-xl border border-white/70 bg-white/80 p-3">
-                  <label className="mb-1 block text-xs font-bold uppercase tracking-wide text-cosmos/60">Language</label>
-                  <select
-                    value={libraryLang}
-                    onChange={(e) => setLibraryLang(e.target.value)}
-                    className="w-full rounded-lg border border-twilight/20 bg-white px-2 py-2 text-sm text-cosmos"
-                  >
-                    <option value="">All</option>
-                    {libraryLangOptions.map((code) => (
-                      <option key={code} value={code}>
-                        {code.toUpperCase()}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div className="rounded-xl border border-white/70 bg-white/80 p-3">
-                  <label className="mb-1 block text-xs font-bold uppercase tracking-wide text-cosmos/60">Series</label>
-                  <select
-                    value={librarySeries}
-                    onChange={(e) => setLibrarySeries(e.target.value)}
-                    className="w-full rounded-lg border border-twilight/20 bg-white px-2 py-2 text-sm text-cosmos"
-                  >
-                    <option value="">All</option>
-                    {librarySeriesOptions.map((slug) => (
-                      <option key={slug} value={slug}>
-                        {slug}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div className="rounded-xl border border-white/70 bg-white/80 p-3 lg:col-span-2">
-                  <label className="mb-1 block text-xs font-bold uppercase tracking-wide text-cosmos/60">Batch</label>
-                  <select
-                    value={libraryBatch}
-                    onChange={(e) => setLibraryBatch(e.target.value)}
-                    className="w-full rounded-lg border border-twilight/20 bg-white px-2 py-2 text-sm text-cosmos"
-                  >
-                    <option value="">All</option>
-                    {libraryBatchOptions.map((seed) => (
-                      <option key={seed} value={seed}>
-                        {seed}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-
-              <div className="mt-4 text-sm font-semibold text-cosmos/70">
-                {manifestLoading ? 'Loading library...' : `${filteredLibraryStories.length} book(s)`}
-              </div>
-              {manifestError ? (
-                <div className="mt-3 rounded-xl border border-bubblegum/40 bg-bubblegum/10 px-4 py-3 text-sm font-semibold text-cosmos">
-                  {manifestError}
-                </div>
-              ) : null}
-              {libraryActionError ? (
-                <div className="mt-3 rounded-xl border border-bubblegum/40 bg-bubblegum/10 px-4 py-3 text-sm font-semibold text-cosmos">
-                  {libraryActionError}
-                </div>
-              ) : null}
-
-              <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {filteredLibraryStories.map((story) => {
-                  const emoji = seriesEmoji[story.series_slug] || { icon: '\uD83D\uDCD6', color: 'bg-white', border: 'border-white' };
-                  const storyKey = `${story.access_tier}-${story.lang}-${story.series_slug}-${story.timestamp}`;
-                  const isOpening = openingStoryKey === storyKey;
-                  return (
-                    <button
-                      type="button"
-                      key={`${story.access_tier}-${story.lang}-${story.series_slug}-${story.timestamp}`}
-                      onClick={() => handleOpenLibraryStory(story)}
-                      disabled={isOpening}
-                      className={`card-cute w-full rounded-2xl border-2 border-dashed ${emoji.border}/30 ${emoji.color}/10 p-4 text-left transition hover:-translate-y-0.5 hover:shadow-soft`}
-                    >
-                      {story.cover_url ? (
-                        <img
-                          src={story.cover_url}
-                          alt={`${story.title} cover`}
-                          className="h-56 w-full rounded-xl object-cover"
-                          loading="lazy"
-                        />
-                      ) : (
-                        <div className="flex h-56 w-full items-center justify-center rounded-xl bg-white/70 text-4xl">
-                          {emoji.icon}
-                        </div>
-                      )}
-                      <div className="mt-3 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-twilight">
-                        <span>{story.lang.toUpperCase()}</span>
-                        <span>•</span>
-                        <span>{story.access_tier === 'free' ? 'free' : 'member'}</span>
-                      </div>
-                      <h4 className="mt-1 font-display text-xl text-cosmos">{story.title}</h4>
-                      <p className="mt-1 text-xs text-cosmos/60">{story.series_slug}</p>
-                      <p className="mt-1 text-xs text-cosmos/60">
-                        {story.timestamp} {formatSeedDate(story.timestamp) ? `(${formatSeedDate(story.timestamp)})` : ''}
-                      </p>
-                      <p className="mt-2 text-xs font-bold text-twilight">
-                        {isOpening ? 'Opening...' : story.access_tier === 'free' ? 'Open Story' : 'Open Member Story'}
-                      </p>
-                    </button>
-                  );
-                })}
-              </div>
             </div>
           </section>
 

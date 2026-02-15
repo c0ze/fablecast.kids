@@ -67,7 +67,7 @@
     },
     "languageDemo": {
         "sticker": "Multilíngue",
-        "title": "Mesma história, três idiomas",
+        "title": "Mesma história, sete idiomas",
         "description": "Uma página real de uma história do Rusty, localizada com carinho.",
         "snippets": {
             "English": "Little Rusty peeked out. Soft snowflakes danced, turning everything snowy white and bright!",
@@ -83,9 +83,9 @@
             "title": "Bíblias de personagens",
             "description": "Cada história nasce de uma bíblia de personagens cuidadosamente elaborada."
         },
-        "threeLanguages": {
-            "title": "Três idiomas",
-            "description": "As histórias em inglês são criadas primeiro, depois belamente traduzidas."
+        "sevenLanguages": {
+            "title": "Sete idiomas",
+            "description": "As histórias em inglês são criadas primeiro, depois belamente traduzidas para seis idiomas adicionais."
         },
         "safeAndCozy": {
             "title": "Seguro e aconchegante",
@@ -237,7 +237,7 @@
             },
             "3": {
                 "title": "Tradução",
-                "description": "A edição mestra em inglês é traduzida para turco e japonês."
+                "description": "A edição mestra em inglês é traduzida para seis idiomas adicionais: turco, japonês, espanhol, português, alemão e francês."
             },
             "4": {
                 "title": "Narração",
@@ -774,6 +774,10 @@
         "subtitle": "Nenhuma assinatura necessária — aproveite essas histórias completas por nossa conta!",
         "readButton": "Ler Agora",
         "loading": "Carregando livros gratuitos...",
-        "noBooks": "Nenhum livro gratuito encontrado no momento."
+        "noBooks": "Nenhum livro gratuito encontrado no momento.",
+        "filterLanguage": "Idioma",
+        "filterSeries": "Série",
+        "allLanguages": "Todos os idiomas",
+        "allSeries": "Todas as séries"
     }
 }

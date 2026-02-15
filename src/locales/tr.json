@@ -56,7 +56,7 @@
     "titlePart1": "Her Hafta Büyüyen Bir",
     "titleHighlight": "Hikaye",
     "titlePart2": " Evreni",
-    "subtitle": "Uyku öncesi hikaye anlatımının sıcaklığıyla büyüyen resimli macera kütüphanesi. Altı sevilen karakter, üç dil, bir büyülü okuma rutini.",
+    "subtitle": "Uyku öncesi hikaye anlatımının sıcaklığıyla büyüyen resimli macera kütüphanesi. Altı sevilen karakter, yedi dil, bir büyülü okuma rutini.",
     "ctaStartReading": "Ücretsiz Okumaya Başla",
     "ctaLatestStories": "Son Hikayeleri Gör"
   },
@@ -67,8 +67,8 @@
   },
   "languageDemo": {
     "sticker": "Çok Dilli",
-    "title": "Aynı Hikaye, Üç Dil",
-    "description": "Bugünkü Rusty hikayesinden gerçek bir sayfa, üç dilde özenle yerelleştirilmiş haliyle.",
+    "title": "Aynı Hikaye, Yedi Dil",
+    "description": "Bugünkü Rusty hikayesinden gerçek bir sayfa, yedi dilde özenle yerelleştirilmiş haliyle.",
     "snippets": {
       "English": "Little Rusty peeked out. Soft snowflakes danced, turning everything snowy white and bright!",
       "Turkish": "Küçük Rusty başını uzattı. Yumuşacık kar taneleri dans ediyordu, her yeri bembeyaz ve ışıl ışıl yapıyordu!",
@@ -83,9 +83,9 @@
       "title": "Karakter Kitapçıkları",
       "description": "Her hikaye, benzersiz sanat tarzları, kişilikleri ve dünya kurallarıyla özenle hazırlanmış bir karakter kitapçığından doğar."
     },
-    "threeLanguages": {
-      "title": "Üç Dil",
-      "description": "Önce İngilizce hikayeler oluşturulur, ardından aynı güzel çizimler korunarak Türkçe ve Japonca'ya çevrilir."
+    "sevenLanguages": {
+      "title": "Yedi Dil",
+      "description": "Önce İngilizce hikayeler oluşturulur, ardından aynı güzel çizimler korunarak altı farklı dile çevrilir."
     },
     "safeAndCozy": {
       "title": "Güvenli ve Sıcak",
@@ -222,7 +222,7 @@
   "about": {
     "sticker": "Hakkında",
     "title": "Fablecast Nasıl Çalışır",
-    "subtitle": "Büyülü bir süreç, karakter kitapçıklarını üç dilde tam resimli, sesli çocuk kitaplarına dönüştürür. İşte sihir böyle gerçekleşiyor.",
+    "subtitle": "Büyülü bir süreç, karakter kitapçıklarını yedi dilde tam resimli, sesli çocuk kitaplarına dönüştürür. İşte sihir böyle gerçekleşiyor.",
     "stepLabel": "Adım {number}",
     "steps": {
       "0": {
@@ -239,7 +239,7 @@
       },
       "3": {
         "title": "Çeviri",
-        "description": "İngilizce ana baskı, Türkçe ve Japonca'ya çevrilir (yakında daha fazla dil gelecek). Çevrilmiş baskılar orijinal illüstrasyonları yeniden kullanır, böylece görsel hikaye anlatımı tüm dillerde tutarlı kalır."
+        "description": "İngilizce ana baskı altı farklı dile çevrilir: Türkçe, Japonca, İspanyolca, Portekizce, Almanca ve Fransızca. Çevrilmiş baskılar orijinal illüstrasyonları yeniden kullanır, böylece görsel hikaye anlatımı tüm dillerde tutarlı kalır."
       },
       "4": {
         "title": "Seslendirme",
@@ -247,7 +247,7 @@
       },
       "5": {
         "title": "Haftalık Güncellemeler",
-        "description": "Kütüphaneye her hafta 6 seri ve 3 dilde yeni hikayeler eklenir. Kütüphane büyümeye devam eder, böylece her zaman sizi bekleyen taze bir macera vardır."
+        "description": "Kütüphaneye her hafta 6 seri ve 7 dilde yeni hikayeler eklenir. Kütüphane büyümeye devam eder, böylece her zaman sizi bekleyen taze bir macera vardır."
       }
     },
     "safetyTitle": "Güvenlik Her Zaman Önceliğimiz",
@@ -404,7 +404,7 @@
       "category": "Başlarken",
       "0": {
         "q": "Fablecast nedir?",
-        "a": "Fablecast bir çocuk hikaye kütüphanesidir. 6 karakter serisi ve 3 dilde tam resimli, sesli hikayeler oluşturuyoruz ve her hafta yeni hikayeler ekliyoruz. Her zaman büyüyen dijital bir hikaye kitaplığı gibi."
+        "a": "Fablecast bir çocuk hikaye kütüphanesidir. 6 karakter serisi ve 7 dilde tam resimli, sesli hikayeler oluşturuyoruz ve her hafta yeni hikayeler ekliyoruz. Her zaman büyüyen dijital bir hikaye kitaplığı gibi."
       },
       "1": {
         "q": "Fablecast kimin için?",
@@ -427,7 +427,7 @@
       },
       "1": {
         "q": "Ne sıklıkla yeni hikayeler ekleniyor?",
-        "a": "Kütüphaneye her hafta altı seri ve üç dilde yeni hikayeler eklenir. Üye olarak, her yeni hikayeye eklenir eklenmez erişirsiniz."
+        "a": "Kütüphaneye her hafta altı seri ve yedi dilde yeni hikayeler eklenir. Üye olarak, her yeni hikayeye eklenir eklenmez erişirsiniz."
       },
       "2": {
         "q": "Eski hikayeleri tekrar okuyabilir miyim?",
@@ -446,7 +446,7 @@
       "category": "Abonelik ve Ödeme",
       "0": {
         "q": "Üyelik ne kadar?",
-        "a": "Üyelik aylık 4,99 dolardır. Tüm 6 seri, 3 dil, sesli anlatım ve gelecek tüm hikayeler dahil kütüphanedeki her hikayeye tam erişim sağlar."
+        "a": "Üyelik aylık 4,99 dolardır. Tüm 6 seri, 7 dil, sesli anlatım ve gelecek tüm hikayeler dahil kütüphanedeki her hikayeye tam erişim sağlar."
       },
       "1": {
         "q": "İstediğim zaman iptal edebilir miyim?",
