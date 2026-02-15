@@ -1,5 +1,6 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useRef, useEffect } from 'react';
 import { useTranslation } from '../i18n';
+import { LANGUAGES, Flag, getLanguage } from '../utils/languages';
 
 function formatSeedDate(seed) {
     if (!seed || String(seed).length < 8) return '';
@@ -16,43 +17,123 @@ function formatSeedDate(seed) {
 }
 
 const seriesEmoji = {
-    'adventures-of-rusty': { icon: '\uD83D\uDC36', color: 'bg-peach', border: 'border-peach' },
-    'captain-barnacles-voyages': { icon: '\u2693', color: 'bg-sky', border: 'border-sky' },
-    'astro-bun-to-the-moon': { icon: '\uD83D\uDC30', color: 'bg-lavender', border: 'border-lavender' },
-    'pippa-the-little-plane': { icon: '\u2708\uFE0F', color: 'bg-mint', border: 'border-mint' },
-    'professor-hoot-mysteries': { icon: '\uD83E\uDD89', color: 'bg-starlight', border: 'border-starlight' },
-    'grug-garden': { icon: '\uD83C\uDF31', color: 'bg-candy', border: 'border-candy' }
+    'adventures-of-rusty': { icon: '🐶', color: 'bg-peach', border: 'border-peach' },
+    'captain-barnacles-voyages': { icon: '⚓', color: 'bg-sky', border: 'border-sky' },
+    'astro-bun-to-the-moon': { icon: '🐰', color: 'bg-lavender', border: 'border-lavender' },
+    'pippa-the-little-plane': { icon: '✈️', color: 'bg-mint', border: 'border-mint' },
+    'professor-hoot-mysteries': { icon: '🦉', color: 'bg-starlight', border: 'border-starlight' },
+    'grug-garden': { icon: '🌱', color: 'bg-candy', border: 'border-candy' }
 };
 
-const LANG_META = {
-    en: { flag: '🇺🇸', key: 'english' },
-    tr: { flag: '🇹🇷', key: 'turkish' },
-    ja: { flag: '🇯🇵', key: 'japanese' },
-    es: { flag: '🇪🇸', key: 'spanish' },
-    pt: { flag: '🇧🇷', key: 'portuguese' },
-    de: { flag: '🇩🇪', key: 'german' },
-    fr: { flag: '🇫🇷', key: 'french' }
-};
+function CustomDropdown({ options, value, onChange, placeholder, size = "md" }) {
+    const [isOpen, setIsOpen] = useState(false);
+    const containerRef = useRef(null);
+
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (containerRef.current && !containerRef.current.contains(event.target)) {
+                setIsOpen(false);
+            }
+        }
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
+
+    const selectedOption = options.find(o => o.value === value) || options[0];
+
+    return (
+        <div className="relative w-full" ref={containerRef}>
+            <button
+                type="button"
+                onClick={() => setIsOpen(!isOpen)}
+                className="flex w-full items-center justify-between rounded-lg border border-twilight/20 bg-white px-3 py-2 text-sm text-cosmos hover:border-twilight/40 focus:border-twilight focus:ring-1 focus:ring-twilight/30"
+            >
+                <div className="flex items-center gap-2 overflow-hidden">
+                    {selectedOption.icon}
+                    <span className="truncate">{selectedOption.label}</span>
+                </div>
+                <span className="ml-2 text-xs text-cosmos/40">▼</span>
+            </button>
+
+            {isOpen && (
+                <div className="absolute left-0 right-0 z-10 mt-1 max-h-60 overflow-auto rounded-xl border border-twilight/20 bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <div className="p-1">
+                        {options.map((opt) => (
+                            <button
+                                key={opt.value}
+                                onClick={() => {
+                                    onChange(opt.value);
+                                    setIsOpen(false);
+                                }}
+                                className={`flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm transition ${value === opt.value
+                                    ? 'bg-twilight/10 text-twilight font-bold'
+                                    : 'text-cosmos/80 hover:bg-twilight/5 hover:text-cosmos'
+                                    }`}
+                            >
+                                {opt.icon}
+                                <span className="truncate">{opt.label}</span>
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            )}
+        </div>
+    );
+}
 
 export default function FreeBooks({ stories = [] }) {
     const { t } = useTranslation();
     const [filterLang, setFilterLang] = useState('');
     const [filterSeries, setFilterSeries] = useState('');
 
-    const langOptions = useMemo(() =>
+    const availableLangs = useMemo(() =>
         [...new Set(stories.map(s => s.lang).filter(Boolean))].sort(),
         [stories]
     );
 
-    const seriesOptions = useMemo(() =>
-        [...new Set(stories.map(s => s.series_slug).filter(Boolean))].sort(),
-        [stories]
-    );
+    const langOptions = useMemo(() => {
+        const allOption = {
+            value: '',
+            label: t('freeBooks.allLanguages'),
+            icon: <Flag country="un" size={20} className="shrink-0" />
+        };
+
+        const list = availableLangs.map(code => {
+            const l = getLanguage(code);
+            const label = t(`setupModal.languageOptions.${l.key}`) || l.label;
+            return {
+                value: code,
+                label: label,
+                icon: <Flag country={l.country} size={20} className="shrink-0" />
+            };
+        });
+
+        return [allOption, ...list];
+
+    }, [availableLangs, t]);
+
+    const seriesOptions = useMemo(() => {
+        const allOption = { value: '', label: t('freeBooks.allSeries'), icon: null };
+
+        const list = [...new Set(stories.map(s => s.series_slug).filter(Boolean))].sort().map(s => {
+            const emoji = seriesEmoji[s];
+            const name = t(`characters.series.${s}.series`);
+            return {
+                value: s,
+                label: name,
+                icon: emoji ? <span className="text-base">{emoji.icon}</span> : null
+            };
+        });
+
+        return [allOption, ...list];
+    }, [stories, t]);
+
 
     const filteredStories = useMemo(() => {
         return stories.filter(story => {
             if (story.access_tier !== 'free') return false;
-            if (filterLang && story.lang !== filterLang) return false;
+            // Filter by lang code, ignoring case just in case
+            if (filterLang && story.lang.toLowerCase() !== filterLang.toLowerCase()) return false;
             if (filterSeries && story.series_slug !== filterSeries) return false;
             return true;
         });
@@ -68,7 +149,7 @@ export default function FreeBooks({ stories = [] }) {
         <article className="mx-auto max-w-6xl px-6 py-14 lg:px-8">
             <div className="text-center">
                 <span className="sticker border-mint bg-mint/10 text-cosmos">
-                    {'\uD83D\uDCDA'} {t('freeBooks.sticker')}
+                    📚 {t('freeBooks.sticker')}
                 </span>
                 <h1 className="mt-4 font-display text-4xl text-cosmos">{t('freeBooks.title')}</h1>
                 <p className="mx-auto mt-4 max-w-xl text-lg text-cosmos/70">
@@ -78,44 +159,25 @@ export default function FreeBooks({ stories = [] }) {
 
             {/* Filters */}
             <div className="mt-10 flex flex-wrap justify-center gap-4">
-                <div className="rounded-xl border border-white/70 bg-white/80 p-3">
+                <div className="w-64 rounded-xl border border-white/70 bg-white/80 p-3">
                     <label htmlFor="lang-filter" className="mb-1 block text-xs font-bold uppercase tracking-wide text-cosmos/60">
                         {t('freeBooks.filterLanguage')}
                     </label>
-                    <select
-                        id="lang-filter"
+                    <CustomDropdown
+                        options={langOptions}
                         value={filterLang}
-                        onChange={(e) => setFilterLang(e.target.value)}
-                        className="w-full rounded-lg border border-twilight/20 bg-white px-2 py-2 text-sm text-cosmos"
-                    >
-                        <option value="">{t('freeBooks.allLanguages')}</option>
-                        {langOptions.map(l => {
-                            const meta = LANG_META[l];
-                            const label = meta
-                                ? `${meta.flag} ${t(`auth.languageOptions.${meta.key}`)}`
-                                : l.toUpperCase();
-                            return <option key={l} value={l}>{label}</option>;
-                        })}
-                    </select>
+                        onChange={setFilterLang}
+                    />
                 </div>
-                <div className="rounded-xl border border-white/70 bg-white/80 p-3">
+                <div className="w-64 rounded-xl border border-white/70 bg-white/80 p-3">
                     <label htmlFor="series-filter" className="mb-1 block text-xs font-bold uppercase tracking-wide text-cosmos/60">
                         {t('freeBooks.filterSeries')}
                     </label>
-                    <select
-                        id="series-filter"
+                    <CustomDropdown
+                        options={seriesOptions}
                         value={filterSeries}
-                        onChange={(e) => setFilterSeries(e.target.value)}
-                        className="w-full rounded-lg border border-twilight/20 bg-white px-2 py-2 text-sm text-cosmos"
-                    >
-                        <option value="">{t('freeBooks.allSeries')}</option>
-                        {seriesOptions.map(s => {
-                            const emoji = seriesEmoji[s];
-                            const name = t(`characters.series.${s}.series`);
-                            const icon = emoji ? `${emoji.icon} ` : '';
-                            return <option key={s} value={s}>{icon}{name}</option>;
-                        })}
-                    </select>
+                        onChange={setFilterSeries}
+                    />
                 </div>
             </div>
 
@@ -126,7 +188,8 @@ export default function FreeBooks({ stories = [] }) {
             ) : (
                 <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {filteredStories.map((story) => {
-                        const emoji = seriesEmoji[story.series_slug] || { icon: '\uD83D\uDCD6', color: 'bg-white', border: 'border-white' };
+                        const emoji = seriesEmoji[story.series_slug] || { icon: '📖', color: 'bg-white', border: 'border-white' };
+                        const langData = getLanguage(story.lang);
 
                         return (
                             <div
@@ -146,10 +209,11 @@ export default function FreeBooks({ stories = [] }) {
                                             {emoji.icon}
                                         </div>
                                     )}
-                                    <div className="absolute top-2 right-2 rounded-full bg-white/90 px-2 py-1 text-xs font-bold text-cosmos shadow-sm backdrop-blur-sm">
-                                        {LANG_META[story.lang]
-                                            ? `${LANG_META[story.lang].flag} ${t(`auth.languageOptions.${LANG_META[story.lang].key}`)}`
-                                            : story.lang.toUpperCase()}
+                                    <div className="absolute top-2 right-2 flex items-center gap-1.5 rounded-full bg-white/90 px-2 py-1 text-xs font-bold text-cosmos shadow-sm backdrop-blur-sm">
+                                        <Flag country={langData.country} size={16} />
+                                        <span>
+                                            {t(`setupModal.languageOptions.${langData.key}`) || langData.label}
+                                        </span>
                                     </div>
                                 </div>
 
@@ -172,7 +236,7 @@ export default function FreeBooks({ stories = [] }) {
                                     onClick={() => handleRead(story.index_url)}
                                     className="mt-5 w-full rounded-full bg-twilight px-4 py-3 text-sm font-bold text-white shadow-candy transition hover:bg-plumMist hover:shadow-glow"
                                 >
-                                    {t('freeBooks.readButton')} {'\u2728'}
+                                    {t('freeBooks.readButton')} ✨
                                 </button>
                             </div>
                         );

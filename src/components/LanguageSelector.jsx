@@ -1,29 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from '../i18n';
-
-const LANGUAGES = [
-  { code: 'en', country: 'us', label: 'English' },
-  { code: 'tr', country: 'tr', label: 'Türkçe' },
-  { code: 'ja', country: 'jp', label: '日本語' },
-  { code: 'es', country: 'es', label: 'Español' },
-  { code: 'pt', country: 'br', label: 'Português' },
-  { code: 'de', country: 'de', label: 'Deutsch' },
-  { code: 'fr', country: 'fr', label: 'Français' }
-];
-
-function Flag({ country, size = 20 }) {
-  return (
-    <img
-      src={`https://flagcdn.com/w40/${country}.png`}
-      srcSet={`https://flagcdn.com/w80/${country}.png 2x`}
-      width={size}
-      height={Math.round(size * 0.75)}
-      alt=""
-      className="inline-block rounded-sm"
-      style={{ objectFit: 'cover' }}
-    />
-  );
-}
+import { LANGUAGES, Flag } from '../utils/languages';
 
 export default function LanguageSelector({ className = '' }) {
   const { lang, setLang } = useTranslation();
